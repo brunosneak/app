@@ -1,0 +1,57 @@
+.pageMenu{
+    background-color: #000;
+    bottom: 0;
+    color: $blanc;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Dosis', sans-serif;
+    justify-content: space-around;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 1;
+    ul{
+        display: flex;
+        flex-direction: column;
+        li{
+            font-size: 2em;
+            list-style-type: none;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            padding: 0;
+            &::first-letter{
+                text-transform: capitalize;
+            }
+            a{
+                color: $blanc;
+                text-decoration: none;
+            }
+        }
+    }
+    .cv::after, .contact::after{
+        content: '';
+        background-color: $blanc;
+        display: block;
+        height: 2px;
+        margin-top: 20px;
+        width: 500px;
+    }
+
+}
+
+.nom, .score{
+    position: relative;
+    text-transform: uppercase;
+}
+
+.nom{
+    bottom: 45px;
+    font-size: 2em;
+}
+
+.score{
+    bottom: 200px;
+    font-size: 4em;
+}

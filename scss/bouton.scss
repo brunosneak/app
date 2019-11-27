@@ -1,0 +1,54 @@
+/*************************************************************************************************************************/
+/************************************************BOUTON BURGER************************************************************/
+/*************************************************************************************************************************/
+
+#menu_burger{
+    align-items: center;
+    background-color: #000000;
+    border: 2px solid $blanc;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    left: 30px;
+    opacity: 0.7;
+    position: absolute;
+    top: 30px;
+    width: 60px;
+    z-index: 2;
+    span{
+        background-color: $blanc;
+        border-radius: 10px;
+        height: 3px;
+        margin: 3px 0;
+        position: relative;
+        top: 16px;
+        width: 50%;
+    }
+}
+
+/*************************************************************************************************************************/
+/************************************************BOUTON START*************************************************************/
+/*************************************************************************************************************************/
+
+#start{
+    align-items: center;
+    background-color: #000000;
+    border: 2px solid $blanc;
+    border-radius: 100px;
+    bottom: 150px;
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2em;
+    height: 175px;
+    justify-content: center;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    opacity: 0.7;
+    width: 175px;
+    right: 0;
+    color: $blanc;
+    text-decoration: none;
+    text-transform: uppercase;
+}

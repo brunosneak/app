@@ -1,0 +1,48 @@
+.fond1{
+    background-image: url('../img/1er_fond.svg');
+    background-size: cover;
+    bottom: 0; 
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.fond2{
+    background-image: url('../img/2eme_fond.svg');
+    background-size: cover;
+    bottom: 0;  
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.fond3{
+    background-image: url('../img/3eme_fond.svg');
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.monNom, h2, h2+p{
+    margin: 0;
+    color: $blanc;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2em;
+    margin-top: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 6em;
+    font-weight: 400;
+}
+h2+p{
+    margin-top: 10px;
+    text-transform: capitalize;
+}
