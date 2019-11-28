@@ -381,7 +381,7 @@ h2 + p {
   background-color: #000000;
   border: 2px solid #ffffff;
   border-radius: 100px;
-  bottom: 150px;
+  bottom: 75px;
   display: flex;
   font-family: 'Dosis', sans-serif;
   font-size: 2em;
@@ -411,18 +411,21 @@ h2 + p {
   text-align: center;
   top: 0;
   z-index: 1; }
-  .pageMenu ul {
+  .pageMenu .nav1 > ul {
     display: flex;
-    flex-direction: column; }
-    .pageMenu ul li {
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    top: 40px; }
+    .pageMenu .nav1 > ul li {
       font-size: 2em;
       list-style-type: none;
       margin: 0 auto;
       margin-bottom: 25px;
       padding: 0; }
-      .pageMenu ul li::first-letter {
+      .pageMenu .nav1 > ul li::first-letter {
         text-transform: capitalize; }
-      .pageMenu ul li a {
+      .pageMenu .nav1 > ul li a {
         color: #ffffff;
         text-decoration: none; }
   .pageMenu .cv::after, .pageMenu .contact::after {
@@ -433,14 +436,86 @@ h2 + p {
     margin-top: 20px;
     width: 500px; }
 
+header {
+  background-image: url(../img/feuille_en_hauteur.svg);
+  background-position: top;
+  background-size: 18%;
+  background-repeat: no-repeat;
+  height: 30vh; }
+
 .nom, .score {
   position: relative;
   text-transform: uppercase; }
 
 .nom {
-  bottom: 45px;
-  font-size: 2em; }
+  font-size: 2em;
+  top: 30px; }
 
 .score {
-  bottom: 200px;
-  font-size: 4em; }
+  font-size: 4em;
+  top: 50px; }
+
+.plateforme {
+  height: 30vh;
+  margin: 0 auto; }
+
+.nav1 {
+  height: 30vh; }
+  .nav1 ul {
+    margin: 0; }
+
+.reseauSocial {
+  display: flex;
+  height: 10vh;
+  justify-content: center; }
+  .reseauSocial ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    width: 125px; }
+    .reseauSocial ul li {
+      list-style-type: none; }
+  .reseauSocial .git, .reseauSocial .linkedin {
+    height: 30px; }
+
+#fond_vert {
+  background-image: url("../img/fond_vert.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; }
+
+#tour {
+  position: absolute;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+  top: 0; }
+
+#hero {
+  height: 20%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 100px; }
+
+#boulePique {
+  height: 10%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 200px;
+  top: 500px; }
+
+#pieceJs {
+  height: 10%;
+  left: 300px;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 700px; }
