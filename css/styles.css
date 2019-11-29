@@ -484,38 +484,24 @@ header {
 #fond_vert {
   background-image: url("../img/fond_vert.svg");
   background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
   height: 100vh; }
 
 #tour {
-  position: absolute;
-  bottom: 0;
-  height: 100vh;
-  left: 0;
-  margin: 0 auto;
-  right: 0;
-  top: 0; }
+  background-image: url("../img/tour.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 100vw; }
 
-#hero {
-  height: 20%;
-  left: 0;
-  margin: 0 auto;
+#fenetreGauche {
+  height: 50%;
   position: absolute;
-  right: 0;
-  top: 100px; }
+  left: 620px;
+  top: 130px; }
 
-#boulePique {
-  height: 10%;
-  left: 0;
-  margin: 0 auto;
+#fenetreDroite {
+  height: 50%;
   position: absolute;
-  right: 200px;
-  top: 500px; }
-
-#pieceJs {
-  height: 10%;
-  left: 300px;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  top: 700px; }
+  right: 620px;
+  top: 130px; }
