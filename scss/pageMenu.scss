@@ -2,7 +2,7 @@
     background-color: #000;
     bottom: 0;
     color: $blanc;
-    display: flex;
+    display: none;
     flex-direction: column;
     font-family: 'Dosis', sans-serif;
     justify-content: space-around;
@@ -61,12 +61,12 @@ header{
 
 .nom{
     font-size: 2em;
-    top: 30px;
+    margin-top: 40px;
 }
 
 .score{
     font-size: 4em;
-    top: 50px;
+    top: 40px;
 }
 
 // image plateforme
