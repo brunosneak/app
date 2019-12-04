@@ -46,8 +46,8 @@
 /*************************************************************************************************************************/
 
 #masqueHero{
-    height: 150px;
-    width: 123px;
+    height: 123px;
+    width: 97px;
     position: absolute;
     overflow: hidden;
     left: 600px;
@@ -57,7 +57,8 @@
 }
 
 #hero{
-    height: 100%;
+    top: -14px;
+    height: 150px;
     position: absolute;
 }
 

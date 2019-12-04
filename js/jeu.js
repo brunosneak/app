@@ -13,6 +13,7 @@ window.addEventListener("load", function(){
 /***************************************POSITIONNEMENT DEPART DU DECORS***************************************************/
 /*************************************************************************************************************************/
 
+    var animationDuJeu = function(){
     var decors = [document.getElementById('fenetreGauche'),document.getElementById('fenetreDroite'),document.getElementById('pieceJs'),document.getElementById('boulePique'),document.getElementById('masqueHero'),document.getElementById('font_vert'),document.getElementById('hero'),document.getElementById('masqueFantome'),document.getElementById('fantome'),document.getElementById('masqueInsecte'),document.getElementById('insecte'),document.getElementById('masqueInsecte2'),document.getElementById('insecte2')];
     
     var positionDeDepartFenetre = function(element1, element2){
@@ -29,7 +30,7 @@ window.addEventListener("load", function(){
     positionDeDepartObjet(decors[3]);
     positionDeDepartObjet(decors[7]);
     positionDeDepartObjet(decors[9]);
-    // positionDeDepartObjet(decors[11]);
+    positionDeDepartObjet(decors[11]);
 
 
 /*************************************************************************************************************************/
@@ -88,7 +89,7 @@ window.addEventListener("load", function(){
         }
 
         if(fond_vert.offsetTop >= fantomeCoinBasGauche){
-            decors[7].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+            decors[7].style.top = fond_vert.offsetHeight + "px";
         }
 
         if(fond_vert.offsetTop >= insecteCoinBasGauche){
@@ -98,9 +99,6 @@ window.addEventListener("load", function(){
         if(fond_vert.offsetTop >= insecte2CoinBasGauche){
             decors[11].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
         }
-
-        requestAnimationFrame(slideUp);
-
     };
     slideUp();
 
@@ -121,27 +119,27 @@ window.addEventListener("load", function(){
         switch(position){
             // flèche directionnelle gauche
             case 37:
-                positionX -= 20;
+                positionX -= 10;
                 masque.style.left = positionX + "px";
                 masque.style.transform = "";
             break;
             // flèche directionnelle haut
             case 38:
-                positionY -= 20
+                positionY -= 10;
                 masque.style.top = positionY + "px";
             break;
             // flèche directionnelle droite
             case 39:
-                positionX += 20;
+                positionX += 10;
                 masque.style.left = positionX + "px";
                 masque.style.transform = "scaleX(-1)";
             break;
             // flèche directionnelle bas
             case 40:
-                positionY += 20;
+                positionY += 10;
                 masque.style.top = positionY + "px";
             break
-        }
+        };
 
     });
 
@@ -151,17 +149,15 @@ window.addEventListener("load", function(){
 
     var hero = decors[6];
     var heroLeft = hero.style.left;
-    var fps = 15;
     var mouvementHero = function(){
         setTimeout(function(){
             heroLeft -= 120;
             if(heroLeft < -360){
-                heroLeft = 0;
+                heroLeft = -14;
             }
             hero.style.left = heroLeft + "px";
-
             requestAnimationFrame(mouvementHero);
-        }, 1000 / fps);
+        }, 1000 / 10);
     };
     mouvementHero();
 
@@ -179,9 +175,8 @@ window.addEventListener("load", function(){
                 fantomeLeft = 0;
             }
             fantome.style.left = fantomeLeft + "px";
-
             requestAnimationFrame(mouvementFantome);
-        },1000 / fps);
+        }, 1000 / 10);
     };
     mouvementFantome();
 
@@ -199,9 +194,8 @@ window.addEventListener("load", function(){
                 insecteLeft = 0;
             }
             insecte.style.left = insecteLeft + "px";
-
             requestAnimationFrame(mouvementInsecte);
-        },1000 / fps);
+        }, 1000 / 10);
     };
     mouvementInsecte();
 
@@ -219,9 +213,8 @@ window.addEventListener("load", function(){
                 insecte2Left = 0;
             }
             insecte2.style.left = insecte2Left + "px";
-
             requestAnimationFrame(mouvementInsecte2);
-        },1000 / fps);
+        }, 1000 / 10);
     };
     mouvementInsecte2();
 
@@ -230,5 +223,29 @@ window.addEventListener("load", function(){
 /********************************************DETECTEUR DE COLLISION*******************************************************/
 /*************************************************************************************************************************/
 
+    var coordonneesFantome = decors[7].getBoundingClientRect();
+    var coordonneesBoulePique = decors[3].getBoundingClientRect();
+    
+    // if(coordonneesMasque.y + coordonneesMasque.height && coordonneesMasque.y + coordonneesMasque.height + coordonneesMasque.x + coordonneesMasque.width == coordonneesFantome.x + coordonneesFantome.y && coordonneesFantome.x + coordonneesFantome.width){
+    //     alert("tu es mort");
+    // };
+
+    if(coordonneesMasque.x < coordonneesFantome.x + coordonneesFantome.width &&
+        coordonneesMasque.x + coordonneesMasque.width > coordonneesFantome.x &&
+        coordonneesMasque.y < coordonneesFantome.y + coordonneesFantome.height &&
+        coordonneesMasque.height + coordonneesMasque.y > coordonneesFantome.y || 
+
+        coordonneesMasque.x < coordonneesBoulePique.x + coordonneesBoulePique.width &&
+        coordonneesMasque.x + coordonneesMasque.width > coordonneesBoulePique.x &&
+        coordonneesMasque.y < coordonneesBoulePique.y + coordonneesBoulePique.height &&
+        coordonneesMasque.height + coordonneesMasque.y > coordonneesBoulePique.y){
+        alert("tu es mort");
+    };
+
+    requestAnimationFrame(animationDuJeu);
+
+    };
+
+    animationDuJeu();
 
 });
