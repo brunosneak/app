@@ -6,6 +6,7 @@
     background-image: url('../img/fond_vert.svg');
     background-size: cover;
     display: flex;
+    justify-content: center;
     height: 100vh;
     overflow: hidden;
 }
@@ -17,9 +18,9 @@
 #tour{
     background-image: url('../img/tour.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    height: 1000px;
     position: relative;
-    width: 100%;
+    width: 1137px;
 }
 
 /*************************************************************************************************************************/
@@ -27,18 +28,17 @@
 /*************************************************************************************************************************/
 
 #fenetreGauche{
-    left: 620px;
+    left: 16%;
 }
 
 #fenetreDroite{
-    right: 620px;
+    left: 56%;
     
 }
 
 #fenetreGauche, #fenetreDroite{
     height: 50%;
     position: absolute;
-    // top: 130px;
 }
 
 /*************************************************************************************************************************/
@@ -50,16 +50,16 @@
     width: 97px;
     position: absolute;
     overflow: hidden;
-    left: 600px;
+    left: 150px;
     top: 100px;
     z-index: 10;
-    // border: 2px solid black;
 }
 
 #hero{
-    top: -14px;
     height: 150px;
+    left: -12px;
     position: absolute;
+    top: -14px;
 }
 
 /*************************************************************************************************************************/
@@ -69,7 +69,7 @@
 #boulePique{
     height: 10%;
     position: absolute;
-    left: 1000px;
+    left: 70%;
 }
 
 /*************************************************************************************************************************/
@@ -78,7 +78,7 @@
 
 #pieceJs{
     height: 10%;
-    left: 600px;
+    left: 30%;
     position: absolute;
 }
 
@@ -91,8 +91,7 @@
     width: 123px;
     position: absolute;
     overflow: hidden;
-    left: 1200px;
-    // border: 2px solid black;
+    left: 40%;
 }
 
 #fantome{
@@ -109,8 +108,7 @@
     width: 285px;
     position: absolute;
     overflow: hidden;
-    left: 490px;
-    // border: 2px solid black;
+    left: 6%;
 }
 
 #insecte{
@@ -127,9 +125,8 @@
     width: 285px;
     position: absolute;
     overflow: hidden;
-    left: 1142px;
+    left: 69%;
     transform: rotateY(180deg);
-    // border: 2px solid black;
 }
 
 #insecte2{

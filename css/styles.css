@@ -489,6 +489,7 @@ header {
   background-image: url("../img/fond_vert.svg");
   background-size: cover;
   display: flex;
+  justify-content: center;
   height: 100vh;
   overflow: hidden; }
 
@@ -498,18 +499,18 @@ header {
 #tour {
   background-image: url("../img/tour.svg");
   background-repeat: no-repeat;
-  background-position: center;
+  height: 1000px;
   position: relative;
-  width: 100%; }
+  width: 1137px; }
 
 /*************************************************************************************************************************/
 /*********************************************FENETRES DE LA TOUR*********************************************************/
 /*************************************************************************************************************************/
 #fenetreGauche {
-  left: 620px; }
+  left: 16%; }
 
 #fenetreDroite {
-  right: 620px; }
+  left: 56%; }
 
 #fenetreGauche, #fenetreDroite {
   height: 50%;
@@ -523,14 +524,15 @@ header {
   width: 97px;
   position: absolute;
   overflow: hidden;
-  left: 600px;
+  left: 150px;
   top: 100px;
   z-index: 10; }
 
 #hero {
-  top: -14px;
   height: 150px;
-  position: absolute; }
+  left: -12px;
+  position: absolute;
+  top: -14px; }
 
 /*************************************************************************************************************************/
 /********************************************OBSTACLE BOULE PIQUE********************************************************/
@@ -538,14 +540,14 @@ header {
 #boulePique {
   height: 10%;
   position: absolute;
-  left: 1000px; }
+  left: 70%; }
 
 /*************************************************************************************************************************/
 /****************************************************PIECES***************************************************************/
 /*************************************************************************************************************************/
 #pieceJs {
   height: 10%;
-  left: 600px;
+  left: 30%;
   position: absolute; }
 
 /*************************************************************************************************************************/
@@ -556,7 +558,7 @@ header {
   width: 123px;
   position: absolute;
   overflow: hidden;
-  left: 1200px; }
+  left: 40%; }
 
 #fantome {
   height: 100%;
@@ -570,7 +572,7 @@ header {
   width: 285px;
   position: absolute;
   overflow: hidden;
-  left: 490px; }
+  left: 6%; }
 
 #insecte {
   height: 100%;
@@ -584,7 +586,7 @@ header {
   width: 285px;
   position: absolute;
   overflow: hidden;
-  left: 1142px;
+  left: 69%;
   transform: rotateY(180deg); }
 
 #insecte2 {
