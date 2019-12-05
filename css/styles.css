@@ -450,11 +450,18 @@ header {
 
 .nom {
   font-size: 2em;
+  margin: 0;
   margin-top: 40px; }
 
 .score {
   font-size: 4em;
-  top: 40px; }
+  top: 40px;
+  margin: 0 10px; }
+
+.tableauScore {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center; }
 
 .plateforme {
   height: 30vh;
@@ -544,10 +551,17 @@ header {
 /*************************************************************************************************************************/
 /********************************************OBSTACLE BOULE PIQUE********************************************************/
 /*************************************************************************************************************************/
-#boulePique {
-  height: 10%;
+#boulePiqueCollision {
+  height: 49px;
+  width: 51px;
   position: absolute;
-  left: 70%; }
+  left: 75%; }
+
+#boulePique {
+  height: 100px;
+  position: absolute;
+  left: -28px;
+  top: -26px; }
 
 /*************************************************************************************************************************/
 /****************************************************PIECES***************************************************************/
@@ -634,5 +648,6 @@ header {
   opacity: 0.7;
   position: absolute;
   top: 30px;
+  text-transform: uppercase;
   right: 30px;
   width: 200px; }

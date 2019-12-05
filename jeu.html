@@ -31,7 +31,9 @@
             <img id="pieceJs" src="../app/img/piece_js.svg" alt="pièce javascript">
             <img id="pieceCss3" src="../app/img/piece_css3.svg" alt="pièce javascript">
             <img id="pieceHtml5" src="../app/img/piece_html5.svg" alt="pièce javascript">
-            <img id="boulePique" src="../app/img/boule_pique.svg" alt="boule avec des piques">
+            <div id="boulePiqueCollision">
+                <img id="boulePique" src="../app/img/boule_pique.svg" alt="boule avec des piques">
+            </div>
             <div id="masqueInsecte">
                 <img id="insecte" src="../app/img/animation_millepatte.svg" alt="Mille pattes">
             </div>
@@ -42,14 +44,18 @@
     </main>
 
     <div id="scoreDuJeu">
-        <p>SCORE</p>
-        <span id="resultat"></span>
+        <p>score</p>
+        <span class="resultat"></span>
     </div>
 
     <section class="pageMenu">
         <header>
             <h1 class="nom">neak bruno</h1>
-            <p class="score">score 0000000</p>
+            <div class="tableauScore">
+                <p class="score">score</p>
+                <span class="resultat score"></span>
+            </div>
+            <p class="score">game over</p>
         </header>
 
         <img class="plateforme" src="../app/img/plateforme.svg" alt="plateforme">

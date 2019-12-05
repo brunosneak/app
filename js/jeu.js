@@ -4,7 +4,7 @@
 /*********************************************INITIALISATION**********************************************************/
 /*********************************************************************************************************************/
 
-var decors = [document.getElementById('fenetreGauche'),document.getElementById('fenetreDroite'),document.getElementById('pieceJs'),document.getElementById('boulePique'),document.getElementById('heroCollision'),document.getElementById('font_vert'),document.getElementById('hero'),document.getElementById('fantomeCollision'),document.getElementById('fantome'),document.getElementById('masqueInsecte'),document.getElementById('insecte'),document.getElementById('masqueInsecte2'),document.getElementById('insecte2'),document.getElementById('pieceCss3'),document.getElementById('pieceHtml5'),document.getElementById('resultat'),document.getElementsByClassName('score')];
+var decors = [document.getElementById('fenetreGauche'),document.getElementById('fenetreDroite'),document.getElementById('pieceJs'),document.getElementById('boulePiqueCollision'),document.getElementById('heroCollision'),document.getElementById('font_vert'),document.getElementById('hero'),document.getElementById('fantomeCollision'),document.getElementById('fantome'),document.getElementById('masqueInsecte'),document.getElementById('insecte'),document.getElementById('masqueInsecte2'),document.getElementById('insecte2'),document.getElementById('pieceCss3'),document.getElementById('pieceHtml5'),document.getElementsByClassName('resultat'),document.getElementsByClassName('score'),document.getElementsByClassName('menu_burger')];
 var masqueHero = decors[4];
 var hero = decors[6];
 var heroLeft = hero.style.left;
@@ -15,8 +15,9 @@ var insecteLeft = insecte.style.left;
 var insecte2 = decors[12];
 var insecte2Left = insecte2.style.left;
 var scoreTotal = 0;
-var stockageInnerHtml = decors[15].innerHTML;
+var stockageInnerHtml = decors[15][0].innerHTML;
 var rafId;
+var pageMenu = document.getElementsByClassName('pageMenu');
 
     
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
@@ -151,10 +152,10 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
                 masqueHero.style.transform = "";
             break;
             // flèche directionnelle haut
-            case 38:
-                coordonneesMasqueY -= 10;
-                masqueHero.style.top = coordonneesMasqueY + "px";
-            break;
+            // case 38:
+            //     coordonneesMasqueY -= 10;
+            //     masqueHero.style.top = coordonneesMasqueY + "px";
+            // break;
             // flèche directionnelle droite
             case 39:
                 coordonneesMasqueX += 10;
@@ -162,10 +163,10 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
                 masqueHero.style.transform = "scaleX(-1)";
             break;
             // flèche directionnelle bas
-            case 40:
-                coordonneesMasqueY += 10;
-                masqueHero.style.top = coordonneesMasqueY + "px";
-            break
+            // case 40:
+            //     coordonneesMasqueY += 10;
+            //     masqueHero.style.top = coordonneesMasqueY + "px";
+            // break
         };
 
     });
@@ -226,65 +227,67 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
     var collision = function(){
 
-    var coordonneesMasque = masqueHero.getBoundingClientRect();
-    var coordonneesFantome = decors[7].getBoundingClientRect();
-    var coordonneesBoulePique = decors[3].getBoundingClientRect();
-    var coordonneesPieceJs = decors[2].getBoundingClientRect();
-    var coordonneesPieceCss3 = decors[13].getBoundingClientRect();
-    var coordonneesPieceHtml5 = decors[14].getBoundingClientRect();
+        var coordonneesMasque = masqueHero.getBoundingClientRect();
+        var coordonneesFantome = decors[7].getBoundingClientRect();
+        var coordonneesBoulePique = decors[3].getBoundingClientRect();
+        var coordonneesPieceJs = decors[2].getBoundingClientRect();
+        var coordonneesPieceCss3 = decors[13].getBoundingClientRect();
+        var coordonneesPieceHtml5 = decors[14].getBoundingClientRect();
 
-    if(masqueHero.offsetLeft <= 130){
-        masqueHero.style.left = "130px";
-    };
-    if(masqueHero.offsetLeft >= 930){
-        masqueHero.style.left = "930px";
-    };
+        if(masqueHero.offsetLeft <= 130){
+            masqueHero.style.left = "130px";
+        };
+        if(masqueHero.offsetLeft >= 930){
+            masqueHero.style.left = "930px";
+        };
 
-    if(coordonneesMasque.x < coordonneesFantome.x + coordonneesFantome.width &&
-        coordonneesMasque.x + coordonneesMasque.width > coordonneesFantome.x &&
-        coordonneesMasque.y < coordonneesFantome.y + coordonneesFantome.height &&
-        coordonneesMasque.height + coordonneesMasque.y > coordonneesFantome.y || 
+        if(coordonneesMasque.x < coordonneesFantome.x + coordonneesFantome.width &&
+            coordonneesMasque.x + coordonneesMasque.width > coordonneesFantome.x &&
+            coordonneesMasque.y < coordonneesFantome.y + coordonneesFantome.height &&
+            coordonneesMasque.height + coordonneesMasque.y > coordonneesFantome.y || 
 
-        coordonneesMasque.x < coordonneesBoulePique.x + coordonneesBoulePique.width &&
-        coordonneesMasque.x + coordonneesMasque.width > coordonneesBoulePique.x &&
-        coordonneesMasque.y < coordonneesBoulePique.y + coordonneesBoulePique.height &&
-        coordonneesMasque.height + coordonneesMasque.y > coordonneesBoulePique.y){
-            cancelAnimationFrame(rafId);
-    };
+            coordonneesMasque.x < coordonneesBoulePique.x + coordonneesBoulePique.width &&
+            coordonneesMasque.x + coordonneesMasque.width > coordonneesBoulePique.x &&
+            coordonneesMasque.y < coordonneesBoulePique.y + coordonneesBoulePique.height &&
+            coordonneesMasque.height + coordonneesMasque.y > coordonneesBoulePique.y){
+                pageMenu[0].style.display = "flex";
+                cancelAnimationFrame(rafId);
+                decors[17][0].style.display = 'none';
+        };
 
-    if(coordonneesMasque.x < coordonneesPieceJs.x + coordonneesPieceJs.width &&
-        coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceJs.x &&
-        coordonneesMasque.y < coordonneesPieceJs.y + coordonneesPieceJs.height &&
-        coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceJs.y){
+        if(coordonneesMasque.x < coordonneesPieceJs.x + coordonneesPieceJs.width &&
+            coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceJs.x &&
+            coordonneesMasque.y < coordonneesPieceJs.y + coordonneesPieceJs.height &&
+            coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceJs.y){
+                var fond_vert = document.getElementById('fond_vert');
+                decors[2].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+                decors[2].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
+                scoreTotal += 100;
+            }
+        
+        if(coordonneesMasque.x < coordonneesPieceCss3.x + coordonneesPieceCss3.width &&
+        coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceCss3.x &&
+        coordonneesMasque.y < coordonneesPieceCss3.y + coordonneesPieceCss3.height &&
+        coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceCss3.y){
             var fond_vert = document.getElementById('fond_vert');
-            decors[2].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            decors[2].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
-            scoreTotal += 100;
+            decors[13].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+            decors[13].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
+            scoreTotal += 50;
         }
-    
-    if(coordonneesMasque.x < coordonneesPieceCss3.x + coordonneesPieceCss3.width &&
-    coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceCss3.x &&
-    coordonneesMasque.y < coordonneesPieceCss3.y + coordonneesPieceCss3.height &&
-    coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceCss3.y){
-        var fond_vert = document.getElementById('fond_vert');
-        decors[13].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-        decors[13].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
-        scoreTotal += 50;
-    }
 
-    if(coordonneesMasque.x < coordonneesPieceHtml5.x + coordonneesPieceHtml5.width &&
-    coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceHtml5.x &&
-    coordonneesMasque.y < coordonneesPieceHtml5.y + coordonneesPieceHtml5.height &&
-    coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceHtml5.y){
-        var fond_vert = document.getElementById('fond_vert');
-        decors[14].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-        decors[14].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
-        scoreTotal += 25;
-    }
+        if(coordonneesMasque.x < coordonneesPieceHtml5.x + coordonneesPieceHtml5.width &&
+        coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceHtml5.x &&
+        coordonneesMasque.y < coordonneesPieceHtml5.y + coordonneesPieceHtml5.height &&
+        coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceHtml5.y){
+            var fond_vert = document.getElementById('fond_vert');
+            decors[14].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+            decors[14].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
+            scoreTotal += 25;
+        }
     };
     
-    decors[15].innerHTML = stockageInnerHtml + scoreTotal;
-    
+    decors[15][0].innerHTML = stockageInnerHtml + scoreTotal;
+    decors[15][1].innerHTML = decors[15][0].innerHTML;
 
 /*************************************************************************************************************************/
 /*******************************************EXECUTION DES FONCTIONS*******************************************************/
