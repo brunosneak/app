@@ -5,20 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <title>Jeu T.O.T.E -Tower Of The End-</title>
 </head>
 <body>
     <main id="fond_vert">
+    <a href="#" class="menu_burger">
+        <span class="first_line"></span>
+        <span class="second_line"></span>
+        <span class="third_line"></span>
+    </a>
         <div id="tour">
             <img id="fenetreGauche" src="../app/img/fenetre_gauche.svg" alt="fenetre">
             <img id="fenetreDroite" src="../app/img/fenetre_droite.svg" alt="fenetre">
-            <div id="masqueHero">
-                <img id="hero" src="../app/img/animation_hero.svg" alt="personnage">
+            <div id="heroCollision"> 
+                <div id="masqueHero">
+                    <img id="hero" src="../app/img/animation_hero.svg" alt="personnage">
+                </div>
             </div>
-            <div id="masqueFantome">
-                <img id="fantome" src="../app/img/animation_fantome.svg" alt="fantome">
+            <div id="fantomeCollision">
+                <div id="masqueFantome">
+                    <img id="fantome" src="../app/img/animation_fantome.svg" alt="fantome">
+                </div>
             </div>
             <img id="pieceJs" src="../app/img/piece_js.svg" alt="pièce javascript">
+            <img id="pieceCss3" src="../app/img/piece_css3.svg" alt="pièce javascript">
+            <img id="pieceHtml5" src="../app/img/piece_html5.svg" alt="pièce javascript">
             <img id="boulePique" src="../app/img/boule_pique.svg" alt="boule avec des piques">
             <div id="masqueInsecte">
                 <img id="insecte" src="../app/img/animation_millepatte.svg" alt="Mille pattes">
@@ -28,6 +40,44 @@
             </div>
         </div>
     </main>
+
+    <div id="scoreDuJeu">
+        <p>SCORE</p>
+        <span id="resultat"></span>
+    </div>
+
+    <section class="pageMenu">
+        <header>
+            <h1 class="nom">neak bruno</h1>
+            <p class="score">score 0000000</p>
+        </header>
+
+        <img class="plateforme" src="../app/img/plateforme.svg" alt="plateforme">
+
+        <nav class="nav1">
+            <ul>
+                <li class="cv"><a href="#">voir mon CV</a></li>
+                <li class="contact"><a href="#">contactez-moi</a></li>
+                <li class="recommencer"><a href="../app/jeu.html">recommencer la partie</a></li>
+            </ul>
+        </nav>
+
+        <nav class="reseauSocial">
+            <ul>
+                <li>
+                    <a href="https://github.com/brunosneak" target="_blank">
+                        <img src="../app/img/icone_git.svg" alt="icone git" class="git">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
+                        <img src="../app/img/icone_linkedin.svg" alt="icone linkedin" class="linkedin">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <script src="js/main.js"></script>
 <script src="js/jeu.js"></script>
 </body>
 </html>

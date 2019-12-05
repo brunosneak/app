@@ -29,14 +29,16 @@ window.addEventListener("load", function(){
 
     function auCliqueDuBouton(){
         var pageMenu = document.getElementsByClassName('pageMenu');
-        var boutonMenu = document.getElementById('menu_burger');
-        boutonMenu.addEventListener('click', function(){
+        var boutonMenu = document.getElementsByClassName('menu_burger');
+        boutonMenu[0].addEventListener('click', function(){
             if(pageMenu[0].style.display == "flex"){
             pageMenu[0].style.display = "none";
-            animationBoutonBurgerRetour()
+            animationBoutonBurgerRetour();
+            requestAnimationFrame(animationDuJeu);
             }else{
                 pageMenu[0].style.display = "flex";
                 animationBoutonBurgerAller();
+                cancelAnimationFrame(rafId);
             };
         });
     };

@@ -4,7 +4,7 @@
 /*********************************************INITIALISATION**********************************************************/
 /*********************************************************************************************************************/
 
-var decors = [document.getElementById('fenetreGauche'),document.getElementById('fenetreDroite'),document.getElementById('pieceJs'),document.getElementById('boulePique'),document.getElementById('masqueHero'),document.getElementById('font_vert'),document.getElementById('hero'),document.getElementById('masqueFantome'),document.getElementById('fantome'),document.getElementById('masqueInsecte'),document.getElementById('insecte'),document.getElementById('masqueInsecte2'),document.getElementById('insecte2')];
+var decors = [document.getElementById('fenetreGauche'),document.getElementById('fenetreDroite'),document.getElementById('pieceJs'),document.getElementById('boulePique'),document.getElementById('heroCollision'),document.getElementById('font_vert'),document.getElementById('hero'),document.getElementById('fantomeCollision'),document.getElementById('fantome'),document.getElementById('masqueInsecte'),document.getElementById('insecte'),document.getElementById('masqueInsecte2'),document.getElementById('insecte2'),document.getElementById('pieceCss3'),document.getElementById('pieceHtml5'),document.getElementById('resultat'),document.getElementsByClassName('score')];
 var masqueHero = decors[4];
 var hero = decors[6];
 var heroLeft = hero.style.left;
@@ -14,6 +14,10 @@ var insecte = decors[10];
 var insecteLeft = insecte.style.left;
 var insecte2 = decors[12];
 var insecte2Left = insecte2.style.left;
+var scoreTotal = 0;
+var stockageInnerHtml = decors[15].innerHTML;
+var rafId;
+
     
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
 window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -47,16 +51,16 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
         fenetreDroiteTop -= 5;
         decors[1].style.top = fenetreDroiteTop + "px";
 
-        var pieceTop = decors[2].offsetTop;
-        pieceTop -= 5;
-        decors[2].style.top = pieceTop + "px";
+        var pieceJsTop = decors[2].offsetTop;
+        pieceJsTop -= 5;
+        decors[2].style.top = pieceJsTop + "px";
 
         var boulePiqueTop = decors[3].offsetTop;
         boulePiqueTop -= 5;
         decors[3].style.top = boulePiqueTop + "px";
 
         var fantomeTop = decors[7].offsetTop;
-        fantomeTop -= 5;
+        fantomeTop -= 8;
         decors[7].style.top = fantomeTop + "px";
 
         var insecteTop = decors[9].offsetTop;
@@ -67,44 +71,64 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
         insecteTop2 -= 5;
         decors[11].style.top = insecteTop2 + "px";
 
+        var pieceCss3Top = decors[13].offsetTop;
+        pieceCss3Top -= 5;
+        decors[13].style.top = pieceCss3Top + "px";
+
+        var pieceHtml5Top = decors[14].offsetTop;
+        pieceHtml5Top -= 5;
+        decors[14].style.top = pieceHtml5Top + "px";
+
 /*************************************************************************************************************************/
 /*********************************************RETOUR CASE DEPART**********************************************************/
 /*************************************************************************************************************************/
 
         var fond_vert = document.getElementById('fond_vert');
-        var fenetreCoinBasGauche = decors[0].offsetTop + decors[0].offsetHeight;
-        var pieceCoinBasGauche = decors[2].offsetTop + decors[2].offsetHeight;
-        var boulePiqueCoinBasGauche = decors[3].offsetTop + decors[3].offsetHeight;
-        var fantomeCoinBasGauche = decors[7].offsetTop + decors[7].offsetHeight;
-        var insecteCoinBasGauche = decors[9].offsetTop + decors[9].offsetHeight;
-        var insecte2CoinBasGauche = decors[11].offsetTop + decors[11].offsetHeight;
+        var fenetreYHeight = decors[0].offsetTop + decors[0].offsetHeight;
+        var pieceJsYHeight = decors[2].offsetTop + decors[2].offsetHeight;
+        var boulePiqueYHeight = decors[3].offsetTop + decors[3].offsetHeight;
+        var fantomeYHeight = decors[7].offsetTop + decors[7].offsetHeight;
+        var insecteYHeight = decors[9].offsetTop + decors[9].offsetHeight;
+        var insecte2YHeight = decors[11].offsetTop + decors[11].offsetHeight;
+        var pieceCss3YHeight = decors[13].offsetTop + decors[13].offsetHeight;
+        var pieceHtml5YHeight = decors[14].offsetTop + decors[14].offsetHeight;
 
-        if(fond_vert.offsetTop >= fenetreCoinBasGauche){
+        if(fond_vert.offsetTop >= fenetreYHeight){
             decors[0].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
             decors[1].style.top = decors[0].style.top;
         }
 
-        if(fond_vert.offsetTop >= pieceCoinBasGauche){
+        if(fond_vert.offsetTop >= pieceJsYHeight){
             decors[2].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
             decors[2].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
         }
 
-        if(fond_vert.offsetTop >= boulePiqueCoinBasGauche){
+        if(fond_vert.offsetTop >= boulePiqueYHeight){
             decors[3].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
             decors[3].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
         }
 
-        if(fond_vert.offsetTop >= fantomeCoinBasGauche){
+        if(fond_vert.offsetTop >= fantomeYHeight){
             decors[7].style.top = fond_vert.offsetHeight + "px";
             decors[7].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
         }
 
-        if(fond_vert.offsetTop >= insecteCoinBasGauche){
+        if(fond_vert.offsetTop >= insecteYHeight){
             decors[9].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
         }
 
-        if(fond_vert.offsetTop >= insecte2CoinBasGauche){
+        if(fond_vert.offsetTop >= insecte2YHeight){
             decors[11].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+        }
+
+        if(fond_vert.offsetTop >= pieceCss3YHeight){
+            decors[13].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+            decors[13].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
+        }
+
+        if(fond_vert.offsetTop >= pieceHtml5YHeight){
+            decors[14].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+            decors[14].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
         }
     };
 
@@ -200,16 +224,20 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 /********************************************DETECTEUR DE COLLISION*******************************************************/
 /*************************************************************************************************************************/
 
+    var collision = function(){
+
     var coordonneesMasque = masqueHero.getBoundingClientRect();
     var coordonneesFantome = decors[7].getBoundingClientRect();
     var coordonneesBoulePique = decors[3].getBoundingClientRect();
     var coordonneesPieceJs = decors[2].getBoundingClientRect();
+    var coordonneesPieceCss3 = decors[13].getBoundingClientRect();
+    var coordonneesPieceHtml5 = decors[14].getBoundingClientRect();
 
-    if(masqueHero.offsetLeft <= 110){
-        masqueHero.style.left = "110px";
+    if(masqueHero.offsetLeft <= 130){
+        masqueHero.style.left = "130px";
     };
-    if(masqueHero.offsetLeft >= 920){
-        masqueHero.style.left = "920px";
+    if(masqueHero.offsetLeft >= 930){
+        masqueHero.style.left = "930px";
     };
 
     if(coordonneesMasque.x < coordonneesFantome.x + coordonneesFantome.width &&
@@ -221,7 +249,7 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
         coordonneesMasque.x + coordonneesMasque.width > coordonneesBoulePique.x &&
         coordonneesMasque.y < coordonneesBoulePique.y + coordonneesBoulePique.height &&
         coordonneesMasque.height + coordonneesMasque.y > coordonneesBoulePique.y){
-        alert("You are dead");
+            cancelAnimationFrame(rafId);
     };
 
     if(coordonneesMasque.x < coordonneesPieceJs.x + coordonneesPieceJs.width &&
@@ -231,11 +259,38 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
             var fond_vert = document.getElementById('fond_vert');
             decors[2].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
             decors[2].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
+            scoreTotal += 100;
         }
+    
+    if(coordonneesMasque.x < coordonneesPieceCss3.x + coordonneesPieceCss3.width &&
+    coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceCss3.x &&
+    coordonneesMasque.y < coordonneesPieceCss3.y + coordonneesPieceCss3.height &&
+    coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceCss3.y){
+        var fond_vert = document.getElementById('fond_vert');
+        decors[13].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+        decors[13].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
+        scoreTotal += 50;
+    }
+
+    if(coordonneesMasque.x < coordonneesPieceHtml5.x + coordonneesPieceHtml5.width &&
+    coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceHtml5.x &&
+    coordonneesMasque.y < coordonneesPieceHtml5.y + coordonneesPieceHtml5.height &&
+    coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceHtml5.y){
+        var fond_vert = document.getElementById('fond_vert');
+        decors[14].style.top = fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+        decors[14].style.left = (Math.floor(Math.random() * (880 - 120 + 1)) + 140) + "px";
+        scoreTotal += 25;
+    }
+    };
+    
+    decors[15].innerHTML = stockageInnerHtml + scoreTotal;
+    
 
 /*************************************************************************************************************************/
 /*******************************************EXECUTION DES FONCTIONS*******************************************************/
 /*************************************************************************************************************************/
+
+    rafId = requestAnimationFrame(animationDuJeu);
 
     positionDeDepartFenetre(decors[0], decors[1]);
     positionDeDepartObjet(decors[2]);
@@ -243,18 +298,21 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     positionDeDepartObjet(decors[7]);
     positionDeDepartObjet(decors[9]);
     positionDeDepartObjet(decors[11]);
+    positionDeDepartObjet(decors[13]);
+    positionDeDepartObjet(decors[14]);
     slideUp();
     mouvementHero();
     mouvementFantome();
     mouvementInsecte();
     mouvementInsecte2();
-    requestAnimationFrame(animationDuJeu);
+    collision();
 };
+
 
 /*************************************************************************************************************************/
 /*****************************************AU CHARGEMENT DE LA FENETRE*****************************************************/
 /*************************************************************************************************************************/
 
 window.addEventListener("load", function(){
-    // animationDuJeu();
+    animationDuJeu();
 });
