@@ -66,6 +66,14 @@ header{
 }
 
 .score{
+    font-size: 3em;
+    top: 40px;
+    margin: 0 10px;
+}
+
+.gameOver{
+    position: relative;
+    text-transform: uppercase;
     font-size: 4em;
     top: 40px;
     margin: 0 10px;

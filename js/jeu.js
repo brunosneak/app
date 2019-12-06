@@ -4,10 +4,11 @@
 /*********************************************INITIALISATION**********************************************************/
 /*********************************************************************************************************************/
 
-var decors = [document.getElementById('fenetreGauche'),document.getElementById('fenetreDroite'),document.getElementById('pieceJs'),document.getElementById('boulePiqueCollision'),document.getElementById('heroCollision'),document.getElementById('font_vert'),document.getElementById('hero'),document.getElementById('fantomeCollision'),document.getElementById('fantome'),document.getElementById('masqueInsecte'),document.getElementById('insecte'),document.getElementById('masqueInsecte2'),document.getElementById('insecte2'),document.getElementById('pieceCss3'),document.getElementById('pieceHtml5'),document.getElementsByClassName('resultat'),document.getElementsByClassName('score'),document.getElementsByClassName('menu_burger')];
+var decors = [document.getElementById('fenetreGauche'),document.getElementById('fenetreDroite'),document.getElementById('pieceJs'),document.getElementById('boulePiqueCollision'),document.getElementById('heroCollision'),document.getElementById('font_vert'),document.getElementById('hero'),document.getElementById('fantomeCollision'),document.getElementById('fantome'),document.getElementById('masqueInsecte'),document.getElementById('insecte'),document.getElementById('masqueInsecte2'),document.getElementById('insecte2'),document.getElementById('pieceCss3'),document.getElementById('pieceHtml5'),document.getElementsByClassName('resultat'),document.getElementsByClassName('score'),document.getElementsByClassName('menu_burger'),document.getElementsByClassName('affichage')];
+
 var masqueHero = decors[4];
 var hero = decors[6];
-var heroLeft = hero.style.left;
+var heroLeft = hero.style.left = -14;
 var fantome = decors[8];
 var fantomeLeft = fantome.style.left;
 var insecte = decors[10];
@@ -18,7 +19,19 @@ var scoreTotal = 0;
 var stockageInnerHtml = decors[15][0].innerHTML;
 var rafId;
 var pageMenu = document.getElementsByClassName('pageMenu');
+var gameOver = document.createElement('p');
+gameOver.className = "gameOver";
+gameOver.innerHTML = "game over";
 
+setInterval(function(){
+    heroLeft -= 120;
+    fantomeLeft -= 120;
+}, 200);
+
+setInterval(function(){
+    insecteLeft -= 286;
+    insecte2Left -= 286;
+    }, 100);
     
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
 window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -45,40 +58,103 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     var slideUp = function(){
 
         var fenetreGaucheTop = decors[0].offsetTop;
-        fenetreGaucheTop -= 5;
+        fenetreGaucheTop -= 6;
         decors[0].style.top = fenetreGaucheTop + "px";
 
         var fenetreDroiteTop = decors[1].offsetTop;
-        fenetreDroiteTop -= 5;
+        fenetreDroiteTop -= 6;
         decors[1].style.top = fenetreDroiteTop + "px";
 
         var pieceJsTop = decors[2].offsetTop;
-        pieceJsTop -= 5;
+        pieceJsTop -= 6;
         decors[2].style.top = pieceJsTop + "px";
 
         var boulePiqueTop = decors[3].offsetTop;
-        boulePiqueTop -= 5;
+        boulePiqueTop -= 6;
         decors[3].style.top = boulePiqueTop + "px";
 
         var fantomeTop = decors[7].offsetTop;
-        fantomeTop -= 8;
+        fantomeTop -= 7;
         decors[7].style.top = fantomeTop + "px";
 
         var insecteTop = decors[9].offsetTop;
-        insecteTop -= 5;
+        insecteTop -= 6;
         decors[9].style.top = insecteTop + "px";
 
         var insecteTop2 = decors[11].offsetTop;
-        insecteTop2 -= 5;
+        insecteTop2 -= 6;
         decors[11].style.top = insecteTop2 + "px";
 
         var pieceCss3Top = decors[13].offsetTop;
-        pieceCss3Top -= 5;
+        pieceCss3Top -= 6;
         decors[13].style.top = pieceCss3Top + "px";
 
         var pieceHtml5Top = decors[14].offsetTop;
-        pieceHtml5Top -= 5;
+        pieceHtml5Top -= 6;
         decors[14].style.top = pieceHtml5Top + "px";
+
+        if(decors[15][0].innerHTML >= 500){
+            fenetreGaucheTop -= 2;
+            fenetreDroiteTop -= 2;
+            pieceJsTop -= 2;
+            boulePiqueTop -= 2;
+            fantomeTop -= 2;
+            insecteTop -= 2;
+            insecteTop2 -= 2;
+            pieceCss3Top -= 2;
+            pieceHtml5Top -= 2;
+            decors[0].style.top = fenetreGaucheTop + "px";
+            decors[1].style.top = fenetreDroiteTop + "px";
+            decors[2].style.top = pieceJsTop + "px";
+            decors[3].style.top = boulePiqueTop + "px";
+            decors[7].style.top = fantomeTop + "px";
+            decors[9].style.top = insecteTop + "px";
+            decors[11].style.top = insecteTop2 + "px";
+            decors[13].style.top = pieceCss3Top + "px";
+            decors[14].style.top = pieceHtml5Top + "px";
+        }
+
+        if(decors[15][0].innerHTML >= 1000){
+            fenetreGaucheTop -= 2;
+            fenetreDroiteTop -= 2;
+            pieceJsTop -= 2;
+            boulePiqueTop -= 2;
+            fantomeTop -= 2;
+            insecteTop -= 2;
+            insecteTop2 -= 2;
+            pieceCss3Top -= 2;
+            pieceHtml5Top -= 2;
+            decors[0].style.top = fenetreGaucheTop + "px";
+            decors[1].style.top = fenetreDroiteTop + "px";
+            decors[2].style.top = pieceJsTop + "px";
+            decors[3].style.top = boulePiqueTop + "px";
+            decors[7].style.top = fantomeTop + "px";
+            decors[9].style.top = insecteTop + "px";
+            decors[11].style.top = insecteTop2 + "px";
+            decors[13].style.top = pieceCss3Top + "px";
+            decors[14].style.top = pieceHtml5Top + "px";
+        }
+
+        if(decors[15][0].innerHTML >= 2000){
+            fenetreGaucheTop -= 2;
+            fenetreDroiteTop -= 2;
+            pieceJsTop -= 2;
+            boulePiqueTop -= 2;
+            fantomeTop -= 2;
+            insecteTop -= 2;
+            insecteTop2 -= 2;
+            pieceCss3Top -= 2;
+            pieceHtml5Top -= 2;
+            decors[0].style.top = fenetreGaucheTop + "px";
+            decors[1].style.top = fenetreDroiteTop + "px";
+            decors[2].style.top = pieceJsTop + "px";
+            decors[3].style.top = boulePiqueTop + "px";
+            decors[7].style.top = fantomeTop + "px";
+            decors[9].style.top = insecteTop + "px";
+            decors[11].style.top = insecteTop2 + "px";
+            decors[13].style.top = pieceCss3Top + "px";
+            decors[14].style.top = pieceHtml5Top + "px";
+        }
 
 /*************************************************************************************************************************/
 /*********************************************RETOUR CASE DEPART**********************************************************/
@@ -174,21 +250,21 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 /*************************************************************************************************************************/
 /*******************************************ANIMATION DU PERSONNAGE*******************************************************/
 /*************************************************************************************************************************/
-
-    var mouvementHero = function(){
-        heroLeft -= 120;
-        if(heroLeft < -360){
-            heroLeft = -14;
-        };
-        hero.style.left = heroLeft + "px";
-    };
     
+var mouvementHero = function(){
+    heroLeft;
+    if(heroLeft < -360){
+        heroLeft = -14;
+    };
+    hero.style.left = heroLeft + "px";
+};
+
 /*************************************************************************************************************************/
 /********************************************ANIMATION DU FANTOME*********************************************************/
 /*************************************************************************************************************************/
 
     var mouvementFantome = function(){
-        fantomeLeft -= 120;
+        fantomeLeft;
         if(fantomeLeft < -840){
             fantomeLeft = 0;
         };
@@ -200,7 +276,7 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 /*************************************************************************************************************************/
 
     var mouvementInsecte = function(){
-        insecteLeft -= 286;
+        insecteLeft;
         if(insecteLeft < -4290){
             insecteLeft = 0;
         };
@@ -213,7 +289,7 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 /*************************************************************************************************************************/
 
     var mouvementInsecte2 = function(){
-        insecte2Left -= 286;
+        insecte2Left;
         if(insecte2Left < -4290){
             insecte2Left = 0;
         };
@@ -253,6 +329,7 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
                 pageMenu[0].style.display = "flex";
                 cancelAnimationFrame(rafId);
                 decors[17][0].style.display = 'none';
+                decors[18][0].appendChild(gameOver);
         };
 
         if(coordonneesMasque.x < coordonneesPieceJs.x + coordonneesPieceJs.width &&
@@ -317,5 +394,5 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 /*************************************************************************************************************************/
 
 window.addEventListener("load", function(){
-    animationDuJeu();
+    // animationDuJeu();
 });

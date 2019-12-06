@@ -454,6 +454,13 @@ header {
   margin-top: 40px; }
 
 .score {
+  font-size: 3em;
+  top: 40px;
+  margin: 0 10px; }
+
+.gameOver {
+  position: relative;
+  text-transform: uppercase;
   font-size: 4em;
   top: 40px;
   margin: 0 10px; }
@@ -539,14 +546,13 @@ header {
   width: 97px;
   position: absolute;
   overflow: hidden;
-  top: -22px;
-  left: -14px; }
+  top: -22px; }
 
 #hero {
   height: 150px;
   left: -12px;
   position: absolute;
-  top: -14px; }
+  top: -13px; }
 
 /*************************************************************************************************************************/
 /********************************************OBSTACLE BOULE PIQUE********************************************************/
