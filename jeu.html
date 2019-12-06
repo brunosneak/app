@@ -9,20 +9,29 @@
     <title>Jeu T.O.T.E -Tower Of The End-</title>
 </head>
 <body>
-    <main id="fond_vert">
-    <a href="#" class="menu_burger">
-        <span class="first_line"></span>
-        <span class="second_line"></span>
-        <span class="third_line"></span>
-    </a>
+
+    <!-- BACKGROUND -->
+    <section id="fond_vert">
+
+    <!-- BOUTON MENU -->
+        <a href="#" class="menu_burger">
+            <span class="first_line"></span>
+            <span class="second_line"></span>
+            <span class="third_line"></span>
+        </a>
+
+        <!-- BACKGROUND TOUR -->
         <div id="tour">
+            <!-- FENETRE DE LA TOUR -->
             <img id="fenetreGauche" src="../app/img/fenetre_gauche.svg" alt="fenetre">
             <img id="fenetreDroite" src="../app/img/fenetre_droite.svg" alt="fenetre">
-            <div id="heroCollision"> 
+            <!-- PERSONNAGE -->
+            <div id="heroCollision">
                 <div id="masqueHero">
                     <img id="hero" src="../app/img/animation_hero.svg" alt="personnage">
                 </div>
             </div>
+            <!-- OBJET DE COLLISION -->
             <div id="fantomeCollision">
                 <div id="masqueFantome">
                     <img id="fantome" src="../app/img/animation_fantome.svg" alt="fantome">
@@ -35,24 +44,31 @@
                 <img id="boulePique" src="../app/img/boule_pique.svg" alt="boule avec des piques">
             </div>
         </div>
-    </main>
+    </section>
 
+    <!-- SCORE PENDANT LE JEU -->
     <div id="scoreDuJeu">
         <p>score</p>
         <span class="resultat"></span>
     </div>
 
+    <!-- PAGE MENU DE LA PAGE JEU -->
     <section class="pageMenu">
+
+        <!-- SCORE AU GAME OVER -->
         <header class="affichage">
             <h1 class="nom">neak bruno</h1>
             <div class="tableauScore">
                 <p class="score">score</p>
                 <span class="resultat score"></span>
             </div>
+            <p class="gameOver">GAME OVER</p>
         </header>
 
+        <!-- IMAGE PLATEFORME -->
         <img class="plateforme" src="../app/img/plateforme.svg" alt="plateforme">
 
+        <!-- NAVIGATION PAGE JEU -->
         <nav class="nav1">
             <ul>
                 <li class="cv"><a href="#">voir mon CV</a></li>
@@ -61,6 +77,7 @@
             </ul>
         </nav>
 
+        <!-- ICONE RESEAUX SOCIAUX -->
         <nav class="reseauSocial">
             <ul>
                 <li>

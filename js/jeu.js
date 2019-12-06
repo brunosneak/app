@@ -15,9 +15,7 @@ var scoreTotal = 0;
 var stockageInnerHtml = decors[11][0].innerHTML;
 var rafId;
 var pageMenu = document.getElementsByClassName('pageMenu');
-var gameOver = document.createElement('p');
-gameOver.className = "gameOver";
-gameOver.innerHTML = "game over";
+var gameOver = document.getElementsByClassName('gameOver');
 
 setInterval(function(){
     heroLeft -= 120;
@@ -183,7 +181,7 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
         switch(position){
             // flèche directionnelle gauche
             case 37:
-                coordonneesMasqueX -= 10;
+                coordonneesMasqueX -= 15;
                 masqueHero.style.left = coordonneesMasqueX + "px";
                 masqueHero.style.transform = "";
             break;
@@ -194,7 +192,7 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
             // break;
             // flèche directionnelle droite
             case 39:
-                coordonneesMasqueX += 10;
+                coordonneesMasqueX += 15;
                 masqueHero.style.left = coordonneesMasqueX + "px";
                 masqueHero.style.transform = "scaleX(-1)";
             break;
@@ -263,7 +261,7 @@ var mouvementHero = function(){
                 pageMenu[0].style.display = "flex";
                 cancelAnimationFrame(rafId);
                 decors[13][0].style.display = 'none';
-                decors[14][0].appendChild(gameOver);
+                gameOver[0].style.display = "block";
         };
 
         if(coordonneesMasque.x < coordonneesPieceJs.x + coordonneesPieceJs.width &&
