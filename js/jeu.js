@@ -44,158 +44,130 @@ setInterval(function(){
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
 window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
-    var animationDuJeu = function(){
-        
-        var positionDeDepartFenetre = function(monObjet1, monObjet2){
-            monObjet1.style.bottom = "-" + Math.floor(Math.random()*1000) - monObjet1.offsetHeight + "px";
-            monObjet2.style.bottom = monObjet1.style.bottom;
-        }
-        
-        var positionDeDepartObjet = function(monObjet){
-            monObjet.style.bottom = "-" + Math.floor(Math.random()*1000) - monObjet.offsetHeight + "px";
-        }
+var animationDuJeu = function(){
+    
+    var positionDeDepartFenetre = function(monObjet1, monObjet2){
+        monObjet1.style.bottom = "-" + Math.floor(Math.random()*1000) - monObjet1.offsetHeight + "px";
+        monObjet2.style.bottom = monObjet1.style.bottom;
+    }
+    
+    var positionDeDepartObjet = function(monObjet){
+        monObjet.style.bottom = "-" + Math.floor(Math.random()*1000) - monObjet.offsetHeight + "px";
+    }
+
+/*************************************************************************************************************************/
+/*******************************************PERSONNAGE LIMITE TOUR********************************************************/
+/*************************************************************************************************************************/
+
+if(elements.heroCollision.offsetLeft <= 128){
+    elements.heroCollision.style.left = "128px";
+};
+if(elements.heroCollision.offsetLeft >= 935){
+    elements.heroCollision.style.left = "935px";
+};
 
 /*************************************************************************************************************************/
 /*********************************************ANIMATION DU DECORS*********************************************************/
 /*************************************************************************************************************************/
 
-
     var slideUp = function(){
 
-        var fenetreGaucheTop = elements.fenetreGauche.offsetTop;
-        var fenetreDroiteTop = elements.fenetreDroite.offsetTop;
-        var pieceJsTop = elements.pieceJs.offsetTop;
-        var boulePiqueCollisionTop = elements.boulePiqueCollision.offsetTop;
-        var fantomeCollisionTop = elements.fantomeCollision.offsetTop;
-        var pieceCss3Top = elements.pieceCss3.offsetTop;
-        var pieceHtml5Top = elements.pieceHtml5.offsetTop;
+        var mesTops = {
+            fenetreGaucheTop: elements.fenetreGauche.offsetTop,
+            fenetreDroiteTop: elements.fenetreDroite.offsetTop,
+            pieceJsTop: elements.pieceJs.offsetTop,
+            boulePiqueCollisionTop: elements.boulePiqueCollision.offsetTop,
+            fantomeCollisionTop: elements.fantomeCollision.offsetTop,
+            pieceCss3Top: elements.pieceCss3.offsetTop,
+            pieceHtml5Top: elements.pieceHtml5.offsetTop,
+        };
 
-        fenetreGaucheTop -= 6;
-        elements.fenetreGauche.style.top = fenetreGaucheTop + "px";
+        var monTop = function(top1, top2, pixel){
+            top1 -= pixel;
+            top2.style.top = top1 + "px";
+        };
 
+        monTop(mesTops.fenetreGaucheTop, elements.fenetreGauche, 6);
+        monTop(mesTops.fenetreDroiteTop, elements.fenetreDroite, 6);
+        monTop(mesTops.boulePiqueCollisionTop, elements.boulePiqueCollision, 6);
+        monTop(mesTops.fantomeCollisionTop, elements.fantomeCollision, 7);
+        monTop(mesTops.pieceJsTop, elements.pieceJs, 6);
+        monTop(mesTops.pieceCss3Top, elements.pieceCss3, 6);
+        monTop(mesTops.pieceHtml5Top, elements.pieceHtml5, 6);
 
-        fenetreDroiteTop -= 6;
-        elements.fenetreDroite.style.top = fenetreDroiteTop + "px";
+/*************************************************************************************************************************/
+/*******************************************NIVEAU ET VITESSE DE JEU******************************************************/
+/*************************************************************************************************************************/
 
+    var niveau = function(scoreAtteint, vitesse, vitesseFantome){
+        if(elements.resultat[0].innerHTML >= scoreAtteint){
+            mesTops.fenetreGaucheTop -= vitesse;
+            mesTops.fenetreDroiteTop -= vitesse;
+            mesTops.pieceJsTop -= vitesse;
+            mesTops.boulePiqueCollisionTop -= vitesse;
+            mesTops.fantomeCollisionTop -= vitesseFantome;
+            mesTops.pieceCss3Top -= vitesse;
+            mesTops.pieceHtml5Top -= vitesse;
+            elements.fenetreGauche.style.top = mesTops.fenetreGaucheTop + "px";
+            elements.fenetreDroite.style.top = mesTops.fenetreDroiteTop + "px";
+            elements.pieceJs.style.top = mesTops.pieceJsTop + "px";
+            elements.boulePiqueCollision.style.top = mesTops.boulePiqueCollisionTop + "px";
+            elements.fantomeCollision.style.top = mesTops.fantomeCollisionTop + "px";
+            elements.pieceCss3.style.top = mesTops.pieceCss3Top + "px";
+            elements.pieceHtml5.style.top = mesTops.pieceHtml5Top + "px";
+        };
+    };
 
-        pieceJsTop -= 6;
-        elements.pieceJs.style.top = pieceJsTop + "px";
+    if(elements.resultat[0].innerHTML >= 10000){
+        niveau(10000, 8, 9);
+    };
 
+    if(elements.resultat[0].innerHTML >= 20000){
+        niveau(20000, 2, 2);
+    };
 
-        boulePiqueCollisionTop -= 6;
-        elements.boulePiqueCollision.style.top = boulePiqueCollisionTop + "px";
-
-
-        fantomeCollisionTop -= 7;
-        elements.fantomeCollision.style.top = fantomeCollisionTop + "px";
-
-
-        pieceCss3Top -= 6;
-        elements.pieceCss3.style.top = pieceCss3Top + "px";
-
-
-        pieceHtml5Top -= 6;
-        elements.pieceHtml5.style.top = pieceHtml5Top + "px";
-
-        if(elements.resultat[0].innerHTML >= 1500){
-            fenetreGaucheTop -= 2;
-            fenetreDroiteTop -= 2;
-            pieceJsTop -= 2;
-            boulePiqueCollisionTop -= 2;
-            fantomeCollisionTop -= 2;
-            pieceCss3Top -= 2;
-            pieceHtml5Top -= 2;
-            elements.fenetreGauche.style.top = fenetreGaucheTop + "px";
-            elements.fenetreDroite.style.top = fenetreDroiteTop + "px";
-            elements.pieceJs.style.top = pieceJsTop + "px";
-            elements.boulePiqueCollision.style.top = boulePiqueCollisionTop + "px";
-            elements.fantomeCollision.style.top = fantomeCollisionTop + "px";
-            elements.pieceCss3.style.top = pieceCss3Top + "px";
-            elements.pieceHtml5.style.top = pieceHtml5Top + "px";
-        }
-
-        if(elements.resultat[0].innerHTML >= 2000){
-            fenetreGaucheTop -= 2;
-            fenetreDroiteTop -= 2;
-            pieceJsTop -= 2;
-            boulePiqueCollisionTop -= 2;
-            fantomeCollisionTop -= 2;
-            pieceCss3Top -= 2;
-            pieceHtml5Top -= 2;
-            elements.fenetreGauche.style.top = fenetreGaucheTop + "px";
-            elements.fenetreDroite.style.top = fenetreDroiteTop + "px";
-            elements.pieceJs.style.top = pieceJsTop + "px";
-            elements.boulePiqueCollision.style.top = boulePiqueCollisionTop + "px";
-            elements.fantomeCollision.style.top = fantomeCollisionTop + "px";
-            elements.pieceCss3.style.top = pieceCss3Top + "px";
-            elements.pieceHtml5.style.top = pieceHtml5Top + "px";
-        }
-
-        if(elements.resultat[0].innerHTML >= 2500){
-            fenetreGaucheTop -= 2;
-            fenetreDroiteTop -= 2;
-            pieceJsTop -= 2;
-            boulePiqueCollisionTop -= 2;
-            fantomeCollisionTop -= 2;
-            pieceCss3Top -= 2;
-            pieceHtml5Top -= 2;
-            elements.fenetreGauche.style.top = fenetreGaucheTop + "px";
-            elements.fenetreDroite.style.top = fenetreDroiteTop + "px";
-            elements.pieceJs.style.top = pieceJsTop + "px";
-            elements.boulePiqueCollision.style.top = boulePiqueCollisionTop + "px";
-            elements.fantomeCollision.style.top = fantomeCollisionTop + "px";
-            elements.pieceCss3.style.top = pieceCss3Top + "px";
-            elements.pieceHtml5.style.top = pieceHtml5Top + "px";
-        }
+    if(elements.resultat[0].innerHTML >= 25000){
+        niveau(25000, 2, 2);
+    }; 
 
 /*************************************************************************************************************************/
 /*********************************************RETOUR CASE DEPART**********************************************************/
 /*************************************************************************************************************************/
 
-        var fenetreYHeight = elements.fenetreGauche.offsetTop + elements.fenetreGauche.offsetHeight;
-        var pieceJsYHeight = elements.pieceJs.offsetTop + elements.pieceJs.offsetHeight;
-        var boulePiqueCollisionYHeight = elements.boulePiqueCollision.offsetTop + elements.boulePiqueCollision.offsetHeight;
-        var fantomeCollisionYHeight = elements.fantomeCollision.offsetTop + elements.fantomeCollision.offsetHeight;
-        var pieceCss3YHeight = elements.pieceCss3.offsetTop + elements.pieceCss3.offsetHeight;
-        var pieceHtml5YHeight = elements.pieceHtml5.offsetTop + elements.pieceHtml5.offsetHeight;
+    var objHeight = {
+        fenetreYHeight: elements.fenetreGauche.offsetTop + elements.fenetreGauche.offsetHeight,
+        pieceJsYHeight: elements.pieceJs.offsetTop + elements.pieceJs.offsetHeight,
+        boulePiqueCollisionYHeight: elements.boulePiqueCollision.offsetTop + elements.boulePiqueCollision.offsetHeight,
+        fantomeCollisionYHeight: elements.fantomeCollision.offsetTop + elements.fantomeCollision.offsetHeight,
+        pieceCss3YHeight: elements.pieceCss3.offsetTop + elements.pieceCss3.offsetHeight,
+        pieceHtml5YHeight: elements.pieceHtml5.offsetTop + elements.pieceHtml5.offsetHeight,
+    }
 
-        if(elements.fond_vert.offsetTop >= fenetreYHeight){
-            elements.fenetreGauche.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            elements.fenetreDroite.style.top = elements.fenetreGauche.style.top;
-        }
+    if(elements.fond_vert.offsetTop >= objHeight.fenetreYHeight){
+        elements.fenetreGauche.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+        elements.fenetreDroite.style.top = elements.fenetreGauche.style.top;
+    };
 
-        if(elements.fond_vert.offsetTop >= pieceJsYHeight){
-            elements.pieceJs.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            elements.pieceJs.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-        }
+    var depart = function(depart1, depart2){
+        if(elements.fond_vert.offsetTop >= depart1){
+            depart2.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+            depart2.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
+        };
+    };
 
-        if(elements.fond_vert.offsetTop >= boulePiqueCollisionYHeight){
-            elements.boulePiqueCollision.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            elements.boulePiqueCollision.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-        }
-
-        if(elements.fond_vert.offsetTop >= fantomeCollisionYHeight){
-            elements.fantomeCollision.style.top = elements.fond_vert.offsetHeight + "px";
-            elements.fantomeCollision.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-        }
-
-        if(elements.fond_vert.offsetTop >= pieceCss3YHeight){
-            elements.pieceCss3.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            elements.pieceCss3.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-        }
-
-        if(elements.fond_vert.offsetTop >= pieceHtml5YHeight){
-            elements.pieceHtml5.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            elements.pieceHtml5.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-        }
+    depart(objHeight.pieceJsYHeight, elements.pieceJs);
+    depart(objHeight.boulePiqueCollisionYHeight, elements.boulePiqueCollision);
+    depart(objHeight.fantomeCollisionYHeight, elements.fantomeCollision);
+    depart(objHeight.pieceCss3YHeight, elements.pieceCss3);
+    depart(objHeight.pieceHtml5YHeight, elements.pieceHtml5);
     };
 
 /*************************************************************************************************************************/
 /******************************************DEPLACEMENT DU PERSONNAGE******************************************************/
 /*************************************************************************************************************************/
 
-    var coordonneesMasqueX = elements.heroCollision.offsetLeft;
-    // var coordonneesMasqueY = elements.heroCollision.offsetTop;
+    var coordMasqueX = elements.heroCollision.offsetLeft;
+    // var coordMasqueY = elements.heroCollision.offsetTop;
 
     window.addEventListener("keydown", function(event){
 
@@ -204,25 +176,25 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
         switch(position){
             // flèche directionnelle gauche
             case 37:
-                coordonneesMasqueX -= 15;
-                elements.heroCollision.style.left = coordonneesMasqueX + "px";
+                coordMasqueX -= 15;
+                elements.heroCollision.style.left = coordMasqueX + "px";
                 elements.heroCollision.style.transform = "";
             break;
             // flèche directionnelle haut
             // case 38:
-            //     coordonneesMasqueY -= 10;
-            //     elements.heroCollision.style.top = coordonneesMasqueY + "px";
+            //     coordMasqueY -= 10;
+            //     elements.heroCollision.style.top = coordMasqueY + "px";
             // break;
             // flèche directionnelle droite
             case 39:
-                coordonneesMasqueX += 15;
-                elements.heroCollision.style.left = coordonneesMasqueX + "px";
+                coordMasqueX += 15;
+                elements.heroCollision.style.left = coordMasqueX + "px";
                 elements.heroCollision.style.transform = "scaleX(-1)";
             break;
             // flèche directionnelle bas
             // case 40:
-            //     coordonneesMasqueY += 10;
-            //     elements.heroCollision.style.top = coordonneesMasqueY + "px";
+            //     coordMasqueY += 10;
+            //     elements.heroCollision.style.top = coordMasqueY + "px";
             // break
         };
     });
@@ -230,14 +202,14 @@ window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 /*************************************************************************************************************************/
 /*******************************************ANIMATION DU PERSONNAGE*******************************************************/
 /*************************************************************************************************************************/
-    
-var mouvementHero = function(){
+
+    var mouvementHero = function(){
     heroLeft;
     if(heroLeft < -360){
         heroLeft = -10;
     };
     elements.hero.style.left = heroLeft + "px";
-};
+    };
 
 /*************************************************************************************************************************/
 /********************************************ANIMATION DU FANTOME*********************************************************/
@@ -250,70 +222,62 @@ var mouvementHero = function(){
         };
         elements.fantome.style.left = fantomeLeft + "px";
     };
-    
+
 /*************************************************************************************************************************/
 /********************************************DETECTEUR DE COLLISION*******************************************************/
 /*************************************************************************************************************************/
 
     var collision = function(){
 
-        var coordonneesMasque = elements.heroCollision.getBoundingClientRect();
-        var coordonneesfantomeCollision = elements.fantomeCollision.getBoundingClientRect();
-        var coordonneesboulePiqueCollision = elements.boulePiqueCollision.getBoundingClientRect();
-        var coordonneesPieceJs = elements.pieceJs.getBoundingClientRect();
-        var coordonneesPieceCss3 = elements.pieceCss3.getBoundingClientRect();
-        var coordonneesPieceHtml5 = elements.pieceHtml5.getBoundingClientRect();
+        var objCoord = {
+            coordMasque: elements.heroCollision.getBoundingClientRect(),
+            coordfantomeCollision: elements.fantomeCollision.getBoundingClientRect(),
+            coordboulePiqueCollision: elements.boulePiqueCollision.getBoundingClientRect(),
+            coordPieceJs: elements.pieceJs.getBoundingClientRect(),
+            coordPieceCss3: elements.pieceCss3.getBoundingClientRect(),
+            coordPieceHtml5: elements.pieceHtml5.getBoundingClientRect(),
+        }
 
-        if(elements.heroCollision.offsetLeft <= 128){
-            elements.heroCollision.style.left = "128px";
-        };
-        if(elements.heroCollision.offsetLeft >= 935){
-            elements.heroCollision.style.left = "935px";
-        };
+        if(objCoord.coordMasque.x < objCoord.coordfantomeCollision.x + objCoord.coordfantomeCollision.width &&
+            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeCollision.x &&
+            objCoord.coordMasque.y < objCoord.coordfantomeCollision.y + objCoord.coordfantomeCollision.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeCollision.y || 
 
-        if(coordonneesMasque.x < coordonneesfantomeCollision.x + coordonneesfantomeCollision.width &&
-            coordonneesMasque.x + coordonneesMasque.width > coordonneesfantomeCollision.x &&
-            coordonneesMasque.y < coordonneesfantomeCollision.y + coordonneesfantomeCollision.height &&
-            coordonneesMasque.height + coordonneesMasque.y > coordonneesfantomeCollision.y || 
-
-            coordonneesMasque.x < coordonneesboulePiqueCollision.x + coordonneesboulePiqueCollision.width &&
-            coordonneesMasque.x + coordonneesMasque.width > coordonneesboulePiqueCollision.x &&
-            coordonneesMasque.y < coordonneesboulePiqueCollision.y + coordonneesboulePiqueCollision.height &&
-            coordonneesMasque.height + coordonneesMasque.y > coordonneesboulePiqueCollision.y){
+            objCoord.coordMasque.x < objCoord.coordboulePiqueCollision.x + objCoord.coordboulePiqueCollision.width &&
+            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordboulePiqueCollision.x &&
+            objCoord.coordMasque.y < objCoord.coordboulePiqueCollision.y + objCoord.coordboulePiqueCollision.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordboulePiqueCollision.y){
                 elements.pageMenu[0].style.display = "flex";
                 cancelAnimationFrame(rafId);
                 elements.menu_burger[0].style.display = 'none';
                 elements.gameOver[0].style.display = "block";
         };
 
-        if(coordonneesMasque.x < coordonneesPieceJs.x + coordonneesPieceJs.width &&
-            coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceJs.x &&
-            coordonneesMasque.y < coordonneesPieceJs.y + coordonneesPieceJs.height &&
-            coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceJs.y){
-                elements.pieceJs.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-                elements.pieceJs.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-                scoreTotal += 100;
-            }
-        
-        if(coordonneesMasque.x < coordonneesPieceCss3.x + coordonneesPieceCss3.width &&
-        coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceCss3.x &&
-        coordonneesMasque.y < coordonneesPieceCss3.y + coordonneesPieceCss3.height &&
-        coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceCss3.y){
-            elements.pieceCss3.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            elements.pieceCss3.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-            scoreTotal += 50;
-        }
+/*************************************************************************************************************************/
+/***********************************************VALEURS PIECES************************************************************/
+/*************************************************************************************************************************/
 
-        if(coordonneesMasque.x < coordonneesPieceHtml5.x + coordonneesPieceHtml5.width &&
-        coordonneesMasque.x + coordonneesMasque.width > coordonneesPieceHtml5.x &&
-        coordonneesMasque.y < coordonneesPieceHtml5.y + coordonneesPieceHtml5.height &&
-        coordonneesMasque.height + coordonneesMasque.y > coordonneesPieceHtml5.y){
-            elements.pieceHtml5.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            elements.pieceHtml5.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
-            scoreTotal += 25;
-        }
+        var objCollision = function(obj1, obj2, points){
+            if(objCoord.coordMasque.x < obj1.x + obj1.width &&
+                objCoord.coordMasque.x + objCoord.coordMasque.width > obj1.x &&
+                objCoord.coordMasque.y < obj1.y + obj1.height &&
+                objCoord.coordMasque.height + objCoord.coordMasque.y > obj1.y){
+                    obj2.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+                    obj2.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
+                    scoreTotal += points;
+                    };
+        };
+
+        objCollision(objCoord.coordPieceJs, elements.pieceJs, 1000);
+        objCollision(objCoord.coordPieceCss3, elements.pieceCss3, 500);
+        objCollision(objCoord.coordPieceHtml5, elements.pieceHtml5, 250);
+
     };
-    
+
+/*************************************************************************************************************************/
+/********************************************AFFICHAGE DES SCORES*********************************************************/
+/*************************************************************************************************************************/
+
     elements.resultat[0].innerHTML = stockageInnerHtml + scoreTotal;
     elements.resultat[1].innerHTML = elements.resultat[0].innerHTML;
 
