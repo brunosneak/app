@@ -309,6 +309,7 @@ template {
   background-size: cover;
   bottom: 0;
   left: 0;
+  overflow: hidden;
   position: absolute;
   right: 0;
   top: 0; }
@@ -375,6 +376,40 @@ h2 + p {
     top: 14px;
     width: 50%; }
 
+.first_line_in {
+  animation-name: firstLine;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+  animation-fill-mode: forwards; }
+
+.second_line_in {
+  animation-name: secondLine;
+  animation-duration: .5s;
+  animation-fill-mode: forwards; }
+
+.third_line_in {
+  animation-name: thirdLine;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+  animation-fill-mode: forwards; }
+
+.first_line_out {
+  animation-name: firstLine;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+  animation-direction: reverse; }
+
+.second_line_out {
+  animation-name: secondLine;
+  animation-duration: .5s;
+  animation-direction: reverse; }
+
+.third_line_out {
+  animation-name: thirdLine;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+  animation-direction: reverse; }
+
 /*************************************************************************************************************************/
 /************************************************BOUTON START*************************************************************/
 /*************************************************************************************************************************/
@@ -408,6 +443,7 @@ h2 + p {
   font-family: 'Dosis', sans-serif;
   justify-content: space-around;
   left: 0;
+  overflow: hidden;
   position: absolute;
   right: 0;
   text-align: center;
@@ -647,7 +683,7 @@ header {
   display: none;
   animation-name: effetGameOver;
   animation-direction: alternate;
-  animation-duration: 1.5s;
+  animation-duration: 1.2s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0, 0.39, 0.46, 1.16); }
 
@@ -657,3 +693,33 @@ header {
     color: red;
     font-size: 6em;
     font-weight: bold; } }
+
+@keyframes firstLine {
+  from {
+    left: 0;
+    transform: rotate(0);
+    width: 50%;
+    transform-origin: top left; }
+  to {
+    left: 5px;
+    transform: rotate(45deg);
+    width: 53%;
+    transform-origin: top left; } }
+
+@keyframes secondLine {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes thirdLine {
+  from {
+    left: 0;
+    transform: rotate(0);
+    width: 50%;
+    transform-origin: top left; }
+  to {
+    left: 4px;
+    transform: rotate(-45deg);
+    width: 53%;
+    transform-origin: top left; } }

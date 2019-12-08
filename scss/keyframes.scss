@@ -7,3 +7,42 @@
         font-weight: bold;
     }
 }
+
+@keyframes firstLine{
+    from{
+        left: 0;
+        transform: rotate(0);
+        width: 50%;
+        transform-origin: top left;
+    }
+    to{
+        left: 5px;
+        transform: rotate(45deg);
+        width: 53%;
+        transform-origin: top left;
+    }
+}
+
+@keyframes secondLine{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes thirdLine{
+    from{
+        left: 0;
+        transform: rotate(0);
+        width: 50%;
+        transform-origin: top left;
+    }
+    to{
+        left: 4px;
+        transform: rotate(-45deg);
+        width: 53%;
+        transform-origin: top left;
+    }
+}

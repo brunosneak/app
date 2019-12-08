@@ -29,6 +29,42 @@
     }
 }
 
+.first_line_in{
+    animation-name: firstLine;
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+    animation-fill-mode: forwards;
+}
+.second_line_in{
+    animation-name: secondLine;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+.third_line_in{
+    animation-name: thirdLine;
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+    animation-fill-mode: forwards;
+}
+
+.first_line_out{
+    animation-name: firstLine;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+    animation-direction: reverse;
+}
+.second_line_out{
+    animation-name: secondLine;
+    animation-duration: .5s;
+    animation-direction: reverse;
+}
+.third_line_out{
+    animation-name: thirdLine;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(1, 1.4, 0.79, 1.35);
+    animation-direction: reverse;
+}
+
 /*************************************************************************************************************************/
 /************************************************BOUTON START*************************************************************/
 /*************************************************************************************************************************/
