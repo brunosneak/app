@@ -15,7 +15,9 @@ var elements = {
     pieceJs: document.getElementById('pieceJs'),
     boulePiqueCollision: document.getElementById('boulePiqueCollision'),
     fantomeCollision: document.getElementById('fantomeCollision'),
+    fantomeCollision2: document.getElementById('fantomeCollision2'),
     fantome: document.getElementById('fantome'),
+    fantome2: document.getElementById('fantome2'),
     menu_burger: document.getElementsByClassName('menu_burger'),
     resultat: document.getElementsByClassName('resultat'),
     pageMenu: document.getElementsByClassName('pageMenu'),
@@ -24,6 +26,7 @@ var elements = {
 
 var heroLeft = elements.hero.style.left = -10;
 var fantomeLeft = elements.fantome.style.left;
+var fantome2Left = elements.fantome2.style.left;
 var scoreTotal = 0;
 var stockageInnerHtml = elements.resultat[0].innerHTML;
 var rafId;
@@ -35,6 +38,7 @@ var rafId;
 setInterval(function(){
     heroLeft -= 120;
     fantomeLeft -= 120;
+    fantome2Left -= 120;
 }, 200);
 
 /*************************************************************************************************************************/
@@ -59,12 +63,12 @@ var animationDuJeu = function(){
 /*******************************************PERSONNAGE LIMITE TOUR********************************************************/
 /*************************************************************************************************************************/
 
-if(elements.heroCollision.offsetLeft <= 128){
-    elements.heroCollision.style.left = "128px";
-};
-if(elements.heroCollision.offsetLeft >= 935){
-    elements.heroCollision.style.left = "935px";
-};
+    if(elements.heroCollision.offsetLeft <= 128){
+        elements.heroCollision.style.left = "128px";
+    };
+    if(elements.heroCollision.offsetLeft >= 935){
+        elements.heroCollision.style.left = "935px";
+    };
 
 /*************************************************************************************************************************/
 /*********************************************ANIMATION DU DECORS*********************************************************/
@@ -78,6 +82,7 @@ if(elements.heroCollision.offsetLeft >= 935){
             pieceJsTop: elements.pieceJs.offsetTop,
             boulePiqueCollisionTop: elements.boulePiqueCollision.offsetTop,
             fantomeCollisionTop: elements.fantomeCollision.offsetTop,
+            fantomeCollision2Top: elements.fantomeCollision2.offsetTop,
             pieceCss3Top: elements.pieceCss3.offsetTop,
             pieceHtml5Top: elements.pieceHtml5.offsetTop,
         };
@@ -106,6 +111,7 @@ if(elements.heroCollision.offsetLeft >= 935){
             mesTops.pieceJsTop -= vitesse;
             mesTops.boulePiqueCollisionTop -= vitesse;
             mesTops.fantomeCollisionTop -= vitesseFantome;
+            mesTops.fantomeCollision2Top -= vitesseFantome;
             mesTops.pieceCss3Top -= vitesse;
             mesTops.pieceHtml5Top -= vitesse;
             elements.fenetreGauche.style.top = mesTops.fenetreGaucheTop + "px";
@@ -113,6 +119,7 @@ if(elements.heroCollision.offsetLeft >= 935){
             elements.pieceJs.style.top = mesTops.pieceJsTop + "px";
             elements.boulePiqueCollision.style.top = mesTops.boulePiqueCollisionTop + "px";
             elements.fantomeCollision.style.top = mesTops.fantomeCollisionTop + "px";
+            elements.fantomeCollision2.style.top = mesTops.fantomeCollision2Top + "px";
             elements.pieceCss3.style.top = mesTops.pieceCss3Top + "px";
             elements.pieceHtml5.style.top = mesTops.pieceHtml5Top + "px";
         };
@@ -120,6 +127,9 @@ if(elements.heroCollision.offsetLeft >= 935){
 
     if(elements.resultat[0].innerHTML >= 10000){
         niveau(10000, 8, 9);
+        mouvementFantome2();
+        monTop(mesTops.fantomeCollision2Top, elements.fantomeCollision2, 1);
+        positionDeDepartObjet(elements.fantomeCollision2);
     };
 
     if(elements.resultat[0].innerHTML >= 20000){
@@ -139,6 +149,7 @@ if(elements.heroCollision.offsetLeft >= 935){
         pieceJsYHeight: elements.pieceJs.offsetTop + elements.pieceJs.offsetHeight,
         boulePiqueCollisionYHeight: elements.boulePiqueCollision.offsetTop + elements.boulePiqueCollision.offsetHeight,
         fantomeCollisionYHeight: elements.fantomeCollision.offsetTop + elements.fantomeCollision.offsetHeight,
+        fantomeCollision2YHeight: elements.fantomeCollision2.offsetTop + elements.fantomeCollision2.offsetHeight,
         pieceCss3YHeight: elements.pieceCss3.offsetTop + elements.pieceCss3.offsetHeight,
         pieceHtml5YHeight: elements.pieceHtml5.offsetTop + elements.pieceHtml5.offsetHeight,
     }
@@ -158,6 +169,7 @@ if(elements.heroCollision.offsetLeft >= 935){
     depart(objHeight.pieceJsYHeight, elements.pieceJs);
     depart(objHeight.boulePiqueCollisionYHeight, elements.boulePiqueCollision);
     depart(objHeight.fantomeCollisionYHeight, elements.fantomeCollision);
+    depart(objHeight.fantomeCollision2YHeight, elements.fantomeCollision2);
     depart(objHeight.pieceCss3YHeight, elements.pieceCss3);
     depart(objHeight.pieceHtml5YHeight, elements.pieceHtml5);
     };
@@ -223,6 +235,14 @@ if(elements.heroCollision.offsetLeft >= 935){
         elements.fantome.style.left = fantomeLeft + "px";
     };
 
+    var mouvementFantome2 = function(){
+        fantome2Left;
+        if(fantome2Left < -840){
+            fantome2Left = 0;
+        };
+    elements.fantome2.style.left = fantome2Left + "px";
+    };
+
 /*************************************************************************************************************************/
 /********************************************DETECTEUR DE COLLISION*******************************************************/
 /*************************************************************************************************************************/
@@ -232,6 +252,7 @@ if(elements.heroCollision.offsetLeft >= 935){
         var objCoord = {
             coordMasque: elements.heroCollision.getBoundingClientRect(),
             coordfantomeCollision: elements.fantomeCollision.getBoundingClientRect(),
+            coordfantomeCollision2: elements.fantomeCollision2.getBoundingClientRect(),
             coordboulePiqueCollision: elements.boulePiqueCollision.getBoundingClientRect(),
             coordPieceJs: elements.pieceJs.getBoundingClientRect(),
             coordPieceCss3: elements.pieceCss3.getBoundingClientRect(),
@@ -242,6 +263,11 @@ if(elements.heroCollision.offsetLeft >= 935){
             objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeCollision.x &&
             objCoord.coordMasque.y < objCoord.coordfantomeCollision.y + objCoord.coordfantomeCollision.height &&
             objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeCollision.y || 
+
+            objCoord.coordMasque.x < objCoord.coordfantomeCollision2.x + objCoord.coordfantomeCollision2.width &&
+            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeCollision2.x &&
+            objCoord.coordMasque.y < objCoord.coordfantomeCollision2.y + objCoord.coordfantomeCollision2.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeCollision2.y || 
 
             objCoord.coordMasque.x < objCoord.coordboulePiqueCollision.x + objCoord.coordboulePiqueCollision.width &&
             objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordboulePiqueCollision.x &&
@@ -299,7 +325,6 @@ if(elements.heroCollision.offsetLeft >= 935){
     mouvementFantome();
     collision();
 };
-
 
 /*************************************************************************************************************************/
 /*****************************************AU CHARGEMENT DE LA FENETRE*****************************************************/
