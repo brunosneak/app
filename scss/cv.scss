@@ -1,0 +1,48 @@
+.presentation{
+    background-color: #000;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    height: 100vh;
+    text-align: center;
+}
+
+.headerCv{
+    background-image: url(../img/feuille_en_hauteur.svg);
+    background-position: top;
+    background-size: 350px;
+    background-repeat: no-repeat;
+    height: 30vh;
+}
+
+.nomCv{
+    margin: 0;
+    padding-top: 40px;
+    text-transform: uppercase;
+}
+
+#PhotoDeProfil{
+    height: 100%;
+}
+
+.description{
+    display: flex;
+    width: 80vw;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 40vh;
+}
+
+.monTitre{
+    width: 70%;
+}
+
+.monTitre{
+    text-align: left;
+}
+
+.recherche{
+}
+
+.monEntete{
+
+}
