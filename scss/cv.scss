@@ -27,22 +27,63 @@
 .description{
     display: flex;
     width: 80vw;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 0 auto;
     height: 40vh;
 }
 
 .monTitre{
-    width: 70%;
-}
-
-.monTitre{
+    width: 40%;
     text-align: left;
+    overflow: auto;
 }
 
 .recherche{
+
 }
 
-.monEntete{
+.competences{
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0;
+        li{
+            list-style-type: none;
+            img{
+                height: 70px;
+            }
+        }
+    }
+    .list1{
+        width: 50%;
+        position: relative;
+    }
+    .list2{
+        width: 60%;
+    }
+}
 
+
+/*************************************************************************************************************************/
+/**********************************************PROGRESS BAR CIRCLE********************************************************/
+/*************************************************************************************************************************/
+
+#ctx{
+    background-image: url('../img/img_cv/css.svg');
+    background-position: center;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.css{
+    position: relative;
 }

@@ -731,3 +731,73 @@ header {
     transform: rotate(-45deg);
     width: 53%;
     transform-origin: top left; } }
+
+.presentation {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  height: 100vh;
+  text-align: center; }
+
+.headerCv {
+  background-image: url(../img/feuille_en_hauteur.svg);
+  background-position: top;
+  background-size: 350px;
+  background-repeat: no-repeat;
+  height: 30vh; }
+
+.nomCv {
+  margin: 0;
+  padding-top: 40px;
+  text-transform: uppercase; }
+
+#PhotoDeProfil {
+  height: 100%; }
+
+.description {
+  display: flex;
+  width: 80vw;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  height: 40vh; }
+
+.monTitre {
+  width: 40%;
+  text-align: left;
+  overflow: auto; }
+
+.competences {
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+  display: flex;
+  justify-content: center; }
+  .competences ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0; }
+    .competences ul li {
+      list-style-type: none; }
+      .competences ul li img {
+        height: 70px; }
+  .competences .list1 {
+    width: 50%;
+    position: relative; }
+  .competences .list2 {
+    width: 60%; }
+
+/*************************************************************************************************************************/
+/**********************************************PROGRESS BAR CIRCLE********************************************************/
+/*************************************************************************************************************************/
+#ctx {
+  background-image: url("../img/img_cv/css.svg");
+  background-position: center;
+  background-size: 50px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.css {
+  position: relative; }
