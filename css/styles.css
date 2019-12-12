@@ -478,9 +478,9 @@ h2 + p {
 /***************************************************EN-TÊTE***************************************************************/
 /*************************************************************************************************************************/
 header {
-  background-image: url(../img/feuille_en_hauteur.svg);
+  background-image: url("../img/feuille_en_hauteur.svg");
   background-position: top;
-  background-size: 18%;
+  background-size: 260px;
   background-repeat: no-repeat;
   height: 30vh; }
 
@@ -698,7 +698,7 @@ header {
 @keyframes effetGameOver {
   from { }
   to {
-    color: red;
+    color: #f9644b;
     font-size: 6em;
     font-weight: bold; } }
 
@@ -740,36 +740,46 @@ header {
   text-align: center; }
 
 .headerCv {
-  background-image: url(../img/feuille_en_hauteur.svg);
+  background-image: url("../img/feuille_en_hauteur.svg");
   background-position: top;
-  background-size: 350px;
+  background-size: 260px;
   background-repeat: no-repeat;
-  height: 30vh; }
+  height: 20vh; }
 
 .nomCv {
   margin: 0;
   padding-top: 40px;
   text-transform: uppercase; }
 
-#PhotoDeProfil {
-  height: 100%; }
-
 .description {
   display: flex;
   width: 80vw;
   justify-content: space-evenly;
   margin: 0 auto;
-  height: 40vh; }
-
-.monTitre {
-  width: 40%;
-  text-align: left;
-  overflow: auto; }
+  height: 45vh; }
+  .description #PhotoDeProfil {
+    height: 90%; }
+  .description .monTitre {
+    width: 40%;
+    text-align: left;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    .description .monTitre p:first-child {
+      font-size: 3em;
+      margin: 0; }
+    .description .monTitre p:nth-child(2) {
+      font-size: 2em;
+      margin: 0; }
+    .description .monTitre p:last-child {
+      font-size: 2em;
+      margin: 0 0 20px 0; }
 
 .competences {
   align-items: center;
   flex-direction: column;
-  height: 30vh;
+  height: 35vh;
   display: flex;
   justify-content: center;
   position: relative; }
@@ -805,3 +815,12 @@ header {
 
 .html5 #ctx, .css #ctx, .js #ctx {
   background-size: 45px; }
+
+/*************************************************************************************************************************/
+/**********************************************SECTION EXPERIENCES********************************************************/
+/*************************************************************************************************************************/
+.xp {
+  background-image: url("../img/fond_ecran_cv.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; }

@@ -7,11 +7,11 @@
 }
 
 .headerCv{
-    background-image: url(../img/feuille_en_hauteur.svg);
+    background-image: url('../img/feuille_en_hauteur.svg');
     background-position: top;
-    background-size: 350px;
+    background-size: 260px;
     background-repeat: no-repeat;
-    height: 30vh;
+    height: 20vh;
 }
 
 .nomCv{
@@ -20,32 +20,41 @@
     text-transform: uppercase;
 }
 
-#PhotoDeProfil{
-    height: 100%;
-}
-
 .description{
     display: flex;
     width: 80vw;
     justify-content: space-evenly;
     margin: 0 auto;
-    height: 40vh;
-}
-
-.monTitre{
-    width: 40%;
-    text-align: left;
-    overflow: auto;
-}
-
-.recherche{
-
+    height: 45vh;
+    #PhotoDeProfil{
+        height: 90%;
+    }
+    .monTitre{
+        width: 40%;
+        text-align: left;
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        p:first-child{
+            font-size: 3em;
+            margin: 0;
+        }
+        p:nth-child(2){
+            font-size: 2em;
+            margin: 0;
+        }
+        p:last-child{
+            font-size: 2em;
+            margin: 0 0 20px 0;
+        }
+    }
 }
 
 .competences{
     align-items: center;
     flex-direction: column;
-    height: 30vh;
+    height: 35vh;
     display: flex;
     justify-content: center;
     position: relative;
@@ -90,4 +99,15 @@
 
 .html5 #ctx, .css #ctx, .js #ctx{
     background-size: 45px;
+}
+
+/*************************************************************************************************************************/
+/**********************************************SECTION EXPERIENCES********************************************************/
+/*************************************************************************************************************************/
+
+.xp{
+    background-image: url('../img/fond_ecran_cv.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
