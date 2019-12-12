@@ -771,33 +771,37 @@ header {
   flex-direction: column;
   height: 30vh;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
   .competences ul {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    padding: 0; }
+    padding: 0;
+    margin: 0;
+    top: 20px; }
     .competences ul li {
-      list-style-type: none; }
-      .competences ul li img {
-        height: 70px; }
+      list-style-type: none;
+      margin-right: 55px; }
   .competences .list1 {
     width: 50%;
-    position: relative; }
+    position: absolute; }
   .competences .list2 {
-    width: 60%; }
+    width: 60%;
+    position: relative; }
 
 /*************************************************************************************************************************/
 /**********************************************PROGRESS BAR CIRCLE********************************************************/
 /*************************************************************************************************************************/
 #ctx {
-  background-image: url("../img/img_cv/css.svg");
   background-position: center;
-  background-size: 50px;
+  background-size: 55px;
   background-repeat: no-repeat;
   position: absolute;
   left: 0;
   top: 0; }
 
-.css {
+.html5, .css, .sass, .js, .jquery, .angular, .node, .git, .mongodb {
   position: relative; }
+
+.html5 #ctx, .css #ctx, .js #ctx {
+  background-size: 45px; }

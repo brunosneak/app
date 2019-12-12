@@ -48,24 +48,25 @@
     height: 30vh;
     display: flex;
     justify-content: center;
+    position: relative;
     ul{
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
         padding: 0;
+        margin: 0;
+        top: 20px;
         li{
             list-style-type: none;
-            img{
-                height: 70px;
-            }
+            margin-right: 55px;
         }
     }
     .list1{
         width: 50%;
-        position: relative;
+        position: absolute;        
     }
     .list2{
         width: 60%;
+        position: relative;
     }
 }
 
@@ -75,15 +76,18 @@
 /*************************************************************************************************************************/
 
 #ctx{
-    background-image: url('../img/img_cv/css.svg');
     background-position: center;
-    background-size: 50px;
+    background-size: 55px;
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
     top: 0;
 }
 
-.css{
+.html5, .css, .sass, .js, .jquery, .angular, .node, .git, .mongodb{
     position: relative;
+}
+
+.html5 #ctx, .css #ctx, .js #ctx{
+    background-size: 45px;
 }
