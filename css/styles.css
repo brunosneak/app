@@ -434,117 +434,6 @@ h2 + p {
   text-transform: uppercase;
   width: 175px; }
 
-.pageMenu {
-  background-color: #000;
-  bottom: 0;
-  color: #fff;
-  display: none;
-  flex-direction: column;
-  font-family: 'Dosis', sans-serif;
-  justify-content: space-around;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  z-index: 10; }
-  .pageMenu .nav1 > ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    position: relative;
-    top: 40px; }
-    .pageMenu .nav1 > ul li {
-      font-size: 2em;
-      list-style-type: none;
-      margin: 0 auto;
-      margin-bottom: 25px;
-      padding: 0; }
-      .pageMenu .nav1 > ul li::first-letter {
-        text-transform: capitalize; }
-      .pageMenu .nav1 > ul li a {
-        color: #fff;
-        text-decoration: none; }
-  .pageMenu .cv::after, .pageMenu .contact::after {
-    content: '';
-    background-color: #fff;
-    display: block;
-    height: 2px;
-    margin-top: 20px;
-    width: 500px; }
-
-/*************************************************************************************************************************/
-/***************************************************EN-TÊTE***************************************************************/
-/*************************************************************************************************************************/
-header {
-  background-image: url("../img/feuille_en_hauteur.svg");
-  background-position: top;
-  background-size: 260px;
-  background-repeat: no-repeat;
-  height: 30vh; }
-
-.nom, .score {
-  position: relative;
-  text-transform: uppercase; }
-
-.nom {
-  font-size: 2em;
-  margin: 0;
-  margin-top: 40px; }
-
-.score {
-  font-size: 3em;
-  margin: 0 10px;
-  top: 40px; }
-
-.gameOver {
-  font-size: 4em;
-  margin: 0 10px;
-  position: relative;
-  text-transform: uppercase;
-  top: 40px; }
-
-.tableauScore {
-  align-items: center;
-  display: inline-flex;
-  justify-content: space-around; }
-
-/*************************************************************************************************************************/
-/***************************************************PLATEFORME************************************************************/
-/*************************************************************************************************************************/
-.plateforme {
-  height: 30vh;
-  margin: 0 auto; }
-
-/*************************************************************************************************************************/
-/**************************************************NAVIGATION*************************************************************/
-/*************************************************************************************************************************/
-.nav1 {
-  height: 30vh; }
-  .nav1 ul {
-    margin: 0; }
-
-/*************************************************************************************************************************/
-/************************************************RESEAUX SOCIAUX**********************************************************/
-/*************************************************************************************************************************/
-.reseauSocial {
-  display: flex;
-  height: 10vh;
-  justify-content: center; }
-  .reseauSocial ul {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    width: 125px; }
-    .reseauSocial ul li {
-      list-style-type: none; }
-  .reseauSocial .git, .reseauSocial .linkedin {
-    height: 30px; }
-
 /*************************************************************************************************************************/
 /**********************************************BACKGROUND DU JEU**********************************************************/
 /*************************************************************************************************************************/
@@ -695,6 +584,117 @@ header {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0, 0.39, 0.46, 1.16); }
 
+.pageMenu {
+  background-color: #000;
+  bottom: 0;
+  color: #fff;
+  display: none;
+  flex-direction: column;
+  font-family: 'Dosis', sans-serif;
+  justify-content: space-around;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 10; }
+  .pageMenu .nav1 > ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    top: 40px; }
+    .pageMenu .nav1 > ul li {
+      font-size: 2em;
+      list-style-type: none;
+      margin: 0 auto;
+      margin-bottom: 25px;
+      padding: 0; }
+      .pageMenu .nav1 > ul li::first-letter {
+        text-transform: capitalize; }
+      .pageMenu .nav1 > ul li a {
+        color: #fff;
+        text-decoration: none; }
+  .pageMenu .cv::after, .pageMenu .contact::after {
+    content: '';
+    background-color: #fff;
+    display: block;
+    height: 2px;
+    margin-top: 20px;
+    width: 500px; }
+
+/*************************************************************************************************************************/
+/***************************************************EN-TÊTE***************************************************************/
+/*************************************************************************************************************************/
+header {
+  background-image: url("../img/feuille_en_hauteur.svg");
+  background-position: top;
+  background-size: 260px;
+  background-repeat: no-repeat;
+  height: 30vh; }
+
+.nom, .score {
+  position: relative;
+  text-transform: uppercase; }
+
+.nom {
+  font-size: 2em;
+  margin: 0;
+  margin-top: 40px; }
+
+.score {
+  font-size: 3em;
+  margin: 0 10px;
+  top: 40px; }
+
+.gameOver {
+  font-size: 4em;
+  margin: 0 10px;
+  position: relative;
+  text-transform: uppercase;
+  top: 40px; }
+
+.tableauScore {
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-around; }
+
+/*************************************************************************************************************************/
+/***************************************************PLATEFORME************************************************************/
+/*************************************************************************************************************************/
+.plateforme {
+  height: 30vh;
+  margin: 0 auto; }
+
+/*************************************************************************************************************************/
+/**************************************************NAVIGATION*************************************************************/
+/*************************************************************************************************************************/
+.nav1 {
+  height: 30vh; }
+  .nav1 ul {
+    margin: 0; }
+
+/*************************************************************************************************************************/
+/************************************************RESEAUX SOCIAUX**********************************************************/
+/*************************************************************************************************************************/
+.reseauSocial {
+  display: flex;
+  height: 10vh;
+  justify-content: center; }
+  .reseauSocial ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    width: 125px; }
+    .reseauSocial ul li {
+      list-style-type: none; }
+  .reseauSocial .git, .reseauSocial .linkedin {
+    height: 30px; }
+
 @keyframes effetGameOver {
   from { }
   to {
@@ -821,6 +821,40 @@ header {
 /*************************************************************************************************************************/
 .xp {
   background-image: url("../img/fond_ecran_cv.svg");
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh; }
+
+/*************************************************************************************************************************/
+/****************************************************CONTACT**************************************************************/
+/*************************************************************************************************************************/
+footer {
+  background-color: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  footer .illustration {
+    width: 400px; }
+  footer .contact {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 30%; }
+    footer .contact p {
+      font-size: 3em; }
+    footer .contact #monCv, footer .contact #contactezMoi {
+      padding: 15px 0;
+      margin: 10px 0;
+      width: 320px;
+      text-align: center;
+      font-size: 1.5em;
+      border: 2px solid #fff;
+      border-radius: 30px;
+      color: #fff;
+      text-decoration: none; }
+  footer .resSoc {
+    width: 30%; }

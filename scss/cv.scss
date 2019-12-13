@@ -107,7 +107,48 @@
 
 .xp{
     background-image: url('../img/fond_ecran_cv.svg');
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+}
+
+/*************************************************************************************************************************/
+/****************************************************CONTACT**************************************************************/
+/*************************************************************************************************************************/
+
+footer{
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .illustration{
+        width: 400px;
+    }
+    .contact{
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        p{
+            font-size: 3em;
+        }
+        #monCv, #contactezMoi{
+            padding: 15px 0;
+            margin: 10px 0;
+            width: 320px;
+            text-align: center;
+            font-size: 1.5em;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    .resSoc{
+        width: 30%;
+    }
 }
