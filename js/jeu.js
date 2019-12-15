@@ -290,7 +290,7 @@ var animationDuJeu = function(){
                 objCoord.coordMasque.y < obj1.y + obj1.height &&
                 objCoord.coordMasque.height + objCoord.coordMasque.y > obj1.y){
                     obj2.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-                    obj2.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
+                    obj2.style.left = (Math.floor(Math.random() * (975 - 128 + 1)) + 128) + "px";
                     scoreTotal += points;
                     };
         };
@@ -332,5 +332,5 @@ var animationDuJeu = function(){
 /*************************************************************************************************************************/
 
 window.addEventListener("load", function(){
-    // animationDuJeu();
+    animationDuJeu();
 });

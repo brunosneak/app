@@ -8,10 +8,44 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <title>Mon Curriculum Vitae</title>
 </head>
-<body>
+<body id="monBody">
+
+    <!-- PAGE MENU DE L'ACCUEIL -->
+    <section class="pageMenu pMc">
+        <header>
+            <h1 class="nom">neak bruno</h1>
+        </header>
+        <img class="plateforme" src="img/plateforme.svg" alt="plateforme">
+
+        <!-- NAVIGATION DE L'ACCUEIL -->
+        <nav class="nav1">
+            <ul>
+                <li class="cv"><a href="cv.html">voir mon CV</a></li>
+                <li class="contact"><a href="#">contactez-moi</a></li>
+                <li class="recommencer"><a href="jeu.html">Commencer la partie</a></li>
+            </ul>
+        </nav>
+
+        <!-- ICONE RESEAUX SOCIAUX -->
+        <nav class="reseauSocial">
+            <ul>
+                <li>
+                    <a href="https://github.com/brunosneak" target="_blank">
+                        <img src="img/icone_git.svg" alt="icone git" class="git">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
+                        <img src="img/icone_linkedin.svg" alt="icone linkedin" class="linkedin">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
     <section class="presentation">
     
-        <a href="#" class="menu_burger">
+        <a href="#" class="menu_burger mBc">
             <span class="first_line"></span>
             <span class="second_line"></span>
             <span class="third_line"></span>
@@ -44,7 +78,7 @@
                 <li class="jquery"></li>
                 <li class="angular"></li>
                 <li class="node"></li>
-                <li class="git"></li>
+                <li class="github"></li>
                 <li class="mongodb"></li>
             </ul>
         </section>
@@ -54,7 +88,7 @@
             <img class="illustration" src="img/illustration.svg" alt="">
             <section class="contact">
                 <p>Alors si on <br> travaillait ensemble !</p>
-                <a id="monCv" href="download/cv_neak_bruno.pdf">Télécharger mon cv.pdf</a>
+                <a id="monCv" target="_blank" href="download/cv_neak_bruno.pdf">Télécharger mon cv.pdf</a>
                 <a id="contactezMoi" href="">Contactez-moi</a>
             </section>
             <section class="resSoc">
@@ -62,17 +96,17 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="https://github.com/brunosneak" target="_blank">
                                 <img class="git" src="img/icone_git.svg" alt="icone git">
                             </a>
-                            <p><a href="">github.com/brunosneak</a></p>
+                            <p><a href="https://github.com/brunosneak" target="_blank">github.com/brunosneak</a></p>
                         </li>
 
                         <li>
-                            <a href="">
+                            <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
                                 <img class="linkedin" src="img/icone_linkedin.svg" alt="icone linkedin">
                             </a>
-                            <p><a href="">linkedin.com/in/bruno-neak</a></p>
+                            <p><a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">linkedin.com/in/bruno-neak</a></p>
                         </li>
                     </ul>
                 </nav>
@@ -81,5 +115,6 @@
     </section>
     <script src="js/main.js"></script>
     <script src="js/cv.js"></script>
+    <script src="js/bouton_cv.js"></script>
 </body>
 </html>

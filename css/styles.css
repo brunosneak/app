@@ -641,7 +641,7 @@ header {
 .nom {
   font-size: 2em;
   margin: 0;
-  margin-top: 40px; }
+  padding-top: 40px; }
 
 .score {
   font-size: 3em;
@@ -810,7 +810,7 @@ header {
   left: 0;
   top: 0; }
 
-.html5, .css, .sass, .js, .jquery, .angular, .node, .git, .mongodb {
+.html5, .css, .sass, .js, .jquery, .angular, .node, .github, .mongodb {
   position: relative; }
 
 .html5 #ctx, .css #ctx, .js #ctx {

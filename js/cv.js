@@ -49,8 +49,8 @@ monCercle('angular', "url('img/img_cv/angular.svg')", 30, "#fff");
 monCercle('node', "", 100, '#4c4c4c');
 monCercle('node', "url('img/img_cv/node.svg')", 20, "#fff");
 // progressBarCircle git
-monCercle('git', "", 100, '#4c4c4c');
-monCercle('git', "url('img/img_cv/git.svg')", 55, "#fff");
+monCercle('github', "", 100, '#4c4c4c');
+monCercle('github', "url('img/img_cv/github.svg')", 55, "#fff");
 // progressBarCircle mongodb
 monCercle('mongodb', "", 100, '#4c4c4c');
 monCercle('mongodb', "url('img/img_cv/mongodb.svg')", 20, "#fff");
