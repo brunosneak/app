@@ -66,8 +66,8 @@ var animationDuJeu = function(){
     if(elements.heroCollision.offsetLeft <= 128){
         elements.heroCollision.style.left = "128px";
     };
-    if(elements.heroCollision.offsetLeft >= 935){
-        elements.heroCollision.style.left = "935px";
+    if(elements.heroCollision.offsetLeft >= 1000){
+        elements.heroCollision.style.left = "1000px";
     };
 
 /*************************************************************************************************************************/
@@ -162,7 +162,7 @@ var animationDuJeu = function(){
     var depart = function(depart1, depart2){
         if(elements.fond_vert.offsetTop >= depart1){
             depart2.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
-            depart2.style.left = (Math.floor(Math.random() * (916 - 128 + 1)) + 128) + "px";
+            depart2.style.left = (Math.floor(Math.random() * (975 - 128 + 1)) + 128) + "px";
         };
     };
 
@@ -190,7 +190,7 @@ var animationDuJeu = function(){
             case 37:
                 coordMasqueX -= 15;
                 elements.heroCollision.style.left = coordMasqueX + "px";
-                elements.heroCollision.style.transform = "";
+                elements.hero.style.top = "-13px";
             break;
             // flèche directionnelle haut
             // case 38:
@@ -201,7 +201,8 @@ var animationDuJeu = function(){
             case 39:
                 coordMasqueX += 15;
                 elements.heroCollision.style.left = coordMasqueX + "px";
-                elements.heroCollision.style.transform = "scaleX(-1)";
+                elements.hero.style.top = "-163px";
+
             break;
             // flèche directionnelle bas
             // case 40:
@@ -331,5 +332,5 @@ var animationDuJeu = function(){
 /*************************************************************************************************************************/
 
 window.addEventListener("load", function(){
-    animationDuJeu();
+    // animationDuJeu();
 });

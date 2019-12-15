@@ -451,23 +451,23 @@ h2 + p {
 #tour {
   background-image: url("../img/tour.svg");
   background-repeat: no-repeat;
-  height: 1000px;
+  height: 2000px;
   position: relative;
-  width: 1137px; }
+  width: 1200px; }
 
 /*************************************************************************************************************************/
 /*********************************************FENETRES DE LA TOUR*********************************************************/
 /*************************************************************************************************************************/
 #fenetreGauche {
-  bottom: -500px;
+  bottom: 0;
   left: 18%; }
 
 #fenetreDroite {
-  bottom: -500px;
+  bottom: 0;
   left: 57%; }
 
 #fenetreGauche, #fenetreDroite {
-  height: 50%;
+  height: 500px;
   position: absolute; }
 
 /*************************************************************************************************************************/
@@ -490,7 +490,7 @@ h2 + p {
   width: 100px; }
 
 #hero {
-  height: 150px;
+  height: 300px;
   left: -12px;
   position: absolute;
   top: -13px; }
@@ -499,7 +499,7 @@ h2 + p {
 /********************************************OBSTACLE BOULE PIQUE********************************************************/
 /*************************************************************************************************************************/
 #boulePiqueCollision {
-  bottom: -100px;
+  bottom: 0;
   height: 49px;
   left: 75%;
   position: absolute;
@@ -515,8 +515,8 @@ h2 + p {
 /****************************************************PIECES***************************************************************/
 /*************************************************************************************************************************/
 #pieceJs, #pieceCss3, #pieceHtml5 {
-  bottom: -100px;
-  height: 10%;
+  bottom: 0px;
+  height: 100px;
   position: absolute; }
 
 #pieceJs {
@@ -532,7 +532,7 @@ h2 + p {
 /***************************************************FANTOME***************************************************************/
 /*************************************************************************************************************************/
 #fantomeCollision, #fantomeCollision2 {
-  bottom: -150px;
+  bottom: 0;
   height: 66px;
   left: 45%;
   position: absolute;
@@ -756,7 +756,7 @@ header {
   width: 80vw;
   justify-content: space-evenly;
   margin: 0 auto;
-  height: 45vh; }
+  height: 40vh; }
   .description #PhotoDeProfil {
     height: 90%; }
   .description .monTitre {
@@ -779,7 +779,7 @@ header {
 .competences {
   align-items: center;
   flex-direction: column;
-  height: 35vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   position: relative; }
@@ -794,10 +794,10 @@ header {
       margin-right: 55px; }
   .competences .list1 {
     width: 50%;
-    position: absolute; }
+    height: 35%; }
   .competences .list2 {
     width: 60%;
-    position: relative; }
+    height: 50%; }
 
 /*************************************************************************************************************************/
 /**********************************************PROGRESS BAR CIRCLE********************************************************/
@@ -856,5 +856,34 @@ footer {
       border-radius: 30px;
       color: #fff;
       text-decoration: none; }
+    footer .contact #contactezMoi {
+      background-color: #f7b3b1;
+      color: #000;
+      font-weight: 600;
+      border: none; }
   footer .resSoc {
-    width: 30%; }
+    width: 30%;
+    text-align: left; }
+    footer .resSoc .git {
+      height: 60px;
+      margin-right: 30px; }
+    footer .resSoc .linkedin {
+      height: 50px;
+      margin-right: 40px; }
+    footer .resSoc ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+      footer .resSoc ul li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px; }
+        footer .resSoc ul li a {
+          text-decoration: none;
+          color: #fff; }
+      footer .resSoc ul p {
+        font-size: 1.5em;
+        margin: 0; }
+    footer .resSoc p:first-child {
+      font-size: 2em; }

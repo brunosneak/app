@@ -24,7 +24,7 @@ var monCercle = function(arg1, monImg, taille, color){
             }
         debut++;
     }
-    var dessin = setInterval(dessinCercle);
+    var dessin = setInterval(dessinCercle, 20);
 };
 
 // progressBarCircle css
