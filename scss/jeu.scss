@@ -72,6 +72,23 @@
     top: -13px;
 }
 
+// #masqueHeroMort{
+//     border: 1px solid #fff;
+//     width: 182px;
+//     height: 110px;
+//     left: 47%;
+//     top: 38%;
+//     position: absolute;
+//     overflow: hidden;
+// }
+
+// #heroMort{
+//     width: 2000px;
+//     position: absolute;
+//     left: 0;
+//     display: none;
+// }
+
 /*************************************************************************************************************************/
 /********************************************OBSTACLE BOULE PIQUE********************************************************/
 /*************************************************************************************************************************/
@@ -172,6 +189,15 @@
 .gameOver{
     display: none;
     animation-name: effetGameOver;
+    animation-direction: alternate;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0, 0.39, 0.46, 1.16)
+}
+
+.win{
+    display: none;
+    animation-name: win;
     animation-direction: alternate;
     animation-duration: 1.2s;
     animation-iteration-count: infinite;

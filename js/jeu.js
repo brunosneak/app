@@ -18,15 +18,18 @@ var elements = {
     fantomeCollision2: document.getElementById('fantomeCollision2'),
     fantome: document.getElementById('fantome'),
     fantome2: document.getElementById('fantome2'),
+    // heroMort: document.getElementById('heroMort'),
     menu_burger: document.getElementsByClassName('menu_burger'),
     resultat: document.getElementsByClassName('resultat'),
     pageMenu: document.getElementsByClassName('pageMenu'),
     gameOver: document.getElementsByClassName('gameOver'),
+    win: document.getElementsByClassName('win'),
 }
 
 var heroLeft = elements.hero.style.left = -10;
 var fantomeLeft = elements.fantome.style.left;
 var fantome2Left = elements.fantome2.style.left;
+// var heroMortLeft = elements.heroMort.style.left; 
 var scoreTotal = 0;
 var stockageInnerHtml = elements.resultat[0].innerHTML;
 var rafId;
@@ -138,6 +141,13 @@ var animationDuJeu = function(){
 
     if(elements.resultat[0].innerHTML >= 25000){
         niveau(25000, 2, 2);
+    }; 
+
+    if(elements.resultat[0].innerHTML >= 30000){
+        elements.pageMenu[0].style.display = "flex";
+        cancelAnimationFrame(rafId);
+        elements.menu_burger[0].style.display = 'none';
+        elements.win[0].style.display = "block";
     }; 
 
 /*************************************************************************************************************************/
@@ -278,6 +288,14 @@ var animationDuJeu = function(){
                 cancelAnimationFrame(rafId);
                 elements.menu_burger[0].style.display = 'none';
                 elements.gameOver[0].style.display = "block";
+                // heroMort.style.display = "block";
+                // var monHeroMort = setInterval(function(){
+                //     heroMortLeft -= 181.7;
+                //     elements.heroMort.style.left = heroMortLeft + "px";
+                // }, 250);
+                // if(heroMortLeft <= -1818){
+                //     clearInterval(monHeroMort);
+                // };
         };
 
 /*************************************************************************************************************************/

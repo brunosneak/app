@@ -584,6 +584,14 @@ h2 + p {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0, 0.39, 0.46, 1.16); }
 
+.win {
+  display: none;
+  animation-name: win;
+  animation-direction: alternate;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.39, 0.46, 1.16); }
+
 .pageMenu {
   background-color: #000;
   bottom: 0;
@@ -648,7 +656,7 @@ header {
   margin: 0 10px;
   top: 40px; }
 
-.gameOver {
+.gameOver, .win {
   font-size: 4em;
   margin: 0 10px;
   position: relative;
@@ -702,35 +710,12 @@ header {
     font-size: 6em;
     font-weight: bold; } }
 
-@keyframes firstLine {
-  from {
-    left: 0;
-    transform: rotate(0);
-    width: 50%;
-    transform-origin: top left; }
+@keyframes win {
+  from { }
   to {
-    left: 5px;
-    transform: rotate(45deg);
-    width: 53%;
-    transform-origin: top left; } }
-
-@keyframes secondLine {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
-@keyframes thirdLine {
-  from {
-    left: 0;
-    transform: rotate(0);
-    width: 50%;
-    transform-origin: top left; }
-  to {
-    left: 4px;
-    transform: rotate(-45deg);
-    width: 53%;
-    transform-origin: top left; } }
+    color: green;
+    font-size: 6em;
+    font-weight: bold; } }
 
 .presentation {
   background-color: #000;
@@ -798,6 +783,9 @@ header {
   .competences .list2 {
     width: 60%;
     height: 50%; }
+
+.mBc {
+  position: fixed; }
 
 /*************************************************************************************************************************/
 /**********************************************PROGRESS BAR CIRCLE********************************************************/
@@ -887,3 +875,9 @@ footer {
         margin: 0; }
     footer .resSoc p:first-child {
       font-size: 2em; }
+
+#pageContact {
+  background-image: url("../img/img_contact/fond_contact.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; }
