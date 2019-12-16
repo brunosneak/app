@@ -3,8 +3,174 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    font-family: 'Dosis', sans-serif;
+    color: #fff;
+    .bgFormulaire{
+        width: 60vw;
+        border-radius: 100px 100px 0 0;
+        height: 90vh;
+        background-color: #000;
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding-left: 100px;
+        ul{
+            padding-left: 0;
+            list-style-type: none;
+            li{
+                display: flex;
+                align-items: center;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
 }
 
-// .bgFormulaire{
-//     width
-// }
+.titreContact{
+    font-size: 3em;
+    text-align: left;
+    margin-top: 80px;
+}
+
+.maPosition{
+    height: 45px;
+}
+
+.numMobile{
+    height: 55px;
+}
+
+.git{
+    height: 40px;
+}
+.linkedin{
+    height: 40px;
+}
+
+.globalContact{
+    display: flex;
+    height: 100%;
+    z-index: 5;
+}
+
+.monForm,.coordonnees{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    p{
+        font-size: 1.5em;
+        margin-left: 20px;
+    }
+}
+.monForm{
+    height: 75%;
+}
+.coordonnees{
+    height: 70%;
+}
+
+.monForm input,.monForm textarea{
+    background-color: #333;
+    border-radius: 7px;
+    outline: none;
+    margin-top: 5px;
+    color: #fff;
+    padding: 10px;
+    resize: none;
+}
+
+.monForm label{
+    font-size: 1.1em;
+    margin-top: 15px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.monForm input{
+    height: 20px;
+
+}
+
+.monForm button{
+    background-color: pink;
+    width: 150px;
+    height: 50px;
+    font-weight: 600;
+    border-radius: 25px;
+    font-size: 1.2em;
+    align-self: flex-end;
+    margin-top: 15px;
+    font-family: 'Dosis', sans-serif;
+    cursor: pointer;
+}
+
+.fond_2{
+    background-image: url('../img/img_contact/fond_2.svg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.fond_3{
+    background-image: url('../img/img_contact/fond_3.svg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+#masqueFantomeVert{
+    width: 127px;
+    height: 285px;
+    position: absolute;
+    left: 76%;
+    top: 46%;
+    overflow: hidden;
+    z-index: 5;
+}
+
+#fantomeVert{
+    position: absolute;
+    width: 2964px;
+    height: 300px;
+    top: -7px;
+    left: -32px;
+}
+
+#masqueVer{
+    width: 408px;
+    height: 185px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#ver{
+    position: absolute;
+    width: 5000px;
+    height: 309px;
+    top: -62px;
+    left: 0;
+}

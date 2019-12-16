@@ -228,7 +228,7 @@ var animationDuJeu = function(){
 
     var mouvementHero = function(){
     heroLeft;
-    if(heroLeft < -360){
+    if(heroLeft < -480){
         heroLeft = -10;
     };
     elements.hero.style.left = heroLeft + "px";
@@ -292,7 +292,7 @@ var animationDuJeu = function(){
                 var intervalId = setInterval(function(){
                     heroMortLeft -= 181.7;
                     elements.heroMort.style.left = heroMortLeft + "px";
-                    if(heroMortLeft <= -1817){
+                    if(heroMortLeft <= -1700){
                         clearInterval(intervalId);
                     };
                 }, 250);
