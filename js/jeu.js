@@ -18,7 +18,7 @@ var elements = {
     fantomeCollision2: document.getElementById('fantomeCollision2'),
     fantome: document.getElementById('fantome'),
     fantome2: document.getElementById('fantome2'),
-    // heroMort: document.getElementById('heroMort'),
+    heroMort: document.getElementById('heroMort'),
     menu_burger: document.getElementsByClassName('menu_burger'),
     resultat: document.getElementsByClassName('resultat'),
     pageMenu: document.getElementsByClassName('pageMenu'),
@@ -26,10 +26,10 @@ var elements = {
     win: document.getElementsByClassName('win'),
 }
 
-var heroLeft = elements.hero.style.left = -10;
-var fantomeLeft = elements.fantome.style.left;
-var fantome2Left = elements.fantome2.style.left;
-// var heroMortLeft = elements.heroMort.style.left; 
+var heroLeft = elements.hero.offsetLeft;
+var fantomeLeft = elements.fantome.offsetLeft;
+var fantome2Left = elements.fantome2.offsetLeft;
+var heroMortLeft = elements.heroMort.offsetLeft; 
 var scoreTotal = 0;
 var stockageInnerHtml = elements.resultat[0].innerHTML;
 var rafId;
@@ -288,14 +288,14 @@ var animationDuJeu = function(){
                 cancelAnimationFrame(rafId);
                 elements.menu_burger[0].style.display = 'none';
                 elements.gameOver[0].style.display = "block";
-                // heroMort.style.display = "block";
-                // var monHeroMort = setInterval(function(){
-                //     heroMortLeft -= 181.7;
-                //     elements.heroMort.style.left = heroMortLeft + "px";
-                // }, 250);
-                // if(heroMortLeft <= -1818){
-                //     clearInterval(monHeroMort);
-                // };
+                heroMort.style.display = "block";
+                var intervalId = setInterval(function(){
+                    heroMortLeft -= 181.7;
+                    elements.heroMort.style.left = heroMortLeft + "px";
+                    if(heroMortLeft <= -1817){
+                        clearInterval(intervalId);
+                    };
+                }, 250);
         };
 
 /*************************************************************************************************************************/
