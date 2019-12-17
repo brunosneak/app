@@ -304,33 +304,35 @@ template {
 [hidden] {
   display: none; }
 
-.fond1 {
-  background-image: url("../img/1er_fond.svg");
+.fond, .fond1, .fond2, .fond3, .fond4, .fond5, .fond6 {
   background-size: cover;
   bottom: 0;
   left: 0;
-  overflow: hidden;
   position: absolute;
   right: 0;
   top: 0; }
+
+.fond {
+  background-image: url("../img/img_page_accueil/fondvert.svg");
+  overflow: hidden; }
+
+.fond1 {
+  background-image: url("../img/img_page_accueil/fond1.svg"); }
 
 .fond2 {
-  background-image: url("../img/2eme_fond.svg");
-  background-size: cover;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0; }
+  background-image: url("../img/img_page_accueil/fond2.svg"); }
 
 .fond3 {
-  background-image: url("../img/3eme_fond.svg");
-  background-size: cover;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0; }
+  background-image: url("../img/img_page_accueil/fond3.svg"); }
+
+.fond4 {
+  background-image: url("../img/img_page_accueil/fond4.svg"); }
+
+.fond5 {
+  background-image: url("../img/img_page_accueil/fond5.svg"); }
+
+.fond6 {
+  background-image: url("../img/img_page_accueil/fond6.svg"); }
 
 .monNom, h2, h2 + p {
   margin: 0;
@@ -347,6 +349,21 @@ h2 {
 h2 + p {
   margin-top: 10px;
   text-transform: capitalize; }
+
+#masqueHeroAccueil {
+  width: 135px;
+  height: 179px;
+  position: absolute;
+  left: 46%;
+  top: 45%;
+  overflow: hidden; }
+
+#heroAccueil {
+  position: absolute;
+  width: 2506px;
+  height: 296px;
+  top: -60px;
+  left: -15px; }
 
 /*************************************************************************************************************************/
 /************************************************BOUTON BURGER************************************************************/
@@ -1017,8 +1034,7 @@ footer {
   position: absolute;
   left: 76%;
   top: 46%;
-  overflow: hidden;
-  z-index: 5; }
+  overflow: hidden; }
 
 #fantomeVert {
   position: absolute;

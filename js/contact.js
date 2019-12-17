@@ -11,6 +11,7 @@ var ver = document.getElementById('ver');
 var masqueVer = document.getElementById('masqueVer');
 var verLeft = ver.offsetLeft;
 var stopIntFant;
+var stopIntVer;
 
 var animeFantome = function(){
     stopIntFant = setInterval(function(){
@@ -18,6 +19,7 @@ var animeFantome = function(){
         fantomeVert.style.left = fantomeVertLeft + "px";
             if(fantomeVertLeft <= -2800){
                 fantomeVertLeft = -32;
+                clearInterval(stopIntFant);
             };
     }, 200);
 };
@@ -28,11 +30,12 @@ masqueFantomeVert.addEventListener('click', function(){
 });
 
 var animeVer = function(){
-    setInterval(function(){
+    stopIntVer = setInterval(function(){
         verLeft -= 459;
         ver.style.left = verLeft + "px";
             if(verLeft <= -4500){
                 verLeft = 0;
+                clearInterval(stopIntVer);
             };
     }, 200);
 };
