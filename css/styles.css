@@ -340,7 +340,10 @@ template {
   font-size: 2em;
   margin-top: 40px;
   text-align: center;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  z-index: 2; }
 
 h2 {
   font-size: 6em;
@@ -362,8 +365,45 @@ h2 + p {
   position: absolute;
   width: 2506px;
   height: 296px;
-  top: -60px;
-  left: -15px; }
+  top: -54px;
+  left: -33px; }
+
+#flechesDir {
+  width: 40%; }
+
+#flecheGauche, #flecheDroite {
+  height: 50px; }
+
+#flecheHautBas {
+  height: 100px; }
+
+#croix {
+  height: 20px;
+  position: absolute;
+  right: 12px;
+  top: 12px; }
+  #croix:hover {
+    cursor: pointer; }
+
+#boiteInfo {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 500px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  height: 150px;
+  color: #fff;
+  font-family: 'Dosis', sans-serif; }
+  #boiteInfo p {
+    width: 40%; }
+  #boiteInfo span {
+    text-decoration: underline; }
 
 /*************************************************************************************************************************/
 /************************************************BOUTON BURGER************************************************************/
@@ -435,12 +475,12 @@ h2 + p {
   background-color: #000000;
   border: 2px solid #fff;
   border-radius: 100px;
-  bottom: 75px;
+  bottom: 175px;
   color: #fff;
   display: flex;
   font-family: 'Dosis', sans-serif;
   font-size: 2em;
-  height: 175px;
+  height: 140px;
   justify-content: center;
   left: 0;
   margin: auto;
@@ -449,7 +489,7 @@ h2 + p {
   right: 0;
   text-decoration: none;
   text-transform: uppercase;
-  width: 175px; }
+  width: 140px; }
 
 /*************************************************************************************************************************/
 /**********************************************BACKGROUND DU JEU**********************************************************/
@@ -492,7 +532,7 @@ h2 + p {
 /*************************************************************************************************************************/
 #heroCollision {
   height: 88px;
-  left: 30%;
+  left: 46%;
   position: absolute;
   top: 100px;
   width: 70px;
@@ -838,12 +878,19 @@ header {
 /*************************************************************************************************************************/
 /**********************************************SECTION EXPERIENCES********************************************************/
 /*************************************************************************************************************************/
-.xp {
+#xp {
   background-image: url("../img/fond_ecran_cv.svg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh; }
+  height: 100vh;
+  display: flex; }
+  #xp .formation {
+    height: 500px;
+    position: absolute; }
+  #xp .experience {
+    height: 300px;
+    position: absolute; }
 
 /*************************************************************************************************************************/
 /****************************************************CONTACT**************************************************************/

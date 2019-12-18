@@ -109,12 +109,21 @@
 /**********************************************SECTION EXPERIENCES********************************************************/
 /*************************************************************************************************************************/
 
-.xp{
+#xp{
     background-image: url('../img/fond_ecran_cv.svg');
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+    .formation{
+        height: 500px;
+        position: absolute;
+    }
+    .experience{
+        height: 300px;
+        position: absolute;
+    }
 }
 
 /*************************************************************************************************************************/

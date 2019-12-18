@@ -8,7 +8,7 @@ var start = document.getElementById('start');
 
 var animeHeroAccueil = function(){
     stopHeroAccueil = setInterval(function(){
-        heroAccueilLeft -= 156;
+        heroAccueilLeft -= 164.7;
         heroAccueil.style.left = heroAccueilLeft + "px";
             if(heroAccueilLeft <= -2300){
                 clearInterval(stopHeroAccueil);
@@ -20,5 +20,5 @@ start.addEventListener('click', function(){
     animeHeroAccueil();
     setTimeout(function(){
         window.location.href = "jeu.html";
-    },4000);
+    },3000);
 });

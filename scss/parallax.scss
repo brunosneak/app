@@ -44,6 +44,9 @@
     margin-top: 40px;
     text-align: center;
     text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    z-index: 2;
 }
 
 h2{
@@ -68,6 +71,51 @@ h2+p{
     position: absolute;
     width: 2506px;
     height: 296px;
-    top: -60px;
-    left: -15px;
+    top: -54px;
+    left: -33px;
+}
+
+#flechesDir{
+    width: 40%;
+}
+
+#flecheGauche, #flecheDroite{
+    height: 50px;
+}
+
+#flecheHautBas{
+    height: 100px;
+}
+
+#croix{
+    height: 20px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+#boiteInfo{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 500px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    height: 150px;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    p{
+        width: 40%;
+    }
+    span{
+        text-decoration: underline;
+    }
 }
