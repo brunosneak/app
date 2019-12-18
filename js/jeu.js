@@ -19,6 +19,7 @@ var elements = {
     fantomeRouge: document.getElementById('fantomeRouge'),
     fantomeVert: document.getElementById('fantomeVert'),
     persoMort: document.getElementById('persoMort'),
+    persoWin: document.getElementById('persoWin'),
     menuBurger: document.getElementsByClassName('menuBurger'),
     resultat: document.getElementsByClassName('resultat'),
     menuCache: document.getElementsByClassName('menuCache'),
@@ -29,7 +30,8 @@ var elements = {
 var persoLeft = elements.perso.offsetLeft;
 var fantomeRougeLeft = elements.fantomeRouge.offsetLeft;
 var fantomeVertLeft = elements.fantomeVert.offsetLeft;
-var persoMortLeft = elements.persoMort.offsetLeft; 
+var persoMortLeft = elements.persoMort.offsetLeft;
+var persoWinLeft = elements.persoWin.offsetLeft; 
 var scoreTotal = 0;
 var stockageInnerHtml = elements.resultat[0].innerHTML;
 var rafId;
@@ -148,7 +150,15 @@ var animationDuJeu = function(){
         cancelAnimationFrame(rafId);
         elements.menuBurger[0].style.display = 'none';
         elements.win[0].style.display = "block";
-    }; 
+        persoWin.style.display = "block";
+        setInterval(function(){
+            persoWinLeft -= 166.5;
+            elements.persoWin.style.left = persoWinLeft + "px";
+            if(persoWinLeft <= -800){
+                persoWinLeft = 166.5;
+            };
+        }, 300);
+    };
 
 /*************************************************************************************************************************/
 /*********************************************RETOUR CASE DEPART**********************************************************/
