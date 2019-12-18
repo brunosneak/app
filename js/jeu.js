@@ -19,7 +19,7 @@ var elements = {
     fantomeRouge: document.getElementById('fantomeRouge'),
     fantomeVert: document.getElementById('fantomeVert'),
     persoMort: document.getElementById('persoMort'),
-    menu_burger: document.getElementsByClassName('menu_burger'),
+    menuBurger: document.getElementsByClassName('menuBurger'),
     resultat: document.getElementsByClassName('resultat'),
     menuCache: document.getElementsByClassName('menuCache'),
     gameOver: document.getElementsByClassName('gameOver'),
@@ -146,7 +146,7 @@ var animationDuJeu = function(){
     if(elements.resultat[0].innerHTML >= 30000){
         elements.menuCache[0].style.display = "flex";
         cancelAnimationFrame(rafId);
-        elements.menu_burger[0].style.display = 'none';
+        elements.menuBurger[0].style.display = 'none';
         elements.win[0].style.display = "block";
     }; 
 
@@ -286,7 +286,7 @@ var animationDuJeu = function(){
             objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordboulePiqueColl.y){
                 elements.menuCache[0].style.display = "flex";
                 cancelAnimationFrame(rafId);
-                elements.menu_burger[0].style.display = 'none';
+                elements.menuBurger[0].style.display = 'none';
                 elements.gameOver[0].style.display = "block";
                 persoMort.style.display = "block";
                 var intervalId = setInterval(function(){
