@@ -4,9 +4,9 @@
 /*********************************************INITIALISATION**********************************************************/
 /*********************************************************************************************************************/
 
-var fantomeVert = document.getElementById('fantomeVert');
-var masqueFantomeVert = document.getElementById('masqueFantomeVert');
-var fantomeVertLeft = fantomeVert.offsetLeft;
+var fantomeVertContact = document.getElementById('fantomeVertContact');
+var masqueFantomeVertContact = document.getElementById('masqueFantomeVertContact');
+var fantomeVertContactLeft = fantomeVertContact.offsetLeft;
 var ver = document.getElementById('ver');
 var masqueVer = document.getElementById('masqueVer');
 var verLeft = ver.offsetLeft;
@@ -15,17 +15,17 @@ var stopIntVer;
 
 var animeFantome = function(){
     stopIntFant = setInterval(function(){
-        fantomeVertLeft -= 185.5;
-        fantomeVert.style.left = fantomeVertLeft + "px";
-            if(fantomeVertLeft <= -2800){
-                fantomeVertLeft = -32;
+        fantomeVertContactLeft -= 185.5;
+        fantomeVertContact.style.left = fantomeVertContactLeft + "px";
+            if(fantomeVertContactLeft <= -2800){
+                fantomeVertContactLeft = -32;
                 clearInterval(stopIntFant);
             };
     }, 200);
 };
 animeFantome();
 
-masqueFantomeVert.addEventListener('click', function(){
+masqueFantomeVertContact.addEventListener('click', function(){
     clearInterval(stopIntFant);
 });
 

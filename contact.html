@@ -10,33 +10,58 @@
 </head>
 <body>
     <section id="pageContact">
+
+        <!----------- BOUTON MENU ------------>
+        <a href="#" class="menu_burger mBcontact">
+            <span class="first_line"></span>
+            <span class="second_line"></span>
+            <span class="third_line"></span>
+        </a>
+        <!------------------------------------>
+
+        <header class="headerContact">
+            <h1 class="monNom">neak bruno</h1>
+        </header>
+
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+        <div id="masqueFantomeVertContact">
+            <img id="fantomeVertContact" src="img/imgContact/animation_fantome4.svg" alt="fantome vert">
+        </div>
+        <div id="masqueVer">
+            <img id="ver" src="img/imgContact/animationVer.svg" alt="ver">
+        </div>
+
         <div class="bgFormulaire">
             <h2 class="titreContact">CONTACT</h2>
             <div class="globalContact">
                 <div class="coordonnees">
                     <ul>
-                        <li><img class="maPosition" src="img/img_contact/map.svg" alt="icone de position"><p>Paris, France</p></li>
-                        <li><img class="numMobile" src="img/img_contact/mobile.svg" alt="icone mobile"><p>06 50 38 18 12</p></li>
+                        <li><img class="maPosition" src="img/imgContact/map.svg" alt="icone de position"><p>Paris, France</p></li>
+                        <li><img class="numMobile" src="img/imgContact/mobile.svg" alt="icone mobile"><p>06 50 38 18 12</p></li>
                     </ul>
                     <nav>
                         <ul>
                             <li>
                                 <a href="https://github.com/brunosneak" target="_blank">
-                                    <img class="git" src="img/icone_git.svg" alt="icone git">
+                                    <img class="git" src="img/imgContact/iconeGit.svg" alt="icone git">
                                 </a>
                                 <p><a href="https://github.com/brunosneak" target="_blank">github.com/brunosneak</a></p>
                             </li>
 
                             <li>
                                 <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
-                                    <img class="linkedin" src="img/icone_linkedin.svg" alt="icone linkedin">
+                                    <img class="linkedin" src="img/imgContact/iconeLinkedin.svg" alt="icone linkedin">
                                 </a>
                                 <p><a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">linkedin.com/in/bruno-neak</a></p>
                             </li>
                         </ul>
                     </nav>
                 </div>
-                <div class="monForm">
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------** A DEVELOPPER EN NODEJS **------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+                <!-- <div class="monForm">
                     <form action="" method="POST">
                         <label for="nom">Nom*</label>
                         <input type="text" name="nom" id="nom">
@@ -46,18 +71,66 @@
                         <textarea name="message" id="message" cols="30" rows="20"></textarea>
                         <button type="submit">Envoyer</button>
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
-        <div class="fond_3"></div>
     </section>
-        <div id="masqueFantomeVert">
-            <img id="fantomeVert" src="img/img_contact/animation_fantome4.svg" alt="fantome vert">
-        </div>
-        <div id="masqueVer">
-            <img id="ver" src="img/img_contact/animationVer.svg" alt="ver">
-        </div>
-        <div class="fond_2"></div>
+
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!-----------------------------------------** MENU CONTACT CACHE **--------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+
+    <section class="menuCache pMcontact">
+
+        <header class="headerMenuCache">
+            <h1 class="monNom">neak bruno</h1>
+        </header>
+        <img class="plateforme" src="img/imgPageAccueil/plateforme.svg" alt="plateforme">
+
+        <!---------- NAVIGATION PRINCIPALE ---------->
+        <nav class="mainNav">
+            <ul>
+                <li class="cv">
+                    <a href="cv.html">voir mon CV</a>
+                </li>
+                <li class="contact">
+                    <a href="contact.html">contactez-moi</a>
+                </li>
+                <li class="recommencer">
+                    <a href="jeu.html">Commencer la partie</a>
+                </li>
+            </ul>
+        </nav>
+        <!------------------------------------------->
+
+        <!---------- NAVIGATION RESEAUX SOCIAUX ---------->
+        <nav class="reseauSocial">
+
+            <ul>
+                <li>
+                    <a href="https://github.com/brunosneak" target="_blank">
+                        <img src="img/imgPageAccueil/iconeGit.svg" alt="icone git" class="git">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
+                        <img src="img/imgPageAccueil/iconeLinkedin.svg" alt="icone linkedin" class="linkedin">
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        <!------------------------------------------------>
+
+    </section>
+
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------** MES SCRIPTS **------------------------------------------------>
+    <!-------------------------------------------------------------------------------------------------------------->
+
+    <script src="js/animationBouton.js"></script>
+    <script src="js/bouton_contact.js"></script>
     <script src="js/contact.js"></script>
 </body>
 </html>
