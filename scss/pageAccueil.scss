@@ -1,0 +1,120 @@
+/*************************************************************************************************************************/
+/**********************************************IMAGES BACKGROUND**********************************************************/
+/*************************************************************************************************************************/
+
+#bgMain, #bg1, #bg2, #bg3, #bg4, #bg5, #bg6{
+    @include backgroundAccueil;
+}
+
+#bgMain{
+    background-image: url('../img/imgPageAccueil/bgMain.svg');
+    overflow: hidden;
+}
+
+#bg1{
+    background-image: url('../img/imgPageAccueil/bg1.svg');
+}
+
+#bg2{
+    background-image: url('../img/imgPageAccueil/bg2.svg');
+}
+
+#bg3{
+    background-image: url('../img/imgPageAccueil/bg3.svg');
+}
+
+#bg4{
+    background-image: url('../img/imgPageAccueil/bg4.svg');
+}
+
+#bg5{
+    background-image: url('../img/imgPageAccueil/bg5.svg');
+}
+
+#bg6{
+    background-image: url('../img/imgPageAccueil/bg6.svg');
+}
+
+/*************************************************************************************************************************/
+/************************************************HEADER ACCUEIL***********************************************************/
+/*************************************************************************************************************************/
+
+.monNom{
+    @include headerAccueil;
+}
+
+#abbrJeu{
+    @include headerAccueil;
+    font-size: 6em;
+    font-weight: 400;
+}
+
+#nomJeu{
+    @include headerAccueil;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+/*************************************************************************************************************************/
+/*****************************************PERSONNAGE SAUT DANS LE VIDE****************************************************/
+/*************************************************************************************************************************/
+
+#masquePersoAcc{
+    height: 179px;
+    left: 46%;
+    overflow: hidden;
+    position: absolute;
+    top: 45%;
+    width: 135px;
+    #persoAcc{
+        height: 296px;
+        left: -33px;
+        position: absolute;
+        top: -54px;
+        width: 2506px;
+    }
+}
+/*************************************************************************************************************************/
+/***************************************************INFO BOX**************************************************************/
+/*************************************************************************************************************************/
+
+#boiteInfo{
+    align-items: center;
+    background-color: #333;
+    border-radius: 25px;
+    bottom: 15px;
+    color: #fff;
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    height: 150px;
+    justify-content: center;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 500px;
+    #flechesDir{
+        width: 40%;
+        #flecheGauche, #flecheDroite{
+            height: 50px;
+        }
+        #flecheHautBas{
+            height: 100px;
+        }
+    }
+    p{
+        width: 40%;
+        span{
+            text-decoration: underline;
+        }
+    }
+    #croix{
+        height: 20px;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

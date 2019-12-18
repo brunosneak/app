@@ -10,79 +10,110 @@
 </head>
 <body>
 
-    <!-- PAGE D'ACCUEIL -->
-    <section class="fond">
-        <h1 class="monNom">neak bruno</h1>
-        <h2>t.o.t.e</h2>
-        <p>-tower of the end-</p>
-        <div class="fond1"></div>
-        <div class="fond2"></div>
-        <div class="fond3"></div>
-        <div class="fond4"></div>
-        <div class="fond5">
-            <div id="masqueHeroAccueil">
-                <img id="heroAccueil" src="img/img_page_accueil/animationherosaut.svg" alt="personnage saute dans le vide">
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!-----------------------------------------** BACKGROUND ACCUEIL **--------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+
+    <section id="bgMain">
+
+        <header id="headerAccueil">
+            <!---------- BOUTON MENU ---------->
+            <a href="#" class="menu_burger mBa">
+                <span class="first_line"></span>
+                <span class="second_line"></span>
+                <span class="third_line"></span>
+            </a>
+            <!--------------------------------->
+            <h1 class="monNom">neak bruno</h1>
+            <h2 id="abbrJeu">t.o.t.e</h2>
+            <p id="nomJeu">-tower of the end-</p>
+        </header>
+        <div id="bg1"></div>
+        <div id="bg2"></div>
+        <div id="bg3"></div>
+        <div id="bg4"></div>
+        <div id="bg5">
+            <div id="masquePersoAcc">
+                <img id="persoAcc" src="img/imgPageAccueil/sautPersoVide.svg" alt="Personnage saute dans le vide">
             </div>
         </div>
-        <div class="fond6"></div>
+        <div id="bg6"></div>
+
     </section>
 
-    <!-- PAGE MENU DE L'ACCUEIL -->
-    <section class="pageMenu pMa">
-        <header>
-            <h1 class="nom">neak bruno</h1>
-        </header>
-        <img class="plateforme" src="img/plateforme.svg" alt="plateforme">
-
-        <!-- NAVIGATION DE L'ACCUEIL -->
-        <nav class="nav1">
-            <ul>
-                <li class="cv"><a href="cv.html">voir mon CV</a></li>
-                <li class="contact"><a href="contact.html">contactez-moi</a></li>
-                <li class="recommencer"><a href="jeu.html">Commencer la partie</a></li>
-            </ul>
-        </nav>
-
-        <!-- ICONE RESEAUX SOCIAUX -->
-        <nav class="reseauSocial">
-            <ul>
-                <li>
-                    <a href="https://github.com/brunosneak" target="_blank">
-                        <img src="img/icone_git.svg" alt="icone git" class="git">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
-                        <img src="img/icone_linkedin.svg" alt="icone linkedin" class="linkedin">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </section>
-
-    <!-- BOUTON MENU -->
-    <a href="#" class="menu_burger mBa">
-        <span class="first_line"></span>
-        <span class="second_line"></span>
-        <span class="third_line"></span>
-    </a>
-
-    <!-- BOUTON START -->
-
+    <!---------- BOUTON START ---------->
     <a href="#" id="start">start</a>
+    <!---------------------------------->
 
-    <div id="boiteInfo">
+    <!---------- INFO BOX ---------->
+    <section id="boiteInfo">
+
         <div id="flechesDir">
-            <img id="flecheGauche" src="img/flechegauche.svg" alt="flèche directionnelle gauche">
-            <img id="flecheHautBas" src="img/flechehautbas.svg" alt="flèche directionnelle haut et bas">
-            <img id="flecheDroite" src="img/flechedroite.svg" alt="flèche directionnelle droite">
+            <img id="flecheGauche" src="img/imgPageAccueil/flecheGauche.svg" alt="flèche directionnelle gauche">
+            <img id="flecheHautBas" src="img/imgPageAccueil/flecheHautBas.svg" alt="flèche directionnelle haut et bas">
+            <img id="flecheDroite" src="img/imgPageAccueil/flecheDroite.svg" alt="flèche directionnelle droite">
         </div>
         <p><span>But du jeu</span> : Récupérer les pièces pour gagner des points en utilisant
              les flèches directionnelles de votre clavier pour vous déplacer.<br> Atteindre 30.000 points.
         </p>
-        <img id="croix" src="img/croix.svg" alt="croix">
-    </div>
-    
+        <img id="croix" src="img/imgPageAccueil/croix.svg" alt="croix">
+
+    </section>
+    <!----------------------------->
+
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!-----------------------------------------** MENU ACCUEIL CACHE **--------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+
+    <section class="menuCache pMa">
+
+        <header id="headerMenuCache">
+            <h1 class="monNom">neak bruno</h1>
+        </header>
+        <img class="plateforme" src="img/imgPageAccueil/plateforme.svg" alt="plateforme">
+
+        <!---------- NAVIGATION PRINCIPALE ---------->
+        <nav class="mainNav">
+            <ul>
+                <li class="cv">
+                    <a href="cv.html">voir mon CV</a>
+                </li>
+                <li class="contact">
+                    <a href="contact.html">contactez-moi</a>
+                </li>
+                <li class="recommencer">
+                    <a href="jeu.html">Commencer la partie</a>
+                </li>
+            </ul>
+        </nav>
+        <!------------------------------------------->
+
+        <!---------- NAVIGATION RESEAUX SOCIAUX ---------->
+        <nav class="reseauSocial">
+
+            <ul>
+                <li>
+                    <a href="https://github.com/brunosneak" target="_blank">
+                        <img src="img/imgPageAccueil/iconeGit.svg" alt="icone git" class="git">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
+                        <img src="img/imgPageAccueil/iconeLinkedin.svg" alt="icone linkedin" class="linkedin">
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        <!------------------------------------------------>
+
+    </section>
+
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------** MES SCRIPTS **------------------------------------------------>
+    <!-------------------------------------------------------------------------------------------------------------->
+
     <script src="js/main.js"></script>
     <script src="js/hero_tombe.js"></script>
     <script src="js/bouton_accueil.js"></script>

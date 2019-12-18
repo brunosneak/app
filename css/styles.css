@@ -304,7 +304,16 @@ template {
 [hidden] {
   display: none; }
 
-.fond, .fond1, .fond2, .fond3, .fond4, .fond5, .fond6 {
+/*************************************************************************************************************************/
+/*************************************************PAGE ACCUEIL************************************************************/
+/*************************************************************************************************************************/
+/*************************************************************************************************************************/
+/*************************************************PAGE ACCUEIL************************************************************/
+/*************************************************************************************************************************/
+/*************************************************************************************************************************/
+/**********************************************IMAGES BACKGROUND**********************************************************/
+/*************************************************************************************************************************/
+#bgMain, #bg1, #bg2, #bg3, #bg4, #bg5, #bg6 {
   background-size: cover;
   bottom: 0;
   left: 0;
@@ -312,29 +321,32 @@ template {
   right: 0;
   top: 0; }
 
-.fond {
-  background-image: url("../img/img_page_accueil/fondvert.svg");
+#bgMain {
+  background-image: url("../img/imgPageAccueil/bgMain.svg");
   overflow: hidden; }
 
-.fond1 {
-  background-image: url("../img/img_page_accueil/fond1.svg"); }
+#bg1 {
+  background-image: url("../img/imgPageAccueil/bg1.svg"); }
 
-.fond2 {
-  background-image: url("../img/img_page_accueil/fond2.svg"); }
+#bg2 {
+  background-image: url("../img/imgPageAccueil/bg2.svg"); }
 
-.fond3 {
-  background-image: url("../img/img_page_accueil/fond3.svg"); }
+#bg3 {
+  background-image: url("../img/imgPageAccueil/bg3.svg"); }
 
-.fond4 {
-  background-image: url("../img/img_page_accueil/fond4.svg"); }
+#bg4 {
+  background-image: url("../img/imgPageAccueil/bg4.svg"); }
 
-.fond5 {
-  background-image: url("../img/img_page_accueil/fond5.svg"); }
+#bg5 {
+  background-image: url("../img/imgPageAccueil/bg5.svg"); }
 
-.fond6 {
-  background-image: url("../img/img_page_accueil/fond6.svg"); }
+#bg6 {
+  background-image: url("../img/imgPageAccueil/bg6.svg"); }
 
-.monNom, h2, h2 + p {
+/*************************************************************************************************************************/
+/************************************************HEADER ACCUEIL***********************************************************/
+/*************************************************************************************************************************/
+.monNom {
   margin: 0;
   font-family: 'Dosis', sans-serif;
   font-size: 2em;
@@ -345,65 +357,84 @@ template {
   position: relative;
   z-index: 2; }
 
-h2 {
+#abbrJeu {
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+  font-size: 2em;
+  margin-top: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  z-index: 2;
   font-size: 6em;
   font-weight: 400; }
 
-h2 + p {
+#nomJeu {
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+  font-size: 2em;
+  margin-top: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  z-index: 2;
   margin-top: 10px;
   text-transform: capitalize; }
 
-#masqueHeroAccueil {
-  width: 135px;
+/*************************************************************************************************************************/
+/*****************************************PERSONNAGE SAUT DANS LE VIDE****************************************************/
+/*************************************************************************************************************************/
+#masquePersoAcc {
   height: 179px;
-  position: absolute;
   left: 46%;
+  overflow: hidden;
+  position: absolute;
   top: 45%;
-  overflow: hidden; }
+  width: 135px; }
+  #masquePersoAcc #persoAcc {
+    height: 296px;
+    left: -33px;
+    position: absolute;
+    top: -54px;
+    width: 2506px; }
 
-#heroAccueil {
-  position: absolute;
-  width: 2506px;
-  height: 296px;
-  top: -54px;
-  left: -33px; }
-
-#flechesDir {
-  width: 40%; }
-
-#flecheGauche, #flecheDroite {
-  height: 50px; }
-
-#flecheHautBas {
-  height: 100px; }
-
-#croix {
-  height: 20px;
-  position: absolute;
-  right: 12px;
-  top: 12px; }
-  #croix:hover {
-    cursor: pointer; }
-
+/*************************************************************************************************************************/
+/***************************************************INFO BOX**************************************************************/
+/*************************************************************************************************************************/
 #boiteInfo {
-  position: absolute;
-  bottom: 15px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 500px;
-  background-color: #333;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: #333;
   border-radius: 25px;
-  height: 150px;
+  bottom: 15px;
   color: #fff;
-  font-family: 'Dosis', sans-serif; }
+  display: flex;
+  font-family: 'Dosis', sans-serif;
+  height: 150px;
+  justify-content: center;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 500px; }
+  #boiteInfo #flechesDir {
+    width: 40%; }
+    #boiteInfo #flechesDir #flecheGauche, #boiteInfo #flechesDir #flecheDroite {
+      height: 50px; }
+    #boiteInfo #flechesDir #flecheHautBas {
+      height: 100px; }
   #boiteInfo p {
     width: 40%; }
-  #boiteInfo span {
-    text-decoration: underline; }
+    #boiteInfo p span {
+      text-decoration: underline; }
+  #boiteInfo #croix {
+    height: 20px;
+    position: absolute;
+    right: 12px;
+    top: 12px; }
+    #boiteInfo #croix:hover {
+      cursor: pointer; }
 
 /*************************************************************************************************************************/
 /************************************************BOUTON BURGER************************************************************/
@@ -663,7 +694,7 @@ h2 + p {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0, 0.39, 0.46, 1.16); }
 
-.pageMenu {
+.menuCache {
   background-color: #000;
   bottom: 0;
   color: #fff;
@@ -678,24 +709,24 @@ h2 + p {
   text-align: center;
   top: 0;
   z-index: 10; }
-  .pageMenu .nav1 > ul {
+  .menuCache .mainNav > ul {
     display: flex;
     flex-direction: column;
     padding: 0;
     position: relative;
     top: 40px; }
-    .pageMenu .nav1 > ul li {
+    .menuCache .mainNav > ul li {
       font-size: 2em;
       list-style-type: none;
       margin: 0 auto;
       margin-bottom: 25px;
       padding: 0; }
-      .pageMenu .nav1 > ul li::first-letter {
+      .menuCache .mainNav > ul li::first-letter {
         text-transform: capitalize; }
-      .pageMenu .nav1 > ul li a {
+      .menuCache .mainNav > ul li a {
         color: #fff;
         text-decoration: none; }
-  .pageMenu .cv::after, .pageMenu .contact::after {
+  .menuCache .cv::after, .menuCache .contact::after {
     content: '';
     background-color: #fff;
     display: block;
@@ -706,18 +737,18 @@ h2 + p {
 /*************************************************************************************************************************/
 /***************************************************EN-TÊTE***************************************************************/
 /*************************************************************************************************************************/
-header {
+#headerMenuCache {
   background-image: url("../img/feuille_en_hauteur.svg");
   background-position: top;
   background-size: 260px;
   background-repeat: no-repeat;
   height: 30vh; }
 
-.nom, .score {
+.monNom, .score {
   position: relative;
   text-transform: uppercase; }
 
-.nom {
+.monNom {
   font-size: 2em;
   margin: 0;
   padding-top: 40px; }
@@ -749,9 +780,9 @@ header {
 /*************************************************************************************************************************/
 /**************************************************NAVIGATION*************************************************************/
 /*************************************************************************************************************************/
-.nav1 {
+.mainNav {
   height: 30vh; }
-  .nav1 ul {
+  .mainNav ul {
     margin: 0; }
 
 /*************************************************************************************************************************/

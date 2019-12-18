@@ -1,4 +1,4 @@
-.pageMenu{
+.menuCache{
     background-color: #000;
     bottom: 0;
     color: #fff;
@@ -13,7 +13,7 @@
     text-align: center;
     top: 0;
     z-index: 10;
-    .nav1>ul{
+    .mainNav>ul{
         display: flex;
         flex-direction: column;
         padding: 0;
@@ -49,7 +49,7 @@
 /***************************************************EN-TÊTE***************************************************************/
 /*************************************************************************************************************************/
 
-header{
+#headerMenuCache{
     background-image: url('../img/feuille_en_hauteur.svg');
     background-position: top;
     background-size: 260px;
@@ -57,12 +57,12 @@ header{
     height: 30vh;
 }
 
-.nom, .score{
+.monNom, .score{
     position: relative;
     text-transform: uppercase;
 }
 
-.nom{
+.monNom{
     font-size: 2em;
     margin: 0;
     padding-top: 40px;
@@ -101,7 +101,7 @@ header{
 /**************************************************NAVIGATION*************************************************************/
 /*************************************************************************************************************************/
 
-.nav1{
+.mainNav{
     height: 30vh;
     ul{
         margin: 0;

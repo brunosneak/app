@@ -21,7 +21,7 @@ var elements = {
     heroMort: document.getElementById('heroMort'),
     menu_burger: document.getElementsByClassName('menu_burger'),
     resultat: document.getElementsByClassName('resultat'),
-    pageMenu: document.getElementsByClassName('pageMenu'),
+    menuCache: document.getElementsByClassName('menuCache'),
     gameOver: document.getElementsByClassName('gameOver'),
     win: document.getElementsByClassName('win'),
 }
@@ -144,7 +144,7 @@ var animationDuJeu = function(){
     }; 
 
     if(elements.resultat[0].innerHTML >= 30000){
-        elements.pageMenu[0].style.display = "flex";
+        elements.menuCache[0].style.display = "flex";
         cancelAnimationFrame(rafId);
         elements.menu_burger[0].style.display = 'none';
         elements.win[0].style.display = "block";
@@ -284,7 +284,7 @@ var animationDuJeu = function(){
             objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordboulePiqueCollision.x &&
             objCoord.coordMasque.y < objCoord.coordboulePiqueCollision.y + objCoord.coordboulePiqueCollision.height &&
             objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordboulePiqueCollision.y){
-                elements.pageMenu[0].style.display = "flex";
+                elements.menuCache[0].style.display = "flex";
                 cancelAnimationFrame(rafId);
                 elements.menu_burger[0].style.display = 'none';
                 elements.gameOver[0].style.display = "block";
