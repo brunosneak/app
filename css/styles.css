@@ -303,11 +303,120 @@ template {
 [hidden] {
   display: none; }
 
+/* ----------------------------------------------------------------------------------------------------
+Super Form Reset
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial; }
+
+/* Remove the stupid outer glow in Webkit */
+input:focus {
+  outline: 0; }
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Text Inputs
+-----------------------------------------------*/
+/* Button Controls
+-----------------------------------------------*/
+input[type=checkbox],
+input[type=radio] {
+  width: 13px;
+  height: 13px; }
+
+/* File Uploads
+-----------------------------------------------*/
+/* Search Input
+-----------------------------------------------*/
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box; }
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display: none; }
+
+/* Buttons
+-----------------------------------------------*/
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  /* Fix IE7 display bug */
+  overflow: visible;
+  width: auto; }
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none; }
+
+/* Textarea
+-----------------------------------------------*/
+textarea {
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto; }
+
+/* Selects
+-----------------------------------------------*/
+select[multiple] {
+  /* Move the label to the top */
+  vertical-align: top; }
+
 /*************************************************************************************************************************/
 /*************************************************PAGE ACCUEIL************************************************************/
 /*************************************************************************************************************************/
 /*************************************************************************************************************************/
 /***************************************************PAGE JEU**************************************************************/
+/*************************************************************************************************************************/
+/*************************************************************************************************************************/
+/****************************************************PAGE CV**************************************************************/
 /*************************************************************************************************************************/
 /*************************************************************************************************************************/
 /**********************************************IMAGES BACKGROUND**********************************************************/
@@ -349,7 +458,7 @@ template {
   margin: 0;
   font-family: 'Dosis', sans-serif;
   font-size: 2em;
-  margin-top: 40px;
+  padding-top: 40px;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
@@ -360,7 +469,7 @@ template {
   margin: 0;
   font-family: 'Dosis', sans-serif;
   font-size: 2em;
-  margin-top: 40px;
+  padding-top: 40px;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
@@ -373,7 +482,7 @@ template {
   margin: 0;
   font-family: 'Dosis', sans-serif;
   font-size: 2em;
-  margin-top: 40px;
+  padding-top: 40px;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
@@ -660,29 +769,29 @@ template {
   /*************************************************************************************************************************/
   /************************************************RESEAUX SOCIAUX**********************************************************/
   /*************************************************************************************************************************/ }
-  .menuCache #headerMenuCache {
+  .menuCache .headerMenuCache {
     background-image: url("../img/feuille_en_hauteur.svg");
     background-position: top;
     background-size: 260px;
     background-repeat: no-repeat;
     height: 30vh; }
-    .menuCache #headerMenuCache .monNom {
+    .menuCache .headerMenuCache .monNom {
       position: relative;
       text-transform: uppercase;
       font-size: 2em;
       margin: 0;
       padding-top: 40px; }
-    .menuCache #headerMenuCache .tableauScore {
+    .menuCache .headerMenuCache .tableauScore {
       align-items: center;
       display: inline-flex;
       justify-content: space-around; }
-      .menuCache #headerMenuCache .tableauScore .score {
+      .menuCache .headerMenuCache .tableauScore .score {
         position: relative;
         text-transform: uppercase;
         font-size: 3em;
         margin: 0 10px;
         top: 40px; }
-    .menuCache #headerMenuCache .gameOver {
+    .menuCache .headerMenuCache .gameOver {
       display: none;
       animation-direction: alternate;
       animation-duration: 1.2s;
@@ -694,7 +803,7 @@ template {
       text-transform: uppercase;
       top: 40px;
       animation-name: effetGameOver; }
-    .menuCache #headerMenuCache .win {
+    .menuCache .headerMenuCache .win {
       display: none;
       animation-direction: alternate;
       animation-duration: 1.2s;
@@ -784,166 +893,163 @@ template {
   color: #fff;
   font-family: 'Dosis', sans-serif;
   height: 100vh;
-  text-align: center; }
-
-.headerCv {
-  background-image: url("../img/feuille_en_hauteur.svg");
-  background-position: top;
-  background-size: 260px;
-  background-repeat: no-repeat;
-  height: 20vh; }
-
-.nomCv {
-  margin: 0;
-  padding-top: 40px;
-  text-transform: uppercase; }
-
-.description {
-  display: flex;
-  width: 80vw;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  height: 40vh; }
-  .description #PhotoDeProfil {
-    height: 90%; }
-  .description .monTitre {
-    width: 40%;
-    text-align: left;
-    overflow: auto;
+  text-align: center;
+  /*************************************************************************************************************************/
+  /**********************************************SECTION EXPERIENCES********************************************************/
+  /*************************************************************************************************************************/
+  /*************************************************************************************************************************/
+  /****************************************************CONTACT**************************************************************/
+  /*************************************************************************************************************************/ }
+  .presentation .mBc {
+    position: fixed; }
+  .presentation .headerCv {
+    height: 20vh;
+    background-image: url("../img/feuille_en_hauteur.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 260px; }
+  .presentation .QuiJeSuis {
     display: flex;
-    justify-content: center;
-    flex-direction: column; }
-    .description .monTitre p:first-child {
-      font-size: 3em;
-      margin: 0; }
-    .description .monTitre p:nth-child(2) {
-      font-size: 2em;
-      margin: 0; }
-    .description .monTitre p:last-child {
-      font-size: 2em;
-      margin: 0 0 20px 0; }
-
-.competences {
-  align-items: center;
-  flex-direction: column;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  position: relative; }
-  .competences ul {
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-    top: 20px; }
-    .competences ul li {
-      list-style-type: none;
-      margin-right: 55px; }
-  .competences .list1 {
-    width: 50%;
-    height: 35%; }
-  .competences .list2 {
-    width: 60%;
-    height: 50%; }
-
-.mBc {
-  position: fixed; }
-
-/*************************************************************************************************************************/
-/**********************************************PROGRESS BAR CIRCLE********************************************************/
-/*************************************************************************************************************************/
-#ctx {
-  background-position: center;
-  background-size: 55px;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 0; }
-
-.html5, .css, .sass, .js, .jquery, .angular, .node, .github, .mongodb {
-  position: relative; }
-
-.html5 #ctx, .css #ctx, .js #ctx {
-  background-size: 45px; }
-
-/*************************************************************************************************************************/
-/**********************************************SECTION EXPERIENCES********************************************************/
-/*************************************************************************************************************************/
-#xp {
-  background-image: url("../img/fond_ecran_cv.svg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex; }
-  #xp .formation {
-    height: 500px;
-    position: absolute; }
-  #xp .experience {
-    height: 300px;
-    position: absolute; }
-
-/*************************************************************************************************************************/
-/****************************************************CONTACT**************************************************************/
-/*************************************************************************************************************************/
-footer {
-  background-color: #000;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
-  footer .illustration {
-    width: 400px; }
-  footer .contact {
-    text-align: left;
+    height: 40vh;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 80vw; }
+    .presentation .QuiJeSuis #PhotoDeProfil {
+      height: 90%; }
+    .presentation .QuiJeSuis .maDescription {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: auto;
+      text-align: left;
+      width: 40%; }
+      .presentation .QuiJeSuis .maDescription .recherche {
+        line-height: 1.5em; }
+        .presentation .QuiJeSuis .maDescription .recherche strong {
+          font-size: 1.2em;
+          font-weight: 400; }
+      .presentation .QuiJeSuis .maDescription p:first-child {
+        margin: 0;
+        font-size: 3em; }
+      .presentation .QuiJeSuis .maDescription p:nth-child(2) {
+        margin: 0;
+        font-size: 2em; }
+      .presentation .QuiJeSuis .maDescription p:last-child {
+        margin: 0 0 20px 0;
+        font-size: 2em; }
+  .presentation .competences {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    width: 30%; }
-    footer .contact p {
-      font-size: 3em; }
-    footer .contact #monCv, footer .contact #contactezMoi {
-      padding: 15px 0;
-      margin: 10px 0;
-      width: 320px;
-      text-align: center;
-      font-size: 1.5em;
-      border: 2px solid #fff;
-      border-radius: 30px;
-      color: #fff;
-      text-decoration: none; }
-    footer .contact #contactezMoi {
-      background-color: #f7b3b1;
-      color: #000;
-      font-weight: 600;
-      border: none; }
-  footer .resSoc {
-    width: 30%;
-    text-align: left; }
-    footer .resSoc .git {
-      height: 60px;
-      margin-right: 30px; }
-    footer .resSoc .linkedin {
-      height: 50px;
-      margin-right: 40px; }
-    footer .resSoc ul {
-      list-style-type: none;
+    height: 40vh;
+    justify-content: center;
+    position: relative;
+    /*************************************************************************************************************************/
+    /**********************************************PROGRESS BAR CIRCLE********************************************************/
+    /*************************************************************************************************************************/ }
+    .presentation .competences ul {
+      display: flex;
+      justify-content: space-around;
+      margin: 0;
       padding: 0;
-      margin: 0; }
-      footer .resSoc ul li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 20px; }
-        footer .resSoc ul li a {
-          text-decoration: none;
-          color: #fff; }
-      footer .resSoc ul p {
+      top: 20px; }
+      .presentation .competences ul li {
+        list-style-type: none;
+        margin-right: 55px; }
+    .presentation .competences .listComp1 {
+      height: 35%;
+      width: 50%; }
+    .presentation .competences .listComp2 {
+      height: 50%;
+      width: 60%; }
+    .presentation .competences #ctx {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 55px;
+      left: 0;
+      position: absolute;
+      top: 0; }
+    .presentation .competences .html5, .presentation .competences .css, .presentation .competences .sass, .presentation .competences .js, .presentation .competences .jquery, .presentation .competences .angular, .presentation .competences .node, .presentation .competences .github, .presentation .competences .mongodb {
+      position: relative; }
+    .presentation .competences .html5 #ctx, .presentation .competences .css #ctx, .presentation .competences .js #ctx {
+      background-size: 45px; }
+  .presentation #xp {
+    background-attachment: fixed;
+    background-image: url("../img/fond_ecran_cv.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100vh; }
+    .presentation #xp .formation {
+      height: 500px;
+      position: absolute; }
+    .presentation #xp .experience {
+      height: 300px;
+      position: absolute; }
+  .presentation footer {
+    align-items: center;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: space-around; }
+    .presentation footer .illustration {
+      width: 400px; }
+    .presentation footer .contact {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 30%; }
+      .presentation footer .contact p {
+        font-size: 3em; }
+      .presentation footer .contact #monCv {
+        border-radius: 30px;
         font-size: 1.5em;
-        margin: 0; }
-    footer .resSoc p:first-child {
-      font-size: 2em; }
+        margin: 10px 0;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        width: 320px;
+        border: 2px solid #fff;
+        color: #fff; }
+      .presentation footer .contact #contactezMoi {
+        border-radius: 30px;
+        font-size: 1.5em;
+        margin: 10px 0;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        width: 320px;
+        background-color: #f7b3b1;
+        color: #000;
+        font-weight: 600; }
+    .presentation footer .resSoc {
+      text-align: left;
+      width: 30%; }
+      .presentation footer .resSoc ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0; }
+        .presentation footer .resSoc ul li {
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          margin-top: 20px; }
+          .presentation footer .resSoc ul li a {
+            color: #fff;
+            text-decoration: none; }
+        .presentation footer .resSoc ul p {
+          font-size: 1.5em;
+          margin: 0; }
+      .presentation footer .resSoc p:first-child {
+        font-size: 2em; }
+      .presentation footer .resSoc .git {
+        height: 60px;
+        margin-right: 30px; }
+      .presentation footer .resSoc .linkedin {
+        height: 50px;
+        margin-right: 40px; }
 
 #pageContact {
   background-image: url("../img/img_contact/fond_contact.svg");
@@ -1096,109 +1202,3 @@ footer {
   height: 309px;
   top: -62px;
   left: 0; }
-
-/* ----------------------------------------------------------------------------------------------------
-Super Form Reset
-A couple of things to watch out for:
-- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
-- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
-- You NEED to set the font-size and family on all form elements
-- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
-- You can style the upload button in webkit using ::-webkit-file-upload-button
-- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
-- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
-- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
-----------------------------------------------------------------------------------------------------*/
-input,
-label,
-select,
-button,
-textarea {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  display: inline-block;
-  vertical-align: middle;
-  white-space: normal;
-  background: none;
-  line-height: 1;
-  /* Browsers have different default form fonts */
-  font-size: 13px;
-  font-family: Arial; }
-
-/* Remove the stupid outer glow in Webkit */
-input:focus {
-  outline: 0; }
-
-/* Box Sizing Reset
------------------------------------------------*/
-/* All of our custom controls should be what we expect them to be */
-input,
-textarea {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box; }
-
-/* These elements are usually rendered a certain way by the browser */
-button,
-input[type=reset],
-input[type=button],
-input[type=submit],
-input[type=checkbox],
-input[type=radio],
-select {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-/* Text Inputs
------------------------------------------------*/
-/* Button Controls
------------------------------------------------*/
-input[type=checkbox],
-input[type=radio] {
-  width: 13px;
-  height: 13px; }
-
-/* File Uploads
------------------------------------------------*/
-/* Search Input
------------------------------------------------*/
-/* Make webkit render the search input like a normal text field */
-input[type=search] {
-  -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box; }
-
-/* Turn off the recent search for webkit. It adds about 15px padding on the left */
-::-webkit-search-decoration {
-  display: none; }
-
-/* Buttons
------------------------------------------------*/
-button,
-input[type="reset"],
-input[type="button"],
-input[type="submit"] {
-  /* Fix IE7 display bug */
-  overflow: visible;
-  width: auto; }
-
-/* IE8 and FF freak out if this rule is within another selector */
-::-webkit-file-upload-button {
-  padding: 0;
-  border: 0;
-  background: none; }
-
-/* Textarea
------------------------------------------------*/
-textarea {
-  /* Move the label to the top */
-  vertical-align: top;
-  /* Turn off scroll bars in IE unless needed */
-  overflow: auto; }
-
-/* Selects
------------------------------------------------*/
-select[multiple] {
-  /* Move the label to the top */
-  vertical-align: top; }

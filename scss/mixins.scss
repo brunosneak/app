@@ -15,7 +15,7 @@
     margin: 0;
     font-family: 'Dosis', sans-serif;
     font-size: 2em;
-    margin-top: 40px;
+    padding-top: 40px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
@@ -54,4 +54,18 @@
     position: relative;
     text-transform: uppercase;
     top: 40px;
+}
+
+/*************************************************************************************************************************/
+/****************************************************PAGE CV**************************************************************/
+/*************************************************************************************************************************/
+
+@mixin cvEtContact {
+    border-radius: 30px;
+    font-size: 1.5em;
+    margin: 10px 0;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 320px;
 }
