@@ -1,0 +1,123 @@
+/*************************************************************************************************************************/
+/***************************************************PAGE JEU**************************************************************/
+/*************************************************************************************************************************/
+
+#fondVertDuJeu{
+    background-image: url('../img/imgJeu/fondVertDuJeu.svg');
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    #tour{
+        background-image: url('../img/imgJeu/tour.svg');
+        background-repeat: no-repeat;
+        height: 2000px;
+        position: relative;
+        width: 1200px;
+        #fenetreGauche{
+            @include fenetres;
+            bottom: 0;
+            left: 18%;
+        }
+        #fenetreDroite{
+            @include fenetres;
+            bottom: 0;
+            left: 57%;
+        }
+        #persoColl{
+            height: 88px;
+            left: 46%;
+            position: absolute;
+            top: 100px;
+            width: 70px;
+            z-index: 5;
+            #masquePerso{
+                height: 123px;
+                left: -16px;
+                overflow: hidden;
+                position: absolute;
+                top: -22px;
+                width: 100px;
+                #perso{
+                    height: 300px;
+                    left: -12px;
+                    position: absolute;
+                    top: -13px;
+                }
+            }
+        }
+        #fantomeRougeColl, #fantomeVertColl{
+            bottom: 0;
+            height: 66px;
+            left: 45%;
+            position: absolute;
+            width: 73px;
+            z-index: 4;
+            #masqueFantomeRouge, #masqueFantomeVert{
+                height: 150px;
+                left: -22px;
+                overflow: hidden;
+                position: absolute;
+                top: -7px;
+                width: 123px;
+                #fantomeRouge, #fantomeVert{
+                    height: 100%;
+                    position: absolute;
+                }
+            }
+        }
+        #fantomeVertColl{
+            left: 60%;
+        }
+        #boulePiqueColl{
+            bottom: 0;
+            height: 49px;
+            left: 75%;
+            position: absolute;
+            width: 51px;
+            #boulePique{
+                height: 100px;
+                left: -28px;
+                position: absolute;
+                top: -26px;
+            }
+        }
+        #pieceJs{
+            left: 20%;
+            @include pieces;
+        }
+        #pieceCss3{
+            left: 30%;
+            @include pieces;
+        }
+        #pieceHtml5{
+            left: 60%;
+            @include pieces;
+        }
+    }
+}
+
+/*************************************************************************************************************************/
+/**********************************************TABLEAU DE SCORE***********************************************************/
+/*************************************************************************************************************************/
+
+#scoreDuJeu{
+    align-items: center;
+    background-color: #000000;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5em;
+    height: 60px;
+    justify-content: space-around;
+    margin: 0;
+    opacity: 0.7;
+    position: absolute;
+    top: 30px;
+    text-transform: uppercase;
+    right: 30px;
+    width: 200px;
+}

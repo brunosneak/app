@@ -10,59 +10,74 @@
 </head>
 <body>
 
-    <!-- BACKGROUND -->
-    <section id="fond_vert">
+    <!---------- BACKGROUND JEU ---------->
+    <section id="fondVertDuJeu">
 
-    <!-- BOUTON MENU -->
+    <!---------- BOUTON MENU ---------->
         <a href="#" class="menu_burger mBj">
             <span class="first_line"></span>
             <span class="second_line"></span>
             <span class="third_line"></span>
         </a>
+    <!--------------------------------->
 
-        <!-- BACKGROUND TOUR -->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------** BACKGROUND TOUR **----------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+
         <div id="tour">
-            <!-- FENETRE DE LA TOUR -->
-            <img id="fenetreGauche" src="img/fenetre_gauche.svg" alt="fenetre">
-            <img id="fenetreDroite" src="img/fenetre_droite.svg" alt="fenetre">
-            <!-- PERSONNAGE -->
-            <div id="heroCollision">
-                <div id="masqueHero">
-                    <img id="hero" src="img/animation_hero.svg" alt="personnage">
-                </div>
-            </div>
-            <!-- OBJET DE COLLISION -->
-            <div id="fantomeCollision">
-                <div id="masqueFantome">
-                    <img id="fantome" src="img/animation_fantome.svg" alt="fantome">
-                </div>
-            </div>
-            <div id="fantomeCollision2">
-                <div id="masqueFantome2">
-                    <img id="fantome2" src="img/animation_fantome2.svg" alt="fantome2">
-                </div>
-            </div>
-            <img id="pieceJs" src="img/piece_js.svg" alt="pièce javascript">
-            <img id="pieceCss3" src="img/piece_css3.svg" alt="pièce javascript">
-            <img id="pieceHtml5" src="img/piece_html5.svg" alt="pièce javascript">
-            <div id="boulePiqueCollision">
-                <img id="boulePique" src="img/boule_pique.svg" alt="boule avec des piques">
-            </div>
-        </div>
-    </section>
 
-    <!-- SCORE PENDANT LE JEU -->
+            <!---------- FENETRE DE LA TOUR ---------->
+            <img id="fenetreGauche" src="img/imgJeu/fenetreGauche.svg" alt="fenetre">
+            <img id="fenetreDroite" src="img/imgJeu/fenetreDroite.svg" alt="fenetre">
+            <!---------------------------------------->
+
+            <!-------------- PERSONNAGE -------------->
+            <div id="persoColl">
+                <div id="masquePerso">
+                    <img id="perso" src="img/imgJeu/spritePerso.svg" alt="personnage">
+                </div>
+            </div>
+            <!---------------------------------------->
+
+            <!---------- OBJET DE COLLISION ---------->
+            <div id="fantomeRougeColl">
+                <div id="masqueFantomeRouge">
+                    <img id="fantomeRouge" src="img/imgJeu/spriteFantomeRouge.svg" alt="fantome rouge">
+                </div>
+            </div>
+            <div id="fantomeVertColl">
+                <div id="masqueFantomeVert">
+                    <img id="fantomeVert" src="img/imgJeu/spriteFantomeVert.svg" alt="fantome vert">
+                </div>
+            </div>
+            <img id="pieceJs" src="img/imgJeu/pieceJs.svg" alt="pièce javascript">
+            <img id="pieceCss3" src="img/imgJeu/pieceCss3.svg" alt="pièce javascript">
+            <img id="pieceHtml5" src="img/imgJeu/pieceHtml5.svg" alt="pièce javascript">
+            <div id="boulePiqueColl">
+                <img id="boulePique" src="img/imgJeu/boulePique.svg" alt="boule avec des piques">
+            </div>
+            <!---------------------------------------->
+        </div>
+
+    </section>
+    <!------------------------------------>
+
+    <!---------- SCORE PENDANT LE JEU ---------->
     <div id="scoreDuJeu">
         <p>score</p>
         <span class="resultat"></span>
     </div>
+    <!------------------------------------------>
 
-    <!-- PAGE MENU DE LA PAGE JEU -->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!-------------------------------------------** MENU JEU CACHE **----------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+
     <section class="menuCache pMj">
 
-        <!-- SCORE AU GAME OVER -->
-        <header class="affichage">
-            <h1 class="nom">neak bruno</h1>
+        <header id="headerMenuCache">
+            <h1 class="monNom">neak bruno</h1>
             <div class="tableauScore">
                 <p class="score">score</p>
                 <span class="resultat score"></span>
@@ -70,41 +85,61 @@
             <p class="gameOver">GAME OVER</p>
             <p class="win">YOU WIN !</p>
         </header>
-        
 
-        <!-- IMAGE PLATEFORME -->
-        <img class="plateforme" src="img/plateforme.svg" alt="plateforme">
-        <div id="masqueHeroMort">
-            <img id="heroMort" src="img/animation_hero_mort.svg" alt="hero mort">
+        <!---------- PLATEFORME AVEC PERSONNAGE MORT ---------->
+        <img class="plateforme" src="img/imgJeu/plateforme.svg" alt="plateforme">
+        <div id="masquePersoMort">
+            <img id="persoMort" src="img/imgJeu/spritePersoMort.svg" alt="personnage mort">
         </div>
+        <!----------------------------------------------------->
 
-        <!-- NAVIGATION PAGE JEU -->
-        <nav class="nav1">
+        <!---------- NAVIGATION PRINCIPALE ---------->
+        <nav class="mainNav">
+
             <ul>
-                <li class="cv"><a href="cv.html">voir mon CV</a></li>
-                <li class="contact"><a href="contact.html">contactez-moi</a></li>
-                <li class="recommencer"><a href="jeu.html">recommencer la partie</a></li>
+                <li class="cv">
+                    <a href="cv.html">voir mon CV</a>
+                </li>
+                <li class="contact">
+                    <a href="contact.html">contactez-moi</a>
+                </li>
+                <li class="recommencer">
+                    <a href="jeu.html">Recommencer la partie</a>
+                </li>
             </ul>
-        </nav>
 
-        <!-- ICONE RESEAUX SOCIAUX -->
+        </nav>
+        <!------------------------------------------->
+
+
+        <!---------- NAVIGATION RESEAUX SOCIAUX ---------->
         <nav class="reseauSocial">
+
             <ul>
                 <li>
                     <a href="https://github.com/brunosneak" target="_blank">
-                        <img src="img/icone_git.svg" alt="icone git" class="git">
+                        <img src="img/imgPageAccueil/iconeGit.svg" alt="icone git" class="git">
                     </a>
                 </li>
+
                 <li>
                     <a href="https://www.linkedin.com/in/bruno-neak/" target="_blank">
-                        <img src="img/icone_linkedin.svg" alt="icone linkedin" class="linkedin">
+                        <img src="img/imgPageAccueil/iconeLinkedin.svg" alt="icone linkedin" class="linkedin">
                     </a>
                 </li>
             </ul>
+
         </nav>
+        <!------------------------------------------------>
+    
     </section>
+
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------** MES SCRIPTS **------------------------------------------------>
+    <!-------------------------------------------------------------------------------------------------------------->
+
     <script src="js/main.js"></script>
     <script src="js/bouton_jeu.js"></script>
-<script src="js/jeu.js"></script>
+    <script src="js/jeu.js"></script>
 </body>
 </html>

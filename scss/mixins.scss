@@ -24,5 +24,34 @@
 }
 
 /*************************************************************************************************************************/
-/*************************************************PAGE ACCUEIL************************************************************/
+/***************************************************PAGE JEU**************************************************************/
 /*************************************************************************************************************************/
+
+@mixin fenetres {
+    height: 500px;
+    position: absolute;
+}
+
+@mixin pieces {
+    bottom: 0px;
+    height: 100px;
+    position: absolute;
+}
+
+@mixin headerPos {
+    position: relative;
+    text-transform: uppercase;
+}
+
+@mixin gameOverAndWin {
+    display: none;
+    animation-direction: alternate;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0, 0.39, 0.46, 1.16);
+    font-size: 4em;
+    margin: 0 10px;
+    position: relative;
+    text-transform: uppercase;
+    top: 40px;
+}

@@ -5,7 +5,6 @@
     display: none;
     flex-direction: column;
     font-family: 'Dosis', sans-serif;
-    justify-content: space-around;
     left: 0;
     overflow: hidden;
     position: absolute;
@@ -13,122 +12,127 @@
     text-align: center;
     top: 0;
     z-index: 10;
-    .mainNav>ul{
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        position: relative;
-        top: 40px;
-        li{
+    #headerMenuCache{
+        background-image: url('../img/feuille_en_hauteur.svg');
+        background-position: top;
+        background-size: 260px;
+        background-repeat: no-repeat;
+        height: 30vh;
+        .monNom{
+            @include headerPos;
             font-size: 2em;
-            list-style-type: none;
-            margin: 0 auto;
-            margin-bottom: 25px;
+            margin: 0;
+            padding-top: 40px;
+        }
+        .tableauScore{
+            align-items: center;
+            display: inline-flex;
+            justify-content: space-around;
+            .score{
+                @include headerPos;
+                font-size: 3em;
+                margin: 0 10px;
+                top: 40px;
+            }
+        }
+        .gameOver{
+            @include gameOverAndWin;
+            animation-name: effetGameOver;
+        }
+        .win{
+            @include gameOverAndWin;
+            animation-name: win;
+        }
+    }
+
+    /*************************************************************************************************************************/
+    /***************************************************PLATEFORME************************************************************/
+    /*************************************************************************************************************************/
+
+    .plateforme{
+        height: 30vh;
+        margin: 0 auto;
+    }
+
+    /*************************************************************************************************************************/
+    /***************************************************PERSONNAGE************************************************************/
+    /*************************************************************************************************************************/
+
+    #masquePersoMort{
+        height: 110px;
+        left: 47%;
+        overflow: hidden;
+        position: absolute;
+        top: 38%;
+        width: 182px;
+        #persoMort{
+            display: none;
+            left: 0;
+            position: absolute;
+            width: 2000px;
+        }
+    }
+
+    /*************************************************************************************************************************/
+    /*********************************************NAVIGATION PRINCIPALE*******************************************************/
+    /*************************************************************************************************************************/
+
+    .mainNav{
+        height: 30vh;
+        ul{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
             padding: 0;
-            &::first-letter{
-                text-transform: capitalize;
+            position: relative;
+            top: 40px;
+            li{
+                font-size: 2em;
+                list-style-type: none;
+                margin: 0 auto;
+                margin-bottom: 25px;
+                padding: 0;
+                &::first-letter{
+                    text-transform: capitalize;
+                }
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                }
             }
-            a{
-                color: #fff;
-                text-decoration: none;
+            .cv::after, .contact::after{
+                content: '';
+                background-color: #fff;
+                display: block;
+                height: 2px;
+                margin-top: 20px;
+                width: 500px;
             }
         }
     }
-    .cv::after, .contact::after{
-        content: '';
-        background-color: #fff;
-        display: block;
-        height: 2px;
-        margin-top: 20px;
-        width: 500px;
-    }
 
-}
+    /*************************************************************************************************************************/
+    /************************************************RESEAUX SOCIAUX**********************************************************/
+    /*************************************************************************************************************************/
 
-/*************************************************************************************************************************/
-/***************************************************EN-TÊTE***************************************************************/
-/*************************************************************************************************************************/
-
-#headerMenuCache{
-    background-image: url('../img/feuille_en_hauteur.svg');
-    background-position: top;
-    background-size: 260px;
-    background-repeat: no-repeat;
-    height: 30vh;
-}
-
-.monNom, .score{
-    position: relative;
-    text-transform: uppercase;
-}
-
-.monNom{
-    font-size: 2em;
-    margin: 0;
-    padding-top: 40px;
-}
-
-.score{
-    font-size: 3em;
-    margin: 0 10px;
-    top: 40px;
-}
-
-.gameOver, .win{
-    font-size: 4em;
-    margin: 0 10px;
-    position: relative;
-    text-transform: uppercase;
-    top: 40px;
-}
-
-.tableauScore{
-    align-items: center;
-    display: inline-flex;
-    justify-content: space-around;
-}
-
-/*************************************************************************************************************************/
-/***************************************************PLATEFORME************************************************************/
-/*************************************************************************************************************************/
-
-.plateforme{
-    height: 30vh;
-    margin: 0 auto;
-}
-
-/*************************************************************************************************************************/
-/**************************************************NAVIGATION*************************************************************/
-/*************************************************************************************************************************/
-
-.mainNav{
-    height: 30vh;
-    ul{
-        margin: 0;
-    }
-}
-
-/*************************************************************************************************************************/
-/************************************************RESEAUX SOCIAUX**********************************************************/
-/*************************************************************************************************************************/
-
-.reseauSocial{
-    display: flex;
-    height: 10vh;
-    justify-content: center;
-    ul{
-        align-items: center;
+    .reseauSocial{
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 0;
-        padding: 0;
-        width: 125px;
-        li{
-            list-style-type: none;
+        height: 10vh;
+        justify-content: center;
+        ul{
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            width: 125px;
+            li{
+                list-style-type: none;
+            }
         }
-    }
-    .git, .linkedin{
-        height: 30px;
+        .git, .linkedin{
+            height: 30px;
+        }
     }
 }

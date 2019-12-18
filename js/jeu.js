@@ -5,20 +5,20 @@
 /*********************************************************************************************************************/
 
 var elements = { 
-    fond_vert: document.getElementById('fond_vert'),
+    fondVertDuJeu: document.getElementById('fondVertDuJeu'),
     fenetreGauche: document.getElementById('fenetreGauche'),
     fenetreDroite: document.getElementById('fenetreDroite'),
-    heroCollision: document.getElementById('heroCollision'),
-    hero: document.getElementById('hero'),
+    persoColl: document.getElementById('persoColl'),
+    perso: document.getElementById('perso'),
     pieceHtml5: document.getElementById('pieceHtml5'),
     pieceCss3: document.getElementById('pieceCss3'),
     pieceJs: document.getElementById('pieceJs'),
-    boulePiqueCollision: document.getElementById('boulePiqueCollision'),
-    fantomeCollision: document.getElementById('fantomeCollision'),
-    fantomeCollision2: document.getElementById('fantomeCollision2'),
-    fantome: document.getElementById('fantome'),
-    fantome2: document.getElementById('fantome2'),
-    heroMort: document.getElementById('heroMort'),
+    boulePiqueColl: document.getElementById('boulePiqueColl'),
+    fantomeRougeColl: document.getElementById('fantomeRougeColl'),
+    fantomeVertColl: document.getElementById('fantomeVertColl'),
+    fantomeRouge: document.getElementById('fantomeRouge'),
+    fantomeVert: document.getElementById('fantomeVert'),
+    persoMort: document.getElementById('persoMort'),
     menu_burger: document.getElementsByClassName('menu_burger'),
     resultat: document.getElementsByClassName('resultat'),
     menuCache: document.getElementsByClassName('menuCache'),
@@ -26,10 +26,10 @@ var elements = {
     win: document.getElementsByClassName('win'),
 }
 
-var heroLeft = elements.hero.offsetLeft;
-var fantomeLeft = elements.fantome.offsetLeft;
-var fantome2Left = elements.fantome2.offsetLeft;
-var heroMortLeft = elements.heroMort.offsetLeft; 
+var persoLeft = elements.perso.offsetLeft;
+var fantomeRougeLeft = elements.fantomeRouge.offsetLeft;
+var fantomeVertLeft = elements.fantomeVert.offsetLeft;
+var persoMortLeft = elements.persoMort.offsetLeft; 
 var scoreTotal = 0;
 var stockageInnerHtml = elements.resultat[0].innerHTML;
 var rafId;
@@ -39,9 +39,9 @@ var rafId;
 /*************************************************************************************************************************/
 
 setInterval(function(){
-    heroLeft -= 120;
-    fantomeLeft -= 120;
-    fantome2Left -= 120;
+    persoLeft -= 120;
+    fantomeRougeLeft -= 120;
+    fantomeVertLeft -= 120;
 }, 200);
 
 /*************************************************************************************************************************/
@@ -66,11 +66,11 @@ var animationDuJeu = function(){
 /*******************************************PERSONNAGE LIMITE TOUR********************************************************/
 /*************************************************************************************************************************/
 
-    if(elements.heroCollision.offsetLeft <= 128){
-        elements.heroCollision.style.left = "128px";
+    if(elements.persoColl.offsetLeft <= 128){
+        elements.persoColl.style.left = "128px";
     };
-    if(elements.heroCollision.offsetLeft >= 1000){
-        elements.heroCollision.style.left = "1000px";
+    if(elements.persoColl.offsetLeft >= 1000){
+        elements.persoColl.style.left = "1000px";
     };
 
 /*************************************************************************************************************************/
@@ -83,9 +83,9 @@ var animationDuJeu = function(){
             fenetreGaucheTop: elements.fenetreGauche.offsetTop,
             fenetreDroiteTop: elements.fenetreDroite.offsetTop,
             pieceJsTop: elements.pieceJs.offsetTop,
-            boulePiqueCollisionTop: elements.boulePiqueCollision.offsetTop,
-            fantomeCollisionTop: elements.fantomeCollision.offsetTop,
-            fantomeCollision2Top: elements.fantomeCollision2.offsetTop,
+            boulePiqueCollTop: elements.boulePiqueColl.offsetTop,
+            fantomeRougeCollTop: elements.fantomeRougeColl.offsetTop,
+            fantomeVertCollTop: elements.fantomeVertColl.offsetTop,
             pieceCss3Top: elements.pieceCss3.offsetTop,
             pieceHtml5Top: elements.pieceHtml5.offsetTop,
         };
@@ -97,8 +97,8 @@ var animationDuJeu = function(){
 
         monTop(mesTops.fenetreGaucheTop, elements.fenetreGauche, 6);
         monTop(mesTops.fenetreDroiteTop, elements.fenetreDroite, 6);
-        monTop(mesTops.boulePiqueCollisionTop, elements.boulePiqueCollision, 6);
-        monTop(mesTops.fantomeCollisionTop, elements.fantomeCollision, 7);
+        monTop(mesTops.boulePiqueCollTop, elements.boulePiqueColl, 6);
+        monTop(mesTops.fantomeRougeCollTop, elements.fantomeRougeColl, 7);
         monTop(mesTops.pieceJsTop, elements.pieceJs, 6);
         monTop(mesTops.pieceCss3Top, elements.pieceCss3, 6);
         monTop(mesTops.pieceHtml5Top, elements.pieceHtml5, 6);
@@ -112,17 +112,17 @@ var animationDuJeu = function(){
             mesTops.fenetreGaucheTop -= vitesse;
             mesTops.fenetreDroiteTop -= vitesse;
             mesTops.pieceJsTop -= vitesse;
-            mesTops.boulePiqueCollisionTop -= vitesse;
-            mesTops.fantomeCollisionTop -= vitesseFantome;
-            mesTops.fantomeCollision2Top -= vitesseFantome;
+            mesTops.boulePiqueCollTop -= vitesse;
+            mesTops.fantomeRougeCollTop -= vitesseFantome;
+            mesTops.fantomeVertCollTop -= vitesseFantome;
             mesTops.pieceCss3Top -= vitesse;
             mesTops.pieceHtml5Top -= vitesse;
             elements.fenetreGauche.style.top = mesTops.fenetreGaucheTop + "px";
             elements.fenetreDroite.style.top = mesTops.fenetreDroiteTop + "px";
             elements.pieceJs.style.top = mesTops.pieceJsTop + "px";
-            elements.boulePiqueCollision.style.top = mesTops.boulePiqueCollisionTop + "px";
-            elements.fantomeCollision.style.top = mesTops.fantomeCollisionTop + "px";
-            elements.fantomeCollision2.style.top = mesTops.fantomeCollision2Top + "px";
+            elements.boulePiqueColl.style.top = mesTops.boulePiqueCollTop + "px";
+            elements.fantomeRougeColl.style.top = mesTops.fantomeRougeCollTop + "px";
+            elements.fantomeVertColl.style.top = mesTops.fantomeVertCollTop + "px";
             elements.pieceCss3.style.top = mesTops.pieceCss3Top + "px";
             elements.pieceHtml5.style.top = mesTops.pieceHtml5Top + "px";
         };
@@ -130,9 +130,9 @@ var animationDuJeu = function(){
 
     if(elements.resultat[0].innerHTML >= 10000){
         niveau(10000, 8, 9);
-        mouvementFantome2();
-        monTop(mesTops.fantomeCollision2Top, elements.fantomeCollision2, 1);
-        positionDeDepartObjet(elements.fantomeCollision2);
+        mouvementFantomeVert();
+        monTop(mesTops.fantomeVertCollTop, elements.fantomeVertColl, 1);
+        positionDeDepartObjet(elements.fantomeVertColl);
     };
 
     if(elements.resultat[0].innerHTML >= 20000){
@@ -157,29 +157,29 @@ var animationDuJeu = function(){
     var objHeight = {
         fenetreYHeight: elements.fenetreGauche.offsetTop + elements.fenetreGauche.offsetHeight,
         pieceJsYHeight: elements.pieceJs.offsetTop + elements.pieceJs.offsetHeight,
-        boulePiqueCollisionYHeight: elements.boulePiqueCollision.offsetTop + elements.boulePiqueCollision.offsetHeight,
-        fantomeCollisionYHeight: elements.fantomeCollision.offsetTop + elements.fantomeCollision.offsetHeight,
-        fantomeCollision2YHeight: elements.fantomeCollision2.offsetTop + elements.fantomeCollision2.offsetHeight,
+        boulePiqueCollYHeight: elements.boulePiqueColl.offsetTop + elements.boulePiqueColl.offsetHeight,
+        fantomeRougeCollYHeight: elements.fantomeRougeColl.offsetTop + elements.fantomeRougeColl.offsetHeight,
+        fantomeVertCollYHeight: elements.fantomeVertColl.offsetTop + elements.fantomeVertColl.offsetHeight,
         pieceCss3YHeight: elements.pieceCss3.offsetTop + elements.pieceCss3.offsetHeight,
         pieceHtml5YHeight: elements.pieceHtml5.offsetTop + elements.pieceHtml5.offsetHeight,
     }
 
-    if(elements.fond_vert.offsetTop >= objHeight.fenetreYHeight){
-        elements.fenetreGauche.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+    if(elements.fondVertDuJeu.offsetTop >= objHeight.fenetreYHeight){
+        elements.fenetreGauche.style.top = elements.fondVertDuJeu.offsetHeight + Math.floor(Math.random()*1000) + "px";
         elements.fenetreDroite.style.top = elements.fenetreGauche.style.top;
     };
 
     var depart = function(depart1, depart2){
-        if(elements.fond_vert.offsetTop >= depart1){
-            depart2.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+        if(elements.fondVertDuJeu.offsetTop >= depart1){
+            depart2.style.top = elements.fondVertDuJeu.offsetHeight + Math.floor(Math.random()*1000) + "px";
             depart2.style.left = (Math.floor(Math.random() * (975 - 128 + 1)) + 128) + "px";
         };
     };
 
     depart(objHeight.pieceJsYHeight, elements.pieceJs);
-    depart(objHeight.boulePiqueCollisionYHeight, elements.boulePiqueCollision);
-    depart(objHeight.fantomeCollisionYHeight, elements.fantomeCollision);
-    depart(objHeight.fantomeCollision2YHeight, elements.fantomeCollision2);
+    depart(objHeight.boulePiqueCollYHeight, elements.boulePiqueColl);
+    depart(objHeight.fantomeRougeCollYHeight, elements.fantomeRougeColl);
+    depart(objHeight.fantomeVertCollYHeight, elements.fantomeVertColl);
     depart(objHeight.pieceCss3YHeight, elements.pieceCss3);
     depart(objHeight.pieceHtml5YHeight, elements.pieceHtml5);
     };
@@ -188,8 +188,8 @@ var animationDuJeu = function(){
 /******************************************DEPLACEMENT DU PERSONNAGE******************************************************/
 /*************************************************************************************************************************/
 
-    var coordMasqueX = elements.heroCollision.offsetLeft;
-    // var coordMasqueY = elements.heroCollision.offsetTop;
+    var coordMasqueX = elements.persoColl.offsetLeft;
+    // var coordMasqueY = elements.persoColl.offsetTop;
 
     window.addEventListener("keydown", function(event){
 
@@ -199,25 +199,25 @@ var animationDuJeu = function(){
             // flèche directionnelle gauche
             case 37:
                 coordMasqueX -= 15;
-                elements.heroCollision.style.left = coordMasqueX + "px";
-                elements.hero.style.top = "-13px";
+                elements.persoColl.style.left = coordMasqueX + "px";
+                elements.perso.style.top = "-13px";
             break;
             // flèche directionnelle haut
             // case 38:
             //     coordMasqueY -= 10;
-            //     elements.heroCollision.style.top = coordMasqueY + "px";
+            //     elements.persoColl.style.top = coordMasqueY + "px";
             // break;
             // flèche directionnelle droite
             case 39:
                 coordMasqueX += 15;
-                elements.heroCollision.style.left = coordMasqueX + "px";
-                elements.hero.style.top = "-163px";
+                elements.persoColl.style.left = coordMasqueX + "px";
+                elements.perso.style.top = "-163px";
 
             break;
             // flèche directionnelle bas
             // case 40:
             //     coordMasqueY += 10;
-            //     elements.heroCollision.style.top = coordMasqueY + "px";
+            //     elements.persoColl.style.top = coordMasqueY + "px";
             // break
         };
     });
@@ -226,32 +226,32 @@ var animationDuJeu = function(){
 /*******************************************ANIMATION DU PERSONNAGE*******************************************************/
 /*************************************************************************************************************************/
 
-    var mouvementHero = function(){
-    heroLeft;
-    if(heroLeft < -480){
-        heroLeft = -10;
+    var mouvementperso = function(){
+    persoLeft;
+    if(persoLeft < -480){
+        persoLeft = -10;
     };
-    elements.hero.style.left = heroLeft + "px";
+    elements.perso.style.left = persoLeft + "px";
     };
 
 /*************************************************************************************************************************/
 /********************************************ANIMATION DU FANTOME*********************************************************/
 /*************************************************************************************************************************/
 
-    var mouvementFantome = function(){
-        fantomeLeft;
-        if(fantomeLeft < -840){
-            fantomeLeft = 0;
+    var mouvementFantomeRouge = function(){
+        fantomeRougeLeft;
+        if(fantomeRougeLeft < -840){
+            fantomeRougeLeft = 0;
         };
-        elements.fantome.style.left = fantomeLeft + "px";
+        elements.fantomeRouge.style.left = fantomeRougeLeft + "px";
     };
 
-    var mouvementFantome2 = function(){
-        fantome2Left;
-        if(fantome2Left < -840){
-            fantome2Left = 0;
+    var mouvementFantomeVert = function(){
+        fantomeVertLeft;
+        if(fantomeVertLeft < -840){
+            fantomeVertLeft = 0;
         };
-    elements.fantome2.style.left = fantome2Left + "px";
+    elements.fantomeVert.style.left = fantomeVertLeft + "px";
     };
 
 /*************************************************************************************************************************/
@@ -261,38 +261,38 @@ var animationDuJeu = function(){
     var collision = function(){
 
         var objCoord = {
-            coordMasque: elements.heroCollision.getBoundingClientRect(),
-            coordfantomeCollision: elements.fantomeCollision.getBoundingClientRect(),
-            coordfantomeCollision2: elements.fantomeCollision2.getBoundingClientRect(),
-            coordboulePiqueCollision: elements.boulePiqueCollision.getBoundingClientRect(),
+            coordMasque: elements.persoColl.getBoundingClientRect(),
+            coordfantomeRougeColl: elements.fantomeRougeColl.getBoundingClientRect(),
+            coordfantomeVertColl: elements.fantomeVertColl.getBoundingClientRect(),
+            coordboulePiqueColl: elements.boulePiqueColl.getBoundingClientRect(),
             coordPieceJs: elements.pieceJs.getBoundingClientRect(),
             coordPieceCss3: elements.pieceCss3.getBoundingClientRect(),
             coordPieceHtml5: elements.pieceHtml5.getBoundingClientRect(),
         }
 
-        if(objCoord.coordMasque.x < objCoord.coordfantomeCollision.x + objCoord.coordfantomeCollision.width &&
-            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeCollision.x &&
-            objCoord.coordMasque.y < objCoord.coordfantomeCollision.y + objCoord.coordfantomeCollision.height &&
-            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeCollision.y || 
+        if(objCoord.coordMasque.x < objCoord.coordfantomeRougeColl.x + objCoord.coordfantomeRougeColl.width &&
+            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeRougeColl.x &&
+            objCoord.coordMasque.y < objCoord.coordfantomeRougeColl.y + objCoord.coordfantomeRougeColl.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeRougeColl.y || 
 
-            objCoord.coordMasque.x < objCoord.coordfantomeCollision2.x + objCoord.coordfantomeCollision2.width &&
-            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeCollision2.x &&
-            objCoord.coordMasque.y < objCoord.coordfantomeCollision2.y + objCoord.coordfantomeCollision2.height &&
-            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeCollision2.y || 
+            objCoord.coordMasque.x < objCoord.coordfantomeVertColl.x + objCoord.coordfantomeVertColl.width &&
+            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeVertColl.x &&
+            objCoord.coordMasque.y < objCoord.coordfantomeVertColl.y + objCoord.coordfantomeVertColl.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeVertColl.y || 
 
-            objCoord.coordMasque.x < objCoord.coordboulePiqueCollision.x + objCoord.coordboulePiqueCollision.width &&
-            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordboulePiqueCollision.x &&
-            objCoord.coordMasque.y < objCoord.coordboulePiqueCollision.y + objCoord.coordboulePiqueCollision.height &&
-            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordboulePiqueCollision.y){
+            objCoord.coordMasque.x < objCoord.coordboulePiqueColl.x + objCoord.coordboulePiqueColl.width &&
+            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordboulePiqueColl.x &&
+            objCoord.coordMasque.y < objCoord.coordboulePiqueColl.y + objCoord.coordboulePiqueColl.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordboulePiqueColl.y){
                 elements.menuCache[0].style.display = "flex";
                 cancelAnimationFrame(rafId);
                 elements.menu_burger[0].style.display = 'none';
                 elements.gameOver[0].style.display = "block";
-                heroMort.style.display = "block";
+                persoMort.style.display = "block";
                 var intervalId = setInterval(function(){
-                    heroMortLeft -= 181.7;
-                    elements.heroMort.style.left = heroMortLeft + "px";
-                    if(heroMortLeft <= -1700){
+                    persoMortLeft -= 181.7;
+                    elements.persoMort.style.left = persoMortLeft + "px";
+                    if(persoMortLeft <= -1700){
                         clearInterval(intervalId);
                     };
                 }, 250);
@@ -307,7 +307,7 @@ var animationDuJeu = function(){
                 objCoord.coordMasque.x + objCoord.coordMasque.width > obj1.x &&
                 objCoord.coordMasque.y < obj1.y + obj1.height &&
                 objCoord.coordMasque.height + objCoord.coordMasque.y > obj1.y){
-                    obj2.style.top = elements.fond_vert.offsetHeight + Math.floor(Math.random()*1000) + "px";
+                    obj2.style.top = elements.fondVertDuJeu.offsetHeight + Math.floor(Math.random()*1000) + "px";
                     obj2.style.left = (Math.floor(Math.random() * (975 - 128 + 1)) + 128) + "px";
                     scoreTotal += points;
                     };
@@ -334,14 +334,14 @@ var animationDuJeu = function(){
 
     positionDeDepartFenetre(elements.fenetreGauche, elements.fenetreDroite);
     positionDeDepartObjet(elements.pieceJs);
-    positionDeDepartObjet(elements.boulePiqueCollision);
-    positionDeDepartObjet(elements.fantomeCollision);
+    positionDeDepartObjet(elements.boulePiqueColl);
+    positionDeDepartObjet(elements.fantomeRougeColl);
     positionDeDepartObjet(elements.pieceCss3);
     positionDeDepartObjet(elements.pieceHtml5);
     positionDeDepartObjet(elements.resultat[0]);
     slideUp();
-    mouvementHero();
-    mouvementFantome();
+    mouvementperso();
+    mouvementFantomeRouge();
     collision();
 };
 
