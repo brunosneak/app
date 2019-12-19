@@ -746,7 +746,7 @@ template {
       position: absolute;
       width: 1000px; }
   .menuCache #masquePersoPause {
-    height: 210px;
+    height: 222px;
     left: 47%;
     overflow: hidden;
     position: absolute;
@@ -815,214 +815,243 @@ template {
     font-size: 6em;
     font-weight: bold; } }
 
-.presentation {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Dosis', sans-serif;
-  height: 100vh;
-  text-align: center;
-  /*************************************************************************************************************************/
-  /**********************************************SECTION EXPERIENCES********************************************************/
-  /*************************************************************************************************************************/
-  /*************************************************************************************************************************/
-  /****************************************************CONTACT**************************************************************/
-  /*************************************************************************************************************************/ }
-  .presentation .mBc {
-    position: fixed; }
-  .presentation .headerCv {
-    height: 20vh;
-    background-image: url("../img/imgCv/feuilleEnHauteur.svg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 260px; }
-  .presentation .QuiJeSuis {
-    display: flex;
-    height: 40vh;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    width: 80vw; }
-    .presentation .QuiJeSuis #PhotoDeProfil {
-      height: 90%; }
-    .presentation .QuiJeSuis .maDescription {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      overflow: auto;
-      text-align: left;
-      width: 40%; }
-      .presentation .QuiJeSuis .maDescription .recherche {
-        line-height: 1.5em; }
-        .presentation .QuiJeSuis .maDescription .recherche strong {
-          font-size: 1.2em;
-          font-weight: 400; }
-      .presentation .QuiJeSuis .maDescription p:first-child {
-        margin: 0;
-        font-size: 3em; }
-      .presentation .QuiJeSuis .maDescription p:nth-child(2) {
-        margin: 0;
-        font-size: 2em; }
-      .presentation .QuiJeSuis .maDescription p:last-child {
-        margin: 0 0 20px 0;
-        font-size: 2em; }
-  .presentation .competences {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 40vh;
-    justify-content: center;
-    position: relative;
-    /*************************************************************************************************************************/
-    /**********************************************PROGRESS BAR CIRCLE********************************************************/
-    /*************************************************************************************************************************/ }
-    .presentation .competences ul {
-      display: flex;
-      justify-content: space-around;
-      margin: 0;
-      padding: 0;
-      top: 20px; }
-      .presentation .competences ul li {
-        list-style-type: none;
-        margin-right: 55px; }
-    .presentation .competences .listComp1 {
-      height: 35%;
-      width: 50%; }
-    .presentation .competences .listComp2 {
-      height: 50%;
-      width: 60%; }
-    .presentation .competences #ctx {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 55px;
-      left: 0;
-      position: absolute;
-      top: 0; }
-    .presentation .competences .html5, .presentation .competences .css, .presentation .competences .sass, .presentation .competences .js, .presentation .competences .jquery, .presentation .competences .angular, .presentation .competences .node, .presentation .competences .github, .presentation .competences .mongodb {
-      position: relative; }
-    .presentation .competences .html5 #ctx, .presentation .competences .css #ctx, .presentation .competences .js #ctx {
-      background-size: 45px; }
-  .presentation #xp {
-    background-attachment: fixed;
-    background-image: url("../img/imgCv/bgCv.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #000;
-    display: flex;
-    font-size: 1.3em;
-    font-weight: 600;
-    height: 100vh;
-    position: relative; }
-    .presentation #xp div {
-      text-align: right;
-      width: calc(100% / 7); }
-    .presentation #xp #livre, .presentation #xp #carte, .presentation #xp #dev, .presentation #xp #devJs {
-      height: 100px;
-      position: absolute;
-      left: 123%;
-      top: -13%; }
-    .presentation #xp #dev {
-      top: -20%; }
-    .presentation #xp #lycee {
-      position: absolute;
-      left: 2%;
-      top: 40%; }
-    .presentation #xp #acf {
-      position: absolute;
-      left: 9%;
-      top: 15%; }
-    .presentation #xp #croupier {
-      position: absolute;
-      left: 28%;
-      top: 46%; }
-    .presentation #xp #stockiste {
-      position: absolute;
-      left: 42%;
-      top: 40%; }
-    .presentation #xp #ecoleMultiM {
-      position: absolute;
-      left: 42%;
-      top: 23%; }
-    .presentation #xp #eCom {
-      position: absolute;
-      left: 65%;
-      top: 32%; }
-    .presentation #xp #ifocop {
-      position: absolute;
-      left: 71%;
-      top: 19%; }
-    .presentation #xp .formation {
-      height: 500px;
-      position: absolute;
-      top: -50%;
-      left: 100%; }
-    .presentation #xp .experience {
-      height: 325px;
-      position: absolute;
-      top: 0;
-      left: 20%; }
-  .presentation footer {
-    align-items: center;
+#monBody {
+  overflow: overlay; }
+  #monBody .presentation {
     background-color: #000;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
     height: 100vh;
-    justify-content: space-around; }
-    .presentation footer .illustration {
-      width: 400px; }
-    .presentation footer .contact {
+    text-align: center;
+    /*************************************************************************************************************************/
+    /**********************************************SECTION EXPERIENCES********************************************************/
+    /*************************************************************************************************************************/
+    /*************************************************************************************************************************/
+    /****************************************************CONTACT**************************************************************/
+    /*************************************************************************************************************************/ }
+    #monBody .presentation .mBc {
+      position: fixed; }
+    #monBody .presentation .headerCv {
+      height: 20vh;
+      background-image: url("../img/imgCv/feuilleEnHauteur.svg");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: 260px; }
+    #monBody .presentation .QuiJeSuis {
+      display: flex;
+      height: 40vh;
+      justify-content: space-evenly;
+      margin: 0 auto;
+      width: 80vw; }
+      #monBody .presentation .QuiJeSuis #PhotoDeProfil {
+        height: 90%; }
+      #monBody .presentation .QuiJeSuis .maDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: auto;
+        text-align: left;
+        width: 40%; }
+        #monBody .presentation .QuiJeSuis .maDescription .recherche {
+          line-height: 1.5em; }
+          #monBody .presentation .QuiJeSuis .maDescription .recherche strong {
+            font-size: 1.2em;
+            font-weight: 400; }
+        #monBody .presentation .QuiJeSuis .maDescription p:first-child {
+          margin: 0;
+          font-size: 3em; }
+        #monBody .presentation .QuiJeSuis .maDescription p:nth-child(2) {
+          margin: 0;
+          font-size: 2em; }
+        #monBody .presentation .QuiJeSuis .maDescription p:last-child {
+          margin: 0 0 20px 0;
+          font-size: 2em; }
+    #monBody .presentation .competences {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      text-align: left;
-      width: 30%; }
-      .presentation footer .contact p {
-        font-size: 3em; }
-      .presentation footer .contact #monCv {
-        border-radius: 30px;
-        font-size: 1.5em;
-        margin: 10px 0;
-        padding: 15px 0;
-        text-align: center;
-        text-decoration: none;
-        width: 320px;
-        border: 2px solid #fff;
-        color: #fff; }
-      .presentation footer .contact #contactezMoi {
-        border-radius: 30px;
-        font-size: 1.5em;
-        margin: 10px 0;
-        padding: 15px 0;
-        text-align: center;
-        text-decoration: none;
-        width: 320px;
-        background-color: #f7b3b1;
-        color: #000;
-        font-weight: 600; }
-    .presentation footer .resSoc {
-      text-align: left;
-      width: 30%; }
-      .presentation footer .resSoc ul {
-        list-style-type: none;
+      height: 40vh;
+      justify-content: center;
+      position: relative;
+      /*************************************************************************************************************************/
+      /**********************************************PROGRESS BAR CIRCLE********************************************************/
+      /*************************************************************************************************************************/ }
+      #monBody .presentation .competences ul {
+        display: flex;
+        justify-content: space-around;
         margin: 0;
-        padding: 0; }
-        .presentation footer .resSoc ul li {
-          align-items: center;
-          display: flex;
-          flex-direction: row;
-          margin-top: 20px; }
-          .presentation footer .resSoc ul li a {
-            color: #fff;
-            text-decoration: none; }
-        .presentation footer .resSoc ul p {
+        padding: 0;
+        top: 20px; }
+        #monBody .presentation .competences ul li {
+          list-style-type: none;
+          margin-right: 55px; }
+      #monBody .presentation .competences .listComp1 {
+        height: 35%;
+        width: 50%; }
+      #monBody .presentation .competences .listComp2 {
+        height: 50%;
+        width: 60%; }
+      #monBody .presentation .competences #ctx {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 55px;
+        left: 0;
+        position: absolute;
+        top: 0; }
+      #monBody .presentation .competences .html5, #monBody .presentation .competences .css, #monBody .presentation .competences .sass, #monBody .presentation .competences .js, #monBody .presentation .competences .jquery, #monBody .presentation .competences .angular, #monBody .presentation .competences .node, #monBody .presentation .competences .github, #monBody .presentation .competences .mongodb {
+        position: relative; }
+      #monBody .presentation .competences .html5 #ctx, #monBody .presentation .competences .css #ctx, #monBody .presentation .competences .js #ctx {
+        background-size: 45px; }
+    #monBody .presentation #xp {
+      background-attachment: fixed;
+      background-image: url("../img/imgCv/bgCv.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #000;
+      display: flex;
+      font-size: 1.3em;
+      font-weight: 600;
+      height: 100vh; }
+      #monBody .presentation #xp #lycee, #monBody .presentation #xp #acf, #monBody .presentation #xp #croupier, #monBody .presentation #xp #stockiste, #monBody .presentation #xp #ecoleMultiM, #monBody .presentation #xp #eCom, #monBody .presentation #xp #ifocop {
+        height: 100%;
+        position: relative;
+        width: calc(100% / 7); }
+      #monBody .presentation #xp .formation {
+        height: 500px;
+        position: absolute; }
+      #monBody .presentation #xp .experience {
+        height: 325px;
+        position: absolute; }
+      #monBody .presentation #xp p {
+        margin: 0;
+        text-align: right; }
+      #monBody .presentation #xp time {
+        z-index: 1; }
+      #monBody .presentation #xp .descrip {
+        position: absolute;
+        width: 100%;
+        z-index: 1; }
+      #monBody .presentation #xp #lycee .formation {
+        left: 100%;
+        top: 30%; }
+      #monBody .presentation #xp #lycee .descrip {
+        top: 37%;
+        left: -5%; }
+      #monBody .presentation #xp #acf .formation {
+        left: 50%;
+        top: 10%; }
+      #monBody .presentation #xp #acf .descrip {
+        top: 17%;
+        left: -55%; }
+      #monBody .presentation #xp #croupier .experience {
+        left: 0;
+        top: 40%; }
+      #monBody .presentation #xp #croupier time {
+        position: absolute;
+        top: 42%;
+        left: 19%; }
+      #monBody .presentation #xp #croupier p {
+        position: absolute;
+        top: 47%;
+        left: 41%; }
+      #monBody .presentation #xp #stockiste .experience {
+        left: 0;
+        top: 36%; }
+      #monBody .presentation #xp #stockiste time {
+        position: absolute;
+        top: 38%;
+        left: 19%; }
+      #monBody .presentation #xp #stockiste p {
+        position: absolute;
+        top: 43%;
+        left: 41%; }
+      #monBody .presentation #xp #ecoleMultiM .formation {
+        left: -10%;
+        top: 15%; }
+      #monBody .presentation #xp #ecoleMultiM .descrip {
+        top: 21%;
+        left: -116%; }
+      #monBody .presentation #xp #eCom .experience {
+        left: -30%;
+        top: 31%; }
+      #monBody .presentation #xp #eCom time {
+        position: absolute;
+        top: 33%;
+        left: -2%; }
+      #monBody .presentation #xp #eCom p {
+        position: absolute;
+        top: 38%;
+        left: 7%; }
+      #monBody .presentation #xp #ifocop .formation {
+        left: -20%;
+        top: 14%; }
+      #monBody .presentation #xp #ifocop .descrip {
+        top: 21%;
+        left: -128%; }
+    #monBody .presentation footer {
+      align-items: center;
+      background-color: #000;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      height: 100vh;
+      justify-content: space-around; }
+      #monBody .presentation footer .illustration {
+        width: 400px; }
+      #monBody .presentation footer .contact {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 30%; }
+        #monBody .presentation footer .contact p {
+          font-size: 3em; }
+        #monBody .presentation footer .contact #monCv {
+          border-radius: 30px;
           font-size: 1.5em;
-          margin: 0; }
-      .presentation footer .resSoc p:first-child {
-        font-size: 2em; }
-      .presentation footer .resSoc .git {
-        height: 60px;
-        margin-right: 30px; }
-      .presentation footer .resSoc .linkedin {
-        height: 50px;
-        margin-right: 40px; }
+          margin: 10px 0;
+          padding: 15px 0;
+          text-align: center;
+          text-decoration: none;
+          width: 320px;
+          border: 2px solid #fff;
+          color: #fff; }
+        #monBody .presentation footer .contact #contactezMoi {
+          border-radius: 30px;
+          font-size: 1.5em;
+          margin: 10px 0;
+          padding: 15px 0;
+          text-align: center;
+          text-decoration: none;
+          width: 320px;
+          background-color: #f7b3b1;
+          color: #000;
+          font-weight: 600; }
+      #monBody .presentation footer .resSoc {
+        text-align: left;
+        width: 30%; }
+        #monBody .presentation footer .resSoc ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0; }
+          #monBody .presentation footer .resSoc ul li {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px; }
+            #monBody .presentation footer .resSoc ul li a {
+              color: #fff;
+              text-decoration: none; }
+          #monBody .presentation footer .resSoc ul p {
+            font-size: 1.5em;
+            margin: 0; }
+        #monBody .presentation footer .resSoc p:first-child {
+          font-size: 2em; }
+        #monBody .presentation footer .resSoc .git {
+          height: 60px;
+          margin-right: 30px; }
+        #monBody .presentation footer .resSoc .linkedin {
+          height: 50px;
+          margin-right: 40px; }
 
 #pageContact {
   color: #fff;

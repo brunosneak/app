@@ -1,248 +1,303 @@
-.presentation{
-    background-color: #000;
-    color: #fff;
-    font-family: 'Dosis', sans-serif;
-    height: 100vh;
-    text-align: center;
-    .mBc{
-        position: fixed;
-    }
-    .headerCv{
-        height: 20vh;
-        background-image: url('../img/imgCv/feuilleEnHauteur.svg');
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: 260px;
-    }
-    .QuiJeSuis{
-        display: flex;
-        height: 40vh;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        width: 80vw;
-        #PhotoDeProfil{
-            height: 90%;
-        }
-        .maDescription{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: auto;
-            text-align: left;
-            width: 40%;
-            .recherche{
-                line-height: 1.5em;
-                strong{
-                    font-size: 1.2em;
-                    font-weight: 400;
-                }
-            }
-            p:first-child{
-                margin: 0;
-                font-size: 3em;
-            }
-            p:nth-child(2){
-                margin: 0;
-                font-size: 2em;
-            }
-            p:last-child{
-                margin: 0 0 20px 0;
-                font-size: 2em;
-            }
-        }
-    }
-    .competences{
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 40vh;
-        justify-content: center;
-        position: relative;
-        ul{
-            display: flex;
-            justify-content: space-around;
-            margin: 0;
-            padding: 0;
-            top: 20px;
-            li{
-                list-style-type: none;
-                margin-right: 55px;
-            }
-        }
-        .listComp1{
-            height: 35%;
-            width: 50%;
-        }
-        .listComp2{
-            height: 50%;
-            width: 60%;
-        }
-
-    /*************************************************************************************************************************/
-    /**********************************************PROGRESS BAR CIRCLE********************************************************/
-    /*************************************************************************************************************************/
-
-        #ctx{
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 55px;
-            left: 0;
-            position: absolute;
-            top: 0;
-        }
-        .html5, .css, .sass, .js, .jquery, .angular, .node, .github, .mongodb{
-            position: relative;
-        }
-        .html5 #ctx, .css #ctx, .js #ctx{
-            background-size: 45px;
-        }
-    }
-
-    
-    /*************************************************************************************************************************/
-    /**********************************************SECTION EXPERIENCES********************************************************/
-    /*************************************************************************************************************************/
-
-    #xp{
-        background-attachment: fixed;
-        background-image: url('../img/imgCv/bgCv.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #000;
-        display: flex;
-        font-size: 1.3em;
-        font-weight: 600;
-        height: 100vh;
-        position: relative;
-        div{
-            text-align: right;
-            width: calc(100% / 7);
-        }
-        #livre, #carte, #dev, #devJs{
-            height: 100px;
-            position: absolute;
-            left: 123%;
-            top: -13%;
-        }
-        #dev{
-            top: -20%;
-        }
-        #lycee{
-            position: absolute;
-            left: 2%;
-            top: 40%;
-        }
-        #acf{
-            position: absolute;
-            left: 9%;
-            top: 15%;
-        }
-        #croupier{
-            position: absolute;
-            left: 28%;
-            top: 46%;
-        }
-        #stockiste{
-            position: absolute;
-            left: 42%;
-            top: 40%;
-        }
-        #ecoleMultiM{
-            position: absolute;
-            left: 42%;
-            top: 23%;
-        }
-        #eCom{
-            position: absolute;
-            left: 65%;
-            top: 32%;    
-        }
-        #ifocop{
-            position: absolute;
-            left: 71%;
-            top: 19%;
-        }
-        .formation{
-            height: 500px;
-            position: absolute;
-            top: -50%;
-            left: 100%;
-        }
-        .experience{
-            height: 325px;
-            position: absolute;
-            top: 0;
-            left: 20%;
-        }
-    }
-
-    /*************************************************************************************************************************/
-    /****************************************************CONTACT**************************************************************/
-    /*************************************************************************************************************************/
-
-    footer{
-        align-items: center;
+#monBody{
+    overflow: overlay;
+    .presentation{
         background-color: #000;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
+        color: #fff;
+        font-family: 'Dosis', sans-serif;
         height: 100vh;
-        justify-content: space-around;
-        .illustration{
-            width: 400px;
+        text-align: center;
+        .mBc{
+            position: fixed;
         }
-        .contact{
+        .headerCv{
+            height: 20vh;
+            background-image: url('../img/imgCv/feuilleEnHauteur.svg');
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 260px;
+        }
+        .QuiJeSuis{
             display: flex;
-            flex-direction: column;
-            text-align: left;
-            width: 30%;
-            p{
-                font-size: 3em;
+            height: 40vh;
+            justify-content: space-evenly;
+            margin: 0 auto;
+            width: 80vw;
+            #PhotoDeProfil{
+                height: 90%;
             }
-            #monCv{
-                @include cvEtContact;
-                border: 2px solid #fff;
-                color: #fff;
-            }
-            #contactezMoi{
-                @include cvEtContact;
-                background-color: #f7b3b1;
-                color: #000;
-                font-weight: 600;
-            }
-        }
-        .resSoc{
-            text-align: left;
-            width: 30%;
-            ul{
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                li{
-                    align-items: center;
-                    display: flex;
-                    flex-direction: row;
-                    margin-top: 20px;
-                    a{
-                        color: #fff;
-                        text-decoration: none;
+            .maDescription{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: auto;
+                text-align: left;
+                width: 40%;
+                .recherche{
+                    line-height: 1.5em;
+                    strong{
+                        font-size: 1.2em;
+                        font-weight: 400;
                     }
                 }
-                p{
-                    font-size: 1.5em;
+                p:first-child{
                     margin: 0;
+                    font-size: 3em;
+                }
+                p:nth-child(2){
+                    margin: 0;
+                    font-size: 2em;
+                }
+                p:last-child{
+                    margin: 0 0 20px 0;
+                    font-size: 2em;
                 }
             }
-            p:first-child{
-                font-size: 2em;
+        }
+        .competences{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 40vh;
+            justify-content: center;
+            position: relative;
+            ul{
+                display: flex;
+                justify-content: space-around;
+                margin: 0;
+                padding: 0;
+                top: 20px;
+                li{
+                    list-style-type: none;
+                    margin-right: 55px;
+                }
             }
-            .git{
-                height: 60px;
-                margin-right: 30px;
+            .listComp1{
+                height: 35%;
+                width: 50%;
             }
-            .linkedin{
-                height: 50px;
-                margin-right: 40px;
+            .listComp2{
+                height: 50%;
+                width: 60%;
+            }
+
+        /*************************************************************************************************************************/
+        /**********************************************PROGRESS BAR CIRCLE********************************************************/
+        /*************************************************************************************************************************/
+
+            #ctx{
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 55px;
+                left: 0;
+                position: absolute;
+                top: 0;
+            }
+            .html5, .css, .sass, .js, .jquery, .angular, .node, .github, .mongodb{
+                position: relative;
+            }
+            .html5 #ctx, .css #ctx, .js #ctx{
+                background-size: 45px;
+            }
+        }
+
+        
+        /*************************************************************************************************************************/
+        /**********************************************SECTION EXPERIENCES********************************************************/
+        /*************************************************************************************************************************/
+
+        #xp{
+            background-attachment: fixed;
+            background-image: url('../img/imgCv/bgCv.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #000;
+            display: flex;
+            font-size: 1.3em;
+            font-weight: 600;
+            height: 100vh;
+            #lycee, #acf, #croupier, #stockiste, #ecoleMultiM, #eCom, #ifocop{
+                height: 100%;
+                position: relative;
+                width: calc(100% / 7);
+            }
+            .formation{
+                height: 500px;
+                position: absolute;
+            }
+            .experience{
+                height: 325px;
+                position: absolute;
+            }
+            p{
+                margin: 0;
+                text-align: right;
+            }
+            time{
+                z-index: 1;
+            }
+            .descrip{
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+            }
+            #lycee{
+                .formation{
+                    left: 100%;
+                    top: 30%;
+                }
+                .descrip{
+                    top: 37%;
+                    left: -5%;
+                }
+            }
+            #acf{
+                .formation{
+                    left: 50%;
+                    top: 10%;
+                }
+                .descrip{
+                    top: 17%;
+                    left: -55%;
+                }
+            }
+            #croupier{
+                .experience{
+                    left: 0;
+                    top: 40%;
+                }
+                time{
+                    position: absolute;
+                    top: 42%;
+                    left: 19%;
+                }
+                p{
+                    position: absolute;
+                    top: 47%;
+                    left: 41%;
+                }
+            }
+            #stockiste{
+                .experience{
+                    left: 0;
+                    top: 36%;
+                }
+                time{
+                    position: absolute;
+                    top: 38%;
+                    left: 19%;
+                }
+                p{
+                    position: absolute;
+                    top: 43%;
+                    left: 41%;
+                }
+            }
+            #ecoleMultiM{
+                .formation{
+                    left: -10%;
+                    top: 15%;
+                }
+                .descrip{
+                    top: 21%;
+                    left: -116%;
+                }
+            }
+            #eCom{
+                .experience{
+                    left: -30%;
+                    top: 31%;
+                }
+                time{
+                    position: absolute;
+                    top: 33%;
+                    left: -2%;
+                }
+                p{
+                    position: absolute;
+                    top: 38%;
+                    left: 7%;
+                }
+            }
+            #ifocop{
+                .formation{
+                    left: -20%;
+                    top: 14%;
+                }
+                .descrip{
+                    top: 21%;
+                    left: -128%;
+                }
+            }
+        }
+
+        /*************************************************************************************************************************/
+        /****************************************************CONTACT**************************************************************/
+        /*************************************************************************************************************************/
+
+        footer{
+            align-items: center;
+            background-color: #000;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            height: 100vh;
+            justify-content: space-around;
+            .illustration{
+                width: 400px;
+            }
+            .contact{
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                width: 30%;
+                p{
+                    font-size: 3em;
+                }
+                #monCv{
+                    @include cvEtContact;
+                    border: 2px solid #fff;
+                    color: #fff;
+                }
+                #contactezMoi{
+                    @include cvEtContact;
+                    background-color: #f7b3b1;
+                    color: #000;
+                    font-weight: 600;
+                }
+            }
+            .resSoc{
+                text-align: left;
+                width: 30%;
+                ul{
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        align-items: center;
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 20px;
+                        a{
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    }
+                    p{
+                        font-size: 1.5em;
+                        margin: 0;
+                    }
+                }
+                p:first-child{
+                    font-size: 2em;
+                }
+                .git{
+                    height: 60px;
+                    margin-right: 30px;
+                }
+                .linkedin{
+                    height: 50px;
+                    margin-right: 40px;
+                }
             }
         }
     }

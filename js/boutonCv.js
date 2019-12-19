@@ -7,7 +7,7 @@ function auCliqueDuBoutonCv(){
     mBc[0].addEventListener('click', function(){
         if(pMc[0].style.display == "flex"){
         pMc[0].style.display = "none";
-        monBody.style.overflow = "initial";
+        monBody.style.overflow = "overlay";
         animationBoutonBurgerRetour();
         }else{
             pMc[0].style.display = "flex";
