@@ -23,7 +23,6 @@ var animeFantome = function(){
             };
     }, 200);
 };
-animeFantome();
 
 masqueFantomeVertContact.addEventListener('click', function(){
     clearInterval(stopIntFant);
@@ -39,4 +38,8 @@ var animeVer = function(){
             };
     }, 200);
 };
-animeVer();
+
+window.addEventListener("load", function(){
+    animeFantome();
+    animeVer();
+});

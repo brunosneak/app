@@ -14,4 +14,6 @@ function auCliqueDuBoutonContact(){
     });
 };
 
-auCliqueDuBoutonContact();
+window.addEventListener("load", function(){
+    auCliqueDuBoutonContact();
+});

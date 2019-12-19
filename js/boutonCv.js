@@ -17,4 +17,6 @@ function auCliqueDuBoutonCv(){
     });
 };
 
-auCliqueDuBoutonCv();
+window.addEventListener("load", function(){
+    auCliqueDuBoutonCv();
+});

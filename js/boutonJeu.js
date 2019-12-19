@@ -26,4 +26,6 @@ function auCliqueDuBoutonJeu(){
     });
 };
 
-auCliqueDuBoutonJeu();
+window.addEventListener("load", function(){
+    auCliqueDuBoutonJeu();
+});

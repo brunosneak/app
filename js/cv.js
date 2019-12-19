@@ -31,30 +31,32 @@ var monCercle = function(arg1, monImg, taille, color){
     var dessin = setInterval(dessinCercle, 20);
 };
 
-// progressBarCircle css
-monCercle('css',"", 100,'#4c4c4c');
-monCercle('css', "url('img/imgCv/css.svg')", 65, "#fff");
-// progressBarCircle html
-monCercle('html5','', 100,'#4c4c4c');
-monCercle('html5', "url('img/imgCv/html5.svg')", 80, "#fff");
-// progressBarCircle sass
-monCercle('sass', "", 100, '#4c4c4c');
-monCercle('sass', "url('img/imgCv/sass.svg')", 60, "#fff");
-// progressBarCircle js
-monCercle('js', "", 100, '#4c4c4c');
-monCercle('js', "url('img/imgCv/js.svg')", 70, "#fff");
-// progressBarCircle jquery
-monCercle('jquery', "", 100, '#4c4c4c');
-monCercle('jquery', "url('img/imgCv/jquery.svg')", 40, "#fff");
-// progressBarCircle angular
-monCercle('angular', "", 100, '#4c4c4c');
-monCercle('angular', "url('img/imgCv/angular.svg')", 30, "#fff");
-// progressBarCircle node
-monCercle('node', "", 100, '#4c4c4c');
-monCercle('node', "url('img/imgCv/node.svg')", 20, "#fff");
-// progressBarCircle git
-monCercle('github', "", 100, '#4c4c4c');
-monCercle('github', "url('img/imgCv/github.svg')", 55, "#fff");
-// progressBarCircle mongodb
-monCercle('mongodb', "", 100, '#4c4c4c');
-monCercle('mongodb', "url('img/imgCv/mongodb.svg')", 20, "#fff");
+window.addEventListener("load", function(){
+    // progressBarCircle css
+    monCercle('css',"", 100,'#4c4c4c');
+    monCercle('css', "url('img/imgCv/css.svg')", 65, "#fff");
+    // progressBarCircle html
+    monCercle('html5','', 100,'#4c4c4c');
+    monCercle('html5', "url('img/imgCv/html5.svg')", 80, "#fff");
+    // progressBarCircle sass
+    monCercle('sass', "", 100, '#4c4c4c');
+    monCercle('sass', "url('img/imgCv/sass.svg')", 60, "#fff");
+    // progressBarCircle js
+    monCercle('js', "", 100, '#4c4c4c');
+    monCercle('js', "url('img/imgCv/js.svg')", 70, "#fff");
+    // progressBarCircle jquery
+    monCercle('jquery', "", 100, '#4c4c4c');
+    monCercle('jquery', "url('img/imgCv/jquery.svg')", 40, "#fff");
+    // progressBarCircle angular
+    monCercle('angular', "", 100, '#4c4c4c');
+    monCercle('angular', "url('img/imgCv/angular.svg')", 30, "#fff");
+    // progressBarCircle node
+    monCercle('node', "", 100, '#4c4c4c');
+    monCercle('node', "url('img/imgCv/node.svg')", 20, "#fff");
+    // progressBarCircle git
+    monCercle('github', "", 100, '#4c4c4c');
+    monCercle('github', "url('img/imgCv/github.svg')", 55, "#fff");
+    // progressBarCircle mongodb
+    monCercle('mongodb', "", 100, '#4c4c4c');
+    monCercle('mongodb', "url('img/imgCv/mongodb.svg')", 20, "#fff");
+});
