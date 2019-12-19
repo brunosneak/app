@@ -905,14 +905,60 @@ template {
     background-image: url("../img/imgCv/bgCv.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    color: #000;
     display: flex;
-    height: 100vh; }
+    font-size: 1.3em;
+    font-weight: 600;
+    height: 100vh;
+    position: relative; }
+    .presentation #xp div {
+      text-align: right;
+      width: calc(100% / 7); }
+    .presentation #xp #livre, .presentation #xp #carte, .presentation #xp #dev, .presentation #xp #devJs {
+      height: 100px;
+      position: absolute;
+      left: 123%;
+      top: -13%; }
+    .presentation #xp #dev {
+      top: -20%; }
+    .presentation #xp #lycee {
+      position: absolute;
+      left: 2%;
+      top: 40%; }
+    .presentation #xp #acf {
+      position: absolute;
+      left: 9%;
+      top: 15%; }
+    .presentation #xp #croupier {
+      position: absolute;
+      left: 28%;
+      top: 46%; }
+    .presentation #xp #stockiste {
+      position: absolute;
+      left: 42%;
+      top: 40%; }
+    .presentation #xp #ecoleMultiM {
+      position: absolute;
+      left: 42%;
+      top: 23%; }
+    .presentation #xp #eCom {
+      position: absolute;
+      left: 65%;
+      top: 32%; }
+    .presentation #xp #ifocop {
+      position: absolute;
+      left: 71%;
+      top: 19%; }
     .presentation #xp .formation {
       height: 500px;
-      position: absolute; }
+      position: absolute;
+      top: -50%;
+      left: 100%; }
     .presentation #xp .experience {
-      height: 300px;
-      position: absolute; }
+      height: 325px;
+      position: absolute;
+      top: 0;
+      left: 20%; }
   .presentation footer {
     align-items: center;
     background-color: #000;

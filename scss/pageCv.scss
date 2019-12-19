@@ -98,6 +98,7 @@
         }
     }
 
+    
     /*************************************************************************************************************************/
     /**********************************************SECTION EXPERIENCES********************************************************/
     /*************************************************************************************************************************/
@@ -107,15 +108,71 @@
         background-image: url('../img/imgCv/bgCv.svg');
         background-repeat: no-repeat;
         background-size: cover;
+        color: #000;
         display: flex;
+        font-size: 1.3em;
+        font-weight: 600;
         height: 100vh;
+        position: relative;
+        div{
+            text-align: right;
+            width: calc(100% / 7);
+        }
+        #livre, #carte, #dev, #devJs{
+            height: 100px;
+            position: absolute;
+            left: 123%;
+            top: -13%;
+        }
+        #dev{
+            top: -20%;
+        }
+        #lycee{
+            position: absolute;
+            left: 2%;
+            top: 40%;
+        }
+        #acf{
+            position: absolute;
+            left: 9%;
+            top: 15%;
+        }
+        #croupier{
+            position: absolute;
+            left: 28%;
+            top: 46%;
+        }
+        #stockiste{
+            position: absolute;
+            left: 42%;
+            top: 40%;
+        }
+        #ecoleMultiM{
+            position: absolute;
+            left: 42%;
+            top: 23%;
+        }
+        #eCom{
+            position: absolute;
+            left: 65%;
+            top: 32%;    
+        }
+        #ifocop{
+            position: absolute;
+            left: 71%;
+            top: 19%;
+        }
         .formation{
             height: 500px;
             position: absolute;
+            top: -50%;
+            left: 100%;
         }
         .experience{
-            height: 300px;
+            height: 325px;
             position: absolute;
+            top: 0;
+            left: 20%;
         }
     }
 
