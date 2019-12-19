@@ -20,6 +20,7 @@ var elements = {
     fantomeVert: document.getElementById('fantomeVert'),
     persoMort: document.getElementById('persoMort'),
     persoWin: document.getElementById('persoWin'),
+    persoPause: document.getElementById('persoPause'),
     menuBurger: document.getElementsByClassName('menuBurger'),
     resultat: document.getElementsByClassName('resultat'),
     menuCache: document.getElementsByClassName('menuCache'),
@@ -31,7 +32,8 @@ var persoLeft = elements.perso.offsetLeft;
 var fantomeRougeLeft = elements.fantomeRouge.offsetLeft;
 var fantomeVertLeft = elements.fantomeVert.offsetLeft;
 var persoMortLeft = elements.persoMort.offsetLeft;
-var persoWinLeft = elements.persoWin.offsetLeft; 
+var persoWinLeft = elements.persoWin.offsetLeft;
+var persoPauseLeft = elements.persoPause.offsetLeft; 
 var scoreTotal = 0;
 var stockageInnerHtml = elements.resultat[0].innerHTML;
 var rafId;
