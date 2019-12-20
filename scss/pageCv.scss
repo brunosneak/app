@@ -272,6 +272,11 @@
                     @include cvEtContact;
                     border: 2px solid #fff;
                     color: #fff;
+                    &:hover{
+                        background-color: #6BED8C;
+                        color: #000;
+                        transition: background-color 1s;
+                    }
                 }
                 #contactezMoi{
                     @include cvEtContact;

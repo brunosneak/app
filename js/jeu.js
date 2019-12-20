@@ -280,20 +280,20 @@ var animationDuJeu = function(){
             coordPieceHtml5: elements.pieceHtml5.getBoundingClientRect(),
         }
 
-        if(objCoord.coordMasque.x < objCoord.coordfantomeRougeColl.x + objCoord.coordfantomeRougeColl.width &&
-            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeRougeColl.x &&
-            objCoord.coordMasque.y < objCoord.coordfantomeRougeColl.y + objCoord.coordfantomeRougeColl.height &&
-            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeRougeColl.y || 
+        if(objCoord.coordMasque.left < objCoord.coordfantomeRougeColl.left + objCoord.coordfantomeRougeColl.width &&
+            objCoord.coordMasque.left + objCoord.coordMasque.width > objCoord.coordfantomeRougeColl.left &&
+            objCoord.coordMasque.top < objCoord.coordfantomeRougeColl.top + objCoord.coordfantomeRougeColl.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.top > objCoord.coordfantomeRougeColl.top || 
 
-            objCoord.coordMasque.x < objCoord.coordfantomeVertColl.x + objCoord.coordfantomeVertColl.width &&
-            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordfantomeVertColl.x &&
-            objCoord.coordMasque.y < objCoord.coordfantomeVertColl.y + objCoord.coordfantomeVertColl.height &&
-            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordfantomeVertColl.y || 
+            objCoord.coordMasque.left < objCoord.coordfantomeVertColl.left + objCoord.coordfantomeVertColl.width &&
+            objCoord.coordMasque.left + objCoord.coordMasque.width > objCoord.coordfantomeVertColl.left &&
+            objCoord.coordMasque.top < objCoord.coordfantomeVertColl.top + objCoord.coordfantomeVertColl.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.top > objCoord.coordfantomeVertColl.top || 
 
-            objCoord.coordMasque.x < objCoord.coordboulePiqueColl.x + objCoord.coordboulePiqueColl.width &&
-            objCoord.coordMasque.x + objCoord.coordMasque.width > objCoord.coordboulePiqueColl.x &&
-            objCoord.coordMasque.y < objCoord.coordboulePiqueColl.y + objCoord.coordboulePiqueColl.height &&
-            objCoord.coordMasque.height + objCoord.coordMasque.y > objCoord.coordboulePiqueColl.y){
+            objCoord.coordMasque.left < objCoord.coordboulePiqueColl.left + objCoord.coordboulePiqueColl.width &&
+            objCoord.coordMasque.left + objCoord.coordMasque.width > objCoord.coordboulePiqueColl.left &&
+            objCoord.coordMasque.top < objCoord.coordboulePiqueColl.top + objCoord.coordboulePiqueColl.height &&
+            objCoord.coordMasque.height + objCoord.coordMasque.top > objCoord.coordboulePiqueColl.top){
                 elements.menuCache[0].style.display = "flex";
                 cancelAnimationFrame(rafId);
                 elements.menuBurger[0].style.display = 'none';
@@ -313,10 +313,10 @@ var animationDuJeu = function(){
 /*************************************************************************************************************************/
 
         var objCollision = function(obj1, obj2, points){
-            if(objCoord.coordMasque.x < obj1.x + obj1.width &&
-                objCoord.coordMasque.x + objCoord.coordMasque.width > obj1.x &&
-                objCoord.coordMasque.y < obj1.y + obj1.height &&
-                objCoord.coordMasque.height + objCoord.coordMasque.y > obj1.y){
+            if(objCoord.coordMasque.left < obj1.left + obj1.width &&
+                objCoord.coordMasque.left + objCoord.coordMasque.width > obj1.left &&
+                objCoord.coordMasque.top < obj1.top + obj1.height &&
+                objCoord.coordMasque.height + objCoord.coordMasque.top > obj1.top){
                     obj2.style.top = elements.fondVertDuJeu.offsetHeight + Math.floor(Math.random()*1000) + "px";
                     obj2.style.left = (Math.floor(Math.random() * (975 - 128 + 1)) + 128) + "px";
                     scoreTotal += points;

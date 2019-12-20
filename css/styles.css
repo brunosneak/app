@@ -778,6 +778,8 @@ template {
         .menuCache .mainNav ul li a {
           color: #fff;
           text-decoration: none; }
+        .menuCache .mainNav ul li .lienCv, .menuCache .mainNav ul li .lienContact {
+          color: #f7b3b1; }
       .menuCache .mainNav ul .cv::after, .menuCache .mainNav ul .contact::after {
         content: '';
         background-color: #fff;
@@ -1029,6 +1031,10 @@ template {
           width: 320px;
           border: 2px solid #fff;
           color: #fff; }
+          #monBody .presentation footer .contact #monCv:hover {
+            background-color: #6BED8C;
+            color: #000;
+            transition: background-color 1s; }
         #monBody .presentation footer .contact #contactezMoi {
           border-radius: 30px;
           font-size: 1.5em;
