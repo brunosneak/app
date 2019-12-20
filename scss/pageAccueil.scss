@@ -51,6 +51,7 @@
 
 #nomJeu{
     @include headerAccueil;
+    font-weight: normal;
     margin-top: 10px;
     text-transform: capitalize;
 }

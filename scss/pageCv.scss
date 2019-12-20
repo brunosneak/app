@@ -176,7 +176,7 @@
                 }
                 .descrip{
                     left: -116%;
-                    top: 21%;
+                    top: 18%;
                 }
             }
             #eCom{
@@ -197,11 +197,11 @@
             #ifocop{
                 .formation{
                     left: -20%;
-                    top: 14%;
+                    top: 10%;
                 }
                 .descrip{
                     left: -128%;
-                    top: 21%;
+                    top: 13%;
                 }
             }
             .formation{
@@ -217,9 +217,11 @@
                 margin: 0;
                 text-align: right;
             }
-            p:first-child{
+            h4{
+                color: #fff;
                 font-weight: bold;
                 margin-bottom: 15px;
+                text-align: right;
                 &::after{
                     content: "";
                     background-color: #000;

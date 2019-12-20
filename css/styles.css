@@ -385,6 +385,7 @@ template {
   color: #fff;
   position: relative;
   z-index: 2;
+  font-weight: normal;
   margin-top: 10px;
   text-transform: capitalize; }
 
@@ -952,7 +953,7 @@ template {
         top: 15%; }
       #monBody .presentation #xp #ecoleMultiM .descrip {
         left: -116%;
-        top: 21%; }
+        top: 18%; }
       #monBody .presentation #xp #eCom .experience {
         left: -30%;
         top: 31%; }
@@ -965,10 +966,10 @@ template {
         top: 38%; }
       #monBody .presentation #xp #ifocop .formation {
         left: -20%;
-        top: 14%; }
+        top: 10%; }
       #monBody .presentation #xp #ifocop .descrip {
         left: -128%;
-        top: 21%; }
+        top: 13%; }
       #monBody .presentation #xp .formation {
         height: 500px;
         position: absolute; }
@@ -979,10 +980,12 @@ template {
         color: #fff;
         margin: 0;
         text-align: right; }
-      #monBody .presentation #xp p:first-child {
+      #monBody .presentation #xp h4 {
+        color: #fff;
         font-weight: bold;
-        margin-bottom: 15px; }
-        #monBody .presentation #xp p:first-child::after {
+        margin-bottom: 15px;
+        text-align: right; }
+        #monBody .presentation #xp h4::after {
           content: "";
           background-color: #000;
           display: block;
