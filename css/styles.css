@@ -910,12 +910,65 @@ template {
       color: #000;
       display: flex;
       font-size: 1.3em;
-      font-weight: 600;
       height: 100vh; }
       #monBody .presentation #xp #lycee, #monBody .presentation #xp #acf, #monBody .presentation #xp #croupier, #monBody .presentation #xp #stockiste, #monBody .presentation #xp #ecoleMultiM, #monBody .presentation #xp #eCom, #monBody .presentation #xp #ifocop {
         height: 100%;
         position: relative;
         width: calc(100% / 7); }
+      #monBody .presentation #xp #lycee .descrip {
+        left: -5%;
+        top: 37%; }
+      #monBody .presentation #xp #lycee .formation {
+        left: 100%;
+        top: 30%; }
+      #monBody .presentation #xp #acf .descrip {
+        left: -55%;
+        top: 17%; }
+      #monBody .presentation #xp #acf .formation {
+        left: 50%;
+        top: 10%; }
+      #monBody .presentation #xp #croupier .experience {
+        left: 0;
+        top: 40%; }
+      #monBody .presentation #xp #croupier time {
+        left: 19%;
+        top: 42%; }
+      #monBody .presentation #xp #croupier p {
+        position: absolute;
+        left: 41%;
+        top: 47%; }
+      #monBody .presentation #xp #stockiste .experience {
+        left: 0;
+        top: 36%; }
+      #monBody .presentation #xp #stockiste time {
+        left: 19%;
+        top: 38%; }
+      #monBody .presentation #xp #stockiste p {
+        left: 41%;
+        position: absolute;
+        top: 43%; }
+      #monBody .presentation #xp #ecoleMultiM .formation {
+        left: -10%;
+        top: 15%; }
+      #monBody .presentation #xp #ecoleMultiM .descrip {
+        left: -116%;
+        top: 21%; }
+      #monBody .presentation #xp #eCom .experience {
+        left: -30%;
+        top: 31%; }
+      #monBody .presentation #xp #eCom time {
+        left: -2%;
+        top: 33%; }
+      #monBody .presentation #xp #eCom p {
+        left: -7%;
+        position: absolute;
+        top: 38%; }
+      #monBody .presentation #xp #ifocop .formation {
+        left: -20%;
+        top: 14%; }
+      #monBody .presentation #xp #ifocop .descrip {
+        left: -128%;
+        top: 21%; }
       #monBody .presentation #xp .formation {
         height: 500px;
         position: absolute; }
@@ -923,71 +976,29 @@ template {
         height: 325px;
         position: absolute; }
       #monBody .presentation #xp p {
+        color: #fff;
         margin: 0;
         text-align: right; }
+      #monBody .presentation #xp p:first-child {
+        font-weight: bold;
+        margin-bottom: 15px; }
+        #monBody .presentation #xp p:first-child::after {
+          content: "";
+          background-color: #000;
+          display: block;
+          height: 2px;
+          margin-top: 5px;
+          position: absolute;
+          right: 0;
+          width: 100px; }
       #monBody .presentation #xp time {
+        color: #000;
+        font-weight: bold;
+        position: absolute;
         z-index: 1; }
       #monBody .presentation #xp .descrip {
         position: absolute;
-        width: 100%;
-        z-index: 1; }
-      #monBody .presentation #xp #lycee .formation {
-        left: 100%;
-        top: 30%; }
-      #monBody .presentation #xp #lycee .descrip {
-        top: 37%;
-        left: -5%; }
-      #monBody .presentation #xp #acf .formation {
-        left: 50%;
-        top: 10%; }
-      #monBody .presentation #xp #acf .descrip {
-        top: 17%;
-        left: -55%; }
-      #monBody .presentation #xp #croupier .experience {
-        left: 0;
-        top: 40%; }
-      #monBody .presentation #xp #croupier time {
-        position: absolute;
-        top: 42%;
-        left: 19%; }
-      #monBody .presentation #xp #croupier p {
-        position: absolute;
-        top: 47%;
-        left: 41%; }
-      #monBody .presentation #xp #stockiste .experience {
-        left: 0;
-        top: 36%; }
-      #monBody .presentation #xp #stockiste time {
-        position: absolute;
-        top: 38%;
-        left: 19%; }
-      #monBody .presentation #xp #stockiste p {
-        position: absolute;
-        top: 43%;
-        left: 41%; }
-      #monBody .presentation #xp #ecoleMultiM .formation {
-        left: -10%;
-        top: 15%; }
-      #monBody .presentation #xp #ecoleMultiM .descrip {
-        top: 21%;
-        left: -116%; }
-      #monBody .presentation #xp #eCom .experience {
-        left: -30%;
-        top: 31%; }
-      #monBody .presentation #xp #eCom time {
-        position: absolute;
-        top: 33%;
-        left: -2%; }
-      #monBody .presentation #xp #eCom p {
-        position: absolute;
-        top: 38%;
-        left: 7%; }
-      #monBody .presentation #xp #ifocop .formation {
-        left: -20%;
-        top: 14%; }
-      #monBody .presentation #xp #ifocop .descrip {
-        top: 21%;
-        left: -128%; }
+        width: 100%; }
     #monBody .presentation footer {
       align-items: center;
       background-color: #000;

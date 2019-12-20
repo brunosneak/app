@@ -113,12 +113,96 @@
             color: #000;
             display: flex;
             font-size: 1.3em;
-            font-weight: 600;
             height: 100vh;
             #lycee, #acf, #croupier, #stockiste, #ecoleMultiM, #eCom, #ifocop{
                 height: 100%;
                 position: relative;
                 width: calc(100% / 7);
+            }
+            #lycee{
+                .descrip{
+                    left: -5%;
+                    top: 37%;
+                }
+                .formation{
+                    left: 100%;
+                    top: 30%;
+                }
+            }
+            #acf{
+                .descrip{
+                    left: -55%;
+                    top: 17%;
+                }
+                .formation{
+                    left: 50%;
+                    top: 10%;
+                }
+            }
+            #croupier{
+                .experience{
+                    left: 0;
+                    top: 40%;
+                }
+                time{
+                    left: 19%;
+                    top: 42%;
+                }
+                p{
+                    position: absolute;
+                    left: 41%;
+                    top: 47%;
+                }
+            }
+            #stockiste{
+                .experience{
+                    left: 0;
+                    top: 36%;
+                }
+                time{
+                    left: 19%;
+                    top: 38%;
+                }
+                p{
+                    left: 41%;
+                    position: absolute;
+                    top: 43%;
+                }
+            }
+            #ecoleMultiM{
+                .formation{
+                    left: -10%;
+                    top: 15%;
+                }
+                .descrip{
+                    left: -116%;
+                    top: 21%;
+                }
+            }
+            #eCom{
+                .experience{
+                    left: -30%;
+                    top: 31%;
+                }
+                time{
+                    left: -2%;
+                    top: 33%;
+                }
+                p{
+                    left: -7%;
+                    position: absolute;
+                    top: 38%;
+                }
+            }
+            #ifocop{
+                .formation{
+                    left: -20%;
+                    top: 14%;
+                }
+                .descrip{
+                    left: -128%;
+                    top: 21%;
+                }
             }
             .formation{
                 height: 500px;
@@ -129,104 +213,33 @@
                 position: absolute;
             }
             p{
+                color: #fff;
                 margin: 0;
                 text-align: right;
             }
+            p:first-child{
+                font-weight: bold;
+                margin-bottom: 15px;
+                &::after{
+                    content: "";
+                    background-color: #000;
+                    display: block;
+                    height: 2px;
+                    margin-top: 5px;
+                    position: absolute;
+                    right: 0;
+                    width: 100px;
+                }
+            }
             time{
+                color: #000;
+                font-weight: bold;
+                position: absolute;
                 z-index: 1;
             }
             .descrip{
                 position: absolute;
                 width: 100%;
-                z-index: 1;
-            }
-            #lycee{
-                .formation{
-                    left: 100%;
-                    top: 30%;
-                }
-                .descrip{
-                    top: 37%;
-                    left: -5%;
-                }
-            }
-            #acf{
-                .formation{
-                    left: 50%;
-                    top: 10%;
-                }
-                .descrip{
-                    top: 17%;
-                    left: -55%;
-                }
-            }
-            #croupier{
-                .experience{
-                    left: 0;
-                    top: 40%;
-                }
-                time{
-                    position: absolute;
-                    top: 42%;
-                    left: 19%;
-                }
-                p{
-                    position: absolute;
-                    top: 47%;
-                    left: 41%;
-                }
-            }
-            #stockiste{
-                .experience{
-                    left: 0;
-                    top: 36%;
-                }
-                time{
-                    position: absolute;
-                    top: 38%;
-                    left: 19%;
-                }
-                p{
-                    position: absolute;
-                    top: 43%;
-                    left: 41%;
-                }
-            }
-            #ecoleMultiM{
-                .formation{
-                    left: -10%;
-                    top: 15%;
-                }
-                .descrip{
-                    top: 21%;
-                    left: -116%;
-                }
-            }
-            #eCom{
-                .experience{
-                    left: -30%;
-                    top: 31%;
-                }
-                time{
-                    position: absolute;
-                    top: 33%;
-                    left: -2%;
-                }
-                p{
-                    position: absolute;
-                    top: 38%;
-                    left: 7%;
-                }
-            }
-            #ifocop{
-                .formation{
-                    left: -20%;
-                    top: 14%;
-                }
-                .descrip{
-                    top: 21%;
-                    left: -128%;
-                }
             }
         }
 
