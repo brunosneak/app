@@ -745,14 +745,14 @@ template {
       left: 0;
       position: absolute;
       width: 1000px; }
-  .menuCache #masquePersoPause {
+  .menuCache .masquePersoPause {
     height: 222px;
     left: 47%;
     overflow: hidden;
     position: absolute;
     top: 24%;
     width: 185px; }
-    .menuCache #masquePersoPause #persoPause {
+    .menuCache .masquePersoPause .persoPause {
       display: none;
       left: 0;
       position: absolute;
