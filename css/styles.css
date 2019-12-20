@@ -327,26 +327,26 @@ template {
   top: 0; }
 
 #bgMain {
-  background-image: url("../img/imgPageAccueil/bgMain.svg");
+  background-image: url("../img/imgAccueil/bgMain.svg");
   overflow: hidden; }
 
 #bg1 {
-  background-image: url("../img/imgPageAccueil/bg1.svg"); }
+  background-image: url("../img/imgAccueil/bg1.svg"); }
 
 #bg2 {
-  background-image: url("../img/imgPageAccueil/bg2.svg"); }
+  background-image: url("../img/imgAccueil/bg2.svg"); }
 
 #bg3 {
-  background-image: url("../img/imgPageAccueil/bg3.svg"); }
+  background-image: url("../img/imgAccueil/bg3.svg"); }
 
 #bg4 {
-  background-image: url("../img/imgPageAccueil/bg4.svg"); }
+  background-image: url("../img/imgAccueil/bg4.svg"); }
 
 #bg5 {
-  background-image: url("../img/imgPageAccueil/bg5.svg"); }
+  background-image: url("../img/imgAccueil/bg5.svg"); }
 
 #bg6 {
-  background-image: url("../img/imgPageAccueil/bg6.svg"); }
+  background-image: url("../img/imgAccueil/bg6.svg"); }
 
 /*************************************************************************************************************************/
 /************************************************HEADER ACCUEIL***********************************************************/
